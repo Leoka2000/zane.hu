@@ -1,32 +1,38 @@
-<nav class="fixed bg-transparent top-0 left-0 w-full z-50 flex justify-center">
-  <div class="flex items-center justify-between w-full  px-6 py-3 bg-transparent z-30  border border-white/10 ">
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-center bg-transparent transition-all duration-300">
+  <div 
+    [ngClass]="{
+      'backdrop-blur-md bg-black/20 border-b border-white/10 py-3': isScrolled,
+      'bg-transparent border-transparent py-5': !isScrolled
+    }"
+    class="flex items-center justify-between w-full px-6 z-30 transition-all duration-300"
+  >
     
-    <div class="flex items-center space-x-2">
+    <div class="flex items-center space-x-2 bg-transparent">
       <div class="w-10 h-10 bg-[#53db78] rounded-lg flex items-center justify-center">
-   <img
-      src="/images/zane-logo-small.png"
-      alt="Hand holding microcontroller"
-      class=" object-cover animate-in fade-in zoom-in duration-1000"
-    />
+        <img
+          src="/images/zane-logo-small.png"
+          alt="Zane Logo"
+          class="object-cover animate-in fade-in zoom-in duration-1000"
+        />
       </div>
-      <span class="text-white font-bold text-xl tracking-tight grotesk">Zane Systems</span>
+      <span class="text-white font-bold text-xl tracking-tight grotesk bg-transparent">Zane Systems</span>
     </div>
 
-    <div class="hidden md:flex items-center space-x-8 text-neutral-400 font-medium grotesk">
-     <a href="#" class="hover:text-white transition-colors">Home</a>
-      <a href="#" class="hover:text-white transition-colors">Services</a>
-      <a href="#" class="hover:text-white transition-colors">Blog</a>
-      <a href="#" class="hover:text-white transition-colors">About Us</a>
-      <a href="#" class="hover:text-white transition-colors">Contact</a>
-      <div class="flex items-center space-x-1 hover:text-white cursor-pointer transition-colors">
-        <span>maybedropdown</span>
+    <div class="hidden md:flex items-center space-x-8 text-neutral-400 font-medium grotesk bg-transparent">
+      <a href="#" class="hover:text-white transition-colors bg-transparent">Home</a>
+      <a href="#" class="hover:text-white transition-colors bg-transparent">Services</a>
+      <a href="#" class="hover:text-white transition-colors bg-transparent">Blog</a>
+      <a href="#" class="hover:text-white transition-colors bg-transparent">About Us</a>
+      <a href="#" class="hover:text-white transition-colors bg-transparent">Contact</a>
+      <div class="flex items-center space-x-1 hover:text-white cursor-pointer transition-colors bg-transparent">
+        <span class="bg-transparent">maybedropdown</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </div>
     </div>
 
-    <div class="flex items-center">
+    <div class="flex items-center bg-transparent">
       <app-primary-button></app-primary-button>
     </div>
   </div>
