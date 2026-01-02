@@ -1,1 +1,45 @@
+<main
+  class="min-h-screen w-full flex items-center justify-center px-[20rem] overflow-hidden"
+>
+  <section
+    class="flex flex-col lg:flex-row  items-center md:ml-[-15rem] justify-center w-full"
+  >
+    <div class="flex  flex-col items-start text-left space-y-6 w-full ">
+      <app-badge></app-badge>
 
+      <div class="space-y-4">
+        <h1
+          class="text-white text-xl lg:text-6xl font-bold tracking-tight grotesk"
+        >
+          Zane Systems
+        </h1>
+        <p class="text-neutral-400 text-lg lg:text-xl max-w-lg ">
+          Innovative hardware and software solutions designed for modern
+          technical challenges.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 pt-4">
+        <app-primary-button></app-primary-button>
+        <app-secondary-button></app-secondary-button>
+      </div>
+    </div>
+
+    <div
+      class="w-full rounded-md flex justify-center lg:justify-end relative"
+    >
+      <div class="absolute inset-0 blur-[120px] rounded-full"></div>
+
+      <img
+        src="images/hero-photo.png"
+        alt="Hand holding microcontroller"
+        class="relative z-10 w-full max-w-[600px] rounded-xl h-auto object-cover animate-in fade-in zoom-in duration-1000"
+      />
+    </div>
+    <img
+      src="shades/shade-green2.png"
+      alt="Hand holding microcontroller"
+      class="absolute right-0 z-0 w-full max-w-[600px] h-auto object-cover animate-in fade-in zoom-in duration-1000"
+    />
+  </section>
+</main>
