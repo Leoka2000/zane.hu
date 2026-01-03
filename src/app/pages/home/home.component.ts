@@ -9,7 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { ContactSectionComponent } from "./contact-section/contact-section.component";
 import { FormContactComponent } from "./contact-section/form-contact/form-contact.component";
 import { FooterComponent } from "../../components/footer/footer.component";
-import { BlogComponent } from "./blog/blog.component";
+import { BlogComponent } from './blog/blog.component';
+
 
 @Component({
   selector: 'app-home',
