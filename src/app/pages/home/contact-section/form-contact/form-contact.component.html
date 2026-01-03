@@ -31,7 +31,7 @@
       type="submit" 
       [text]="'Submit Request'" 
       [icon]="'send'" 
-      [disabled]="contactForm.invalid"
+      [disabled]="contactForm.invalid || isLoading"
       [loading]="isLoading">
     </app-primary-button>
 

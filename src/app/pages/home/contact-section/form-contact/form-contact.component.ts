@@ -12,7 +12,6 @@ import emailjs from '@emailjs/browser';
 import { PrimaryButtonComponent } from '../../../../components/primary-button/primary-button.component';
 import { SuccessDialogComponent } from '../../../../components/success-dialog/success-dialog.component';
 
-
 @Component({
   selector: 'app-form-contact',
   standalone: true,
@@ -31,11 +30,6 @@ import { SuccessDialogComponent } from '../../../../components/success-dialog/su
   templateUrl: './form-contact.component.html',
   styles: [`
     .form-wrapper { background-color: #000d01 !important; position: relative; }
-    .loading-overlay {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 13, 1, 0.7); z-index: 10;
-      display: flex; align-items: center; justify-content: center;
-    }
     ::ng-deep .custom-material-form .mat-mdc-text-field-wrapper { background-color: #000d01 !important; }
     ::ng-deep .custom-material-form .mat-mdc-form-field-focus-overlay { background-color: transparent !important; }
     ::ng-deep .custom-material-form .mdc-line-ripple::before { border-bottom-color: rgba(118, 229, 148, 0.3) !important; }
@@ -62,7 +56,7 @@ export class FormContactComponent {
   }
 
   async onSubmit() {
-    if (this.contactForm.valid) {
+    if (this.contactForm.valid && !this.isLoading) {
       this.isLoading = true;
       
       const templateParams = {
@@ -85,7 +79,7 @@ export class FormContactComponent {
         this.resetForm();
       } catch (error) {
         this.isLoading = false;
-        console.error('FAILED...', error);
+        console.error('EmailJS Error:', error);
       }
     } else {
       this.contactForm.markAllAsTouched();
@@ -96,7 +90,8 @@ export class FormContactComponent {
     this.dialog.open(SuccessDialogComponent, {
       width: '400px',
       enterAnimationDuration: '300ms',
-      exitAnimationDuration: '150ms'
+      exitAnimationDuration: '150ms',
+      disableClose: false
     });
   }
 

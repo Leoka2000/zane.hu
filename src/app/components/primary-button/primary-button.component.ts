@@ -14,5 +14,5 @@ export class PrimaryButtonComponent {
   @Input() text: string = 'Request quote';
   @Input() icon: string = 'request_quote';
   @Input() disabled: boolean = false;
-  @Input() loading: boolean = false; // New Input
+  @Input() loading: boolean = false;
 }
