@@ -44,7 +44,7 @@ $my-app-theme: mat.define-theme((
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #000d01;
+ 
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-weight: auto;
@@ -57,5 +57,5 @@ $my-app-theme: mat.define-theme((
   font-style: normal;
 }
 
-html, body { height: 100%; }
+html, body { height: 100%; background-color: #000d01; }
 
