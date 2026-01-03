@@ -1,37 +1,54 @@
 <button
-  style="background-color: rgba(83, 219, 120, 0.2) !important; border-color: #53db78 !important;"
-  class="
-
-    inline-flex items-center justify-center gap-2 
-    px-5 py-2.5 text-neutral-200 text-sm font-
-     rounded-md 
-    transition-all duration-300 ease-in-out grotesk 
-    
-    /* Tailwind effects that work with inline styles */
-    border backdrop-blur-sm 
-    
-
-    hover:border-[] hover:bg-[#53db78]/40 
-    hover:shadow-[0_0_15px_rgba(83,219,120,0.3)] 
-
+  [type]="type"
+  [disabled]="disabled"
+  class="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md text-sm font-medium grotesk transition-all duration-300 ease-in-out border disabled:opacity-50 disabled:cursor-not-allowed"
+  style="
+    border-color: #53db78;
+    background: linear-gradient(
+      135deg,
+      rgba(83, 219, 120, 0.25) 0%,
+      rgba(19, 47, 28, 0.45) 60%,
+      rgba(0, 13, 1, 0.85) 100%
+    );
+    overflow: hidden;
   "
 >
-  <span class="grotesk" style="background-color: transparent !important; color: inherit;  ">
-    Request quote
-  </span>
-
-  <mat-icon 
+  <span
     style="
-         background-color: transparent !important; 
-      display: flex !important; 
-      align-items: center; 
-      justify-content: center; 
-      width: 20px; 
-      height: 20px; 
-      font-size: 20px; 
-      color: #53db78;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+      transition: background 0.3s ease;
+    "
+  ></span>
+
+  <span
+    class="grotesk"
+    style="
+      position: relative;
+      z-index: 1;
+      color: #e5e5e5;
+      background: transparent;
     "
   >
-    request_quote
+    {{ text }}
+  </span>
+
+  <mat-icon
+    style="
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+      color: #76e594;
+      background: transparent;
+    "
+  >
+    {{ icon }}
   </mat-icon>
 </button>

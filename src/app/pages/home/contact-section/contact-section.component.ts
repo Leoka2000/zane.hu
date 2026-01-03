@@ -8,15 +8,20 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatExpansionModule, MatIconModule],
   templateUrl: './contact-section.component.html',
   // Essential for removing Material default paddings/shadows
-  styles: [`
-    ::ng-deep .custom-dark-accordion .mat-expansion-panel-header-description, 
-    ::ng-deep .custom-dark-accordion .mat-content {
-      flex-grow: 1;
-      justify-content: space-between;
-      align-items: center;
-      background-color: transparent;
-    }
-    ::ng-deep .mat-expansion-indicator { display: none !important; }
-  `]
+  styles: [
+    `
+      ::ng-deep .custom-dark-accordion .mat-expansion-panel-header-description,
+      ::ng-deep .custom-dark-accordion .mat-content {
+        flex-grow: 1;
+        justify-content: space-between;
+
+        align-items: center;
+        background-color: transparent;
+      }
+      ::ng-deep .mat-expansion-indicator {
+        display: none !important;
+      }
+    `,
+  ],
 })
 export class ContactSectionComponent {}
