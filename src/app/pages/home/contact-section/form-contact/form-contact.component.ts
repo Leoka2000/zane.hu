@@ -10,7 +10,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import emailjs from '@emailjs/browser';
 import { PrimaryButtonComponent } from '../../../../components/primary-button/primary-button.component';
-import { SuccessDialogComponent } from '../../../../components/success-dialog/success-dialog.component';
+import { SuccessDialogComponent } from '../../../../components/dialogs/success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-form-contact',

@@ -1,8 +1,9 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Required for [ngClass]
 import { PrimaryButtonComponent } from "../primary-button/primary-button.component";
-import { QuotationDialogComponent } from '../quotation-dialog/quotation-dialog.component';
+
 import { MatDialog } from '@angular/material/dialog';
+import { QuotationDialogComponent } from '../dialogs/quotation-dialog/quotation-dialog.component';
 
 @Component({
   selector: 'app-navbar',

@@ -6,9 +6,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
-import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+
 import emailjs from '@emailjs/browser';
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
+import { PrimaryButtonComponent } from '../../primary-button/primary-button.component';
 
 @Component({
   selector: 'app-quotation-dialog',
