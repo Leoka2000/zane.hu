@@ -1,118 +1,80 @@
-<section class="w-full bg-[#000d01]  ">
-  <div class="mx-auto">
-    <div class="mb-8">
-     <span
-            class="inline-flex items-center gap-3 px-3 py-1.5 rounded-md grotesk border border-[#76e594] text-[#76e594] text-sm font-bold tracking-wide"
-            style="line-height: 1;"
-          >
-            <span style="display: flex; align-items: center;">
-       Contact
-            </span>
-
-            <mat-icon
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.2rem;
-                line-height: 1;
-                height: 1.2rem;
-                width: 1.2rem;
-                color: #76e594;
-              "
-            >
-           contact_mail
-            </mat-icon>
-          </span>
+<section class="w-full bg-[#000d01] py-20">
+  <div class="max-w-7xl mx-auto px-6"> <div class="mb-8">
+      <span class="inline-flex items-center gap-3 px-3 py-1.5 rounded-md grotesk border border-[#76e594] text-[#76e594] text-sm font-bold tracking-wide" style="line-height: 1;">
+        <span>Contact</span>
+        <mat-icon style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem; height: 1.2rem; width: 1.2rem;">
+          contact_mail
+        </mat-icon>
+      </span>
     </div>
 
     <div class="mb-12 space-y-4">
-      <h2
-        class="md:text-6xl text-4xl font-bold text-neutral-200 tracking-tight leading-tight grotesk"
-      >
+      <h2 class="md:text-6xl text-4xl font-medium text-neutral-200 tracking-tight leading-tight grotesk">
         Stay ahead of threats
       </h2>
-      <p class=" md:text-6xl text-4xl text-neutral-200  grotesk">
+      <p class="md:text-6xl text-4xl font-medium text-neutral-400 grotesk">
         Deploy in one click. No setup. No stress.
       </p>
     </div>
 
-    <div class="flex flex-wrap gap-3 mb-16">
-      @for (feature of ['SOC 2 Ready', 'No credit card needed', 'EU-hosted',
-      'Cancel anytime', 'GDPR Compliant', 'Setup in minutes']; track feature) {
-      <div
-        class="flex items-center gap-2 px-4 py-1 rounded-md border bg-none border-[#76e594] bg-[#53db78]/5"
-      >
-        <mat-icon 
-          class=" !text-[#76e594]   text-xl  mb-1.5  flex items-center justify-center"
-        >
-          check_circle
-        </mat-icon>
-        <span class="text-sm font-medium tracking-wide text-neutral-200">{{
-          feature
-        }}</span>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      
+      <div class="flex flex-col">
+        <div class="flex flex-wrap gap-3 mb-8">
+          @for (feature of ['SOC 2 Ready', 'No credit card needed', 'EU-hosted', 'Cancel anytime', 'GDPR Compliant', 'Setup in minutes']; track feature) {
+          <div class="flex items-center gap-2 px-4 py-1 rounded-md border border-[#76e594] bg-[#53db78]/5">
+            <mat-icon class="!text-[#76e594] text-xl mb-1.5 flex items-center justify-center">
+              check_circle
+            </mat-icon>
+            <span class="text-sm font-medium tracking-wide text-neutral-200">{{ feature }}</span>
+          </div>
+          }
+        </div>
+
+        <div class="space-y-4">
+          <mat-accordion class="custom-dark-accordion">
+            <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none border border-neutral-700 !rounded-md !mb-4 overflow-hidden">
+              <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
+                <mat-panel-title class="!text-neutral-200 !text-lg font-bold grotesk">
+                  Do I need to install anything?
+                </mat-panel-title>
+                <mat-icon class="!text-[#76e594]">add</mat-icon>
+              </mat-expansion-panel-header>
+              <div class="py-6 px-8 text-neutral-400 leading-relaxed">
+                Zane Systems is cloud-native. You can manage your entire hardware stack via our browser dashboard with zero local installation required.
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md !mb-4">
+              <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
+                <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
+                  Can I try it without a credit card?
+                </mat-panel-title>
+                <mat-icon class="!text-[#76e594]">add</mat-icon>
+              </mat-expansion-panel-header>
+              <div class="py-6 px-8 text-neutral-400 leading-relaxed">
+                Yes, our Free Tier allows you to connect up to 3 microcontrollers without any billing information required.
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md">
+              <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
+                <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
+                  Is my data stored in the EU?
+                </mat-panel-title>
+                <mat-icon class="!text-[#76e594]">add</mat-icon>
+              </mat-expansion-panel-header>
+              <div class="py-6 px-8 text-neutral-400 leading-relaxed">
+                Absolutely. We use Frankfurt-based servers to ensure full compliance with GDPR and local data residency laws.
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
       </div>
-      }
-    </div>
 
-    <div class="space-y-4">
-      <mat-accordion class="custom-dark-accordion">
-        <mat-expansion-panel
-          hideToggle 
-          class="!bg-transparent  !shadow-none border border-1 border-neutral-700 !rounded-md !mb-4 overflow-hidden"
-        >
-          <mat-expansion-panel-header
-            class="!h-20 !px-8 hover:!bg-white/5 transition-colors"
-          >
-            <mat-panel-title class="!text-text-neutral-200 !text-lg font-bold grotesk">
-              Do I need to install anything?
-            </mat-panel-title>
-            <mat-icon class="!text-[#76e594]">add</mat-icon>
-          </mat-expansion-panel-header >
-          <div class=" py-6 px-8 text-neutral-400 leading-relaxed">
-            Zane Systems is cloud-native. You can manage your entire hardware
-            stack via our browser dashboard with zero local installation
-            required.
-          </div>
-        </mat-expansion-panel>
+      <div class="w-full">
+        <app-form-contact></app-form-contact>
+      </div>
 
-        <mat-expansion-panel
-          hideToggle
-          class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md !mb-4"
-        >
-          <mat-expansion-panel-header
-            class="!h-20 !px-8 hover:!bg-white/5 transition-colors"
-          >
-            <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
-              Can I try it without a credit card?
-            </mat-panel-title>
-            <mat-icon class="!text-[#76e594] ">add</mat-icon>
-          </mat-expansion-panel-header>
-          <div class="py-6 px-8 text-neutral-400 leading-relaxed">
-            Yes, our Free Tier allows you to connect up to 3 microcontrollers
-            without any billing information required.
-          </div>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel
-          hideToggle
-          class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md"
-        >
-          <mat-expansion-panel-header
-            class="!h-20 !px-8 hover:!bg-white/5 transition-colors"
-          >
-            <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
-              Is my data stored in the EU?
-            </mat-panel-title>
-            <mat-icon class="!text-[#76e594]">add</mat-icon>
-          </mat-expansion-panel-header>
-          <div class="py-6 px-8 text-neutral-400 leading-relaxed">
-            Absolutely. We use Frankfurt-based servers to ensure full compliance
-            with GDPR and local data residency laws.
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </div>
-  </div>
-  
+    </div> </div>
 </section>

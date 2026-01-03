@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -6,7 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import emailjs from '@emailjs/browser';
 import { PrimaryButtonComponent } from '../../../../components/primary-button/primary-button.component';
+import { SuccessDialogComponent } from '../../../../components/success-dialog/success-dialog.component';
+
 
 @Component({
   selector: 'app-form-contact',
@@ -19,61 +24,33 @@ import { PrimaryButtonComponent } from '../../../../components/primary-button/pr
     MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
     PrimaryButtonComponent
   ],
   templateUrl: './form-contact.component.html',
   styles: [`
-   
-    .form-wrapper {
-      background-color: #000d01!important;
+    .form-wrapper { background-color: #000d01 !important; position: relative; }
+    .loading-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 13, 1, 0.7); z-index: 10;
+      display: flex; align-items: center; justify-content: center;
     }
-
-
-    ::ng-deep .custom-material-form .mdc-notched-outline__leading,
-    ::ng-deep .custom-material-form .mdc-notched-outline__notch,
-    ::ng-deep .custom-material-form .mdc-notched-outline__trailing {
-      border-color: rgba(118, 229, 148, 0.3) !important;
-    }
-
-    /* 3. Focus State (When clicking the input) */
-    ::ng-deep .custom-material-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
-    ::ng-deep .custom-material-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
-    ::ng-deep .custom-material-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
-      border-color: #76e594 !important;
-      border-width: 2px !important;
-    }
-
-    ::ng-deep .custom-material-form .mdc-floating-label {
-      color: #76e594 !important;
-      opacity: 0.7;
-    }
-    ::ng-deep .custom-material-form .mat-focused .mdc-floating-label {
-      opacity: 1;
-    }
-    ::ng-deep .custom-material-form input, 
-    ::ng-deep .custom-material-form textarea {
-      color: white !important;
-      caret-color: #76e594 !important;
-    }
-
-
-    ::ng-deep .custom-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background {
-      background-color: #76e594 !important;
-      border-color: #76e594 !important;
-    }
-
-
-    .custom-submit-btn {
-      border: 1px solid #76e594 !important;
-      color: #76e594 !important;
-      padding: 25px 50px !important;
-      font-size: 1.1rem !important;
-      transition: all 0.3s  !important;
-    }
+    ::ng-deep .custom-material-form .mat-mdc-text-field-wrapper { background-color: #000d01 !important; }
+    ::ng-deep .custom-material-form .mat-mdc-form-field-focus-overlay { background-color: transparent !important; }
+    ::ng-deep .custom-material-form .mdc-line-ripple::before { border-bottom-color: rgba(118, 229, 148, 0.3) !important; }
+    ::ng-deep .custom-material-form .mat-focused .mdc-line-ripple::after { border-bottom-color: #76e594 !important; }
+    ::ng-deep .custom-material-form .mdc-floating-label { color: #76e594 !important; opacity: 0.7; }
+    ::ng-deep .custom-material-form .mat-focused .mdc-floating-label { opacity: 1; }
+    ::ng-deep .custom-material-form input, ::ng-deep .custom-material-form textarea { color: white !important; caret-color: #76e594 !important; }
+    ::ng-deep .custom-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background { background-color: #76e594 !important; border-color: #76e594 !important; }
+    ::ng-deep .mat-mdc-progress-spinner .mdc-circular-progress__determine-circle-graphic { stroke: #76e594 !important; }
   `]
 })
 export class FormContactComponent {
   contactForm: FormGroup;
+  isLoading = false;
+  private dialog = inject(MatDialog);
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -84,24 +61,52 @@ export class FormContactComponent {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Success:', this.contactForm.value);
+      this.isLoading = true;
       
-      // LOGIC TO CLEAN THE FORM
-      this.contactForm.reset();
-      
- 
-      Object.keys(this.contactForm.controls).forEach(key => {
-        const control = this.contactForm.get(key);
-        control?.setErrors(null);
-        control?.markAsPristine();
-        control?.markAsUntouched();
-      });
+      const templateParams = {
+        name: this.contactForm.value.name,
+        email: this.contactForm.value.email,
+        message: this.contactForm.value.message,
+        terms: this.contactForm.value.terms ? 'Accepted' : 'Not Accepted'
+      };
 
+      try {
+        await emailjs.send(
+          "service_m9xwdke",
+          "template_uo3c3g3",
+          templateParams,
+          "Wz8QOl_kyPBr6ZQT1"
+        );
+
+        this.isLoading = false;
+        this.openSuccessDialog();
+        this.resetForm();
+      } catch (error) {
+        this.isLoading = false;
+        console.error('FAILED...', error);
+      }
     } else {
-      console.log('Formulário inválido');
       this.contactForm.markAllAsTouched();
     }
+  }
+
+  private openSuccessDialog() {
+    this.dialog.open(SuccessDialogComponent, {
+      width: '400px',
+      enterAnimationDuration: '300ms',
+      exitAnimationDuration: '150ms'
+    });
+  }
+
+  private resetForm() {
+    this.contactForm.reset();
+    Object.keys(this.contactForm.controls).forEach(key => {
+      const control = this.contactForm.get(key);
+      control?.setErrors(null);
+      control?.markAsPristine();
+      control?.markAsUntouched();
+    });
   }
 }
