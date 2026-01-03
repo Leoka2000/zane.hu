@@ -1,0 +1,63 @@
+<div class="dialog-container">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-light text-white grotesk">Request a Quote</h2>
+    <button mat-icon-button (click)="closeDialog()" class="text-neutral-500 hover:text-white" [disabled]="isLoading">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+    <mat-form-field appearance="fill" class="w-full custom-field">
+      <mat-label class="text-neutral-400">Full Name</mat-label>
+      <input matInput formControlName="name" placeholder="John Doe">
+      <mat-icon matPrefix [ngClass]="isInvalid('name') ? 'icon-error' : 'icon-success'" class="mr-2">person</mat-icon>
+      <mat-error *ngIf="quoteForm.get('name')?.hasError('required')">Name is required</mat-error>
+      <mat-error *ngIf="quoteForm.get('name')?.hasError('minlength')">Minimum 3 characters</mat-error>
+    </mat-form-field>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <mat-form-field appearance="fill" class="custom-field">
+        <mat-label class="text-neutral-400">Email Address</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="john@example.com">
+        <mat-icon matPrefix [ngClass]="isInvalid('email') ? 'icon-error' : 'icon-success'" class="mr-2">email</mat-icon>
+        <mat-error>Please enter a valid email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="custom-field">
+        <mat-label class="text-neutral-400">Phone Number</mat-label>
+        <input matInput formControlName="phone" placeholder="+36 00 00 00">
+        <mat-icon matPrefix [ngClass]="isInvalid('phone') ? 'icon-error' : 'icon-success'" class="mr-2">phone</mat-icon>
+        <mat-error *ngIf="quoteForm.get('phone')?.hasError('required')">Phone is mandatory</mat-error>
+        <mat-error *ngIf="quoteForm.get('phone')?.hasError('pattern')">Numbers/symbols only</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="fill" class="w-full custom-field">
+      <mat-label class="text-neutral-400">Interested Service</mat-label>
+      <mat-select formControlName="service">
+        <mat-option value="Tervezés">Tervezés</mat-option>
+        <mat-option value="Gyártás">Gyártás</mat-option>
+        <mat-option value="Komplex">Komplex</mat-option>
+      </mat-select>
+      <mat-icon matPrefix [ngClass]="isInvalid('service') ? 'icon-error' : 'icon-success'" class="mr-2">settings</mat-icon>
+      <mat-error>Selection is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full custom-field">
+      <mat-label class="text-neutral-400">Additional Details</mat-label>
+      <textarea matInput formControlName="message" rows="3" placeholder="Tell us more about your needs"></textarea>
+      <mat-icon matPrefix [ngClass]="isInvalid('message') ? 'icon-error' : 'icon-success'" class="mr-2">message</mat-icon>
+      <mat-error>Please provide at least 10 characters</mat-error>
+    </mat-form-field>
+
+    <div class="mt-4 flex justify-end">
+      <app-primary-button 
+        type="submit" 
+        text="Send Request" 
+        icon="send" 
+        [disabled]="quoteForm.invalid || isLoading"
+        [loading]="isLoading">
+      </app-primary-button>
+    </div>
+  </form>
+</div>

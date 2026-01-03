@@ -3,7 +3,8 @@
 >
   <div
     [ngClass]="{
-      'backdrop-blur-sm bg-transparent border-b border-neutral-700 py-3': isScrolled,
+      'backdrop-blur-sm bg-transparent border-b border-neutral-700 py-3':
+        isScrolled,
       'bg-transparent border-transparent py-5': !isScrolled
     }"
     class="flex items-center justify-between w-full px-6 z-30 transition-all duration-300"
@@ -16,7 +17,7 @@
           class="object-cover animate-in fade-in zoom-in duration-1000"
         />
       </div>
-<!--       <span
+      <!--       <span
         class="text-white font-bold text-xl tracking-tight grotesk bg-transparent"
         >Zane Systems</span
       > -->
@@ -62,7 +63,14 @@
     </div>
 
     <div class="flex items-center bg-transparent">
-      <app-primary-button></app-primary-button>
+      <div class="flex items-center bg-transparent">
+        <app-primary-button
+          text="Get a Quote"
+    
+          (click)="openQuoteDialog()"
+        >
+        </app-primary-button>
+      </div>
     </div>
   </div>
 </nav>

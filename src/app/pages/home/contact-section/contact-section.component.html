@@ -22,11 +22,11 @@
       <div class="flex flex-col">
         <div class="flex flex-wrap gap-3 mb-8">
           @for (feature of ['SOC 2 Ready', 'No credit card needed', 'EU-hosted', 'Cancel anytime', 'GDPR Compliant', 'Setup in minutes']; track feature) {
-          <div class="flex items-center gap-2 px-4 py-1 rounded-md border border-[#76e594] bg-[#53db78]/5">
+          <div class="flex items-center gap-2 px-2  rounded-full border border-[#76e594] bg-[#53db78]/5">
             <mat-icon class="!text-[#76e594] text-xl mb-1.5 flex items-center justify-center">
               check_circle
             </mat-icon>
-            <span class="text-sm font-medium tracking-wide text-neutral-200">{{ feature }}</span>
+            <span class="text-xs font-medium tracking-wide text-neutral-200">{{ feature }}</span>
           </div>
           }
         </div>
