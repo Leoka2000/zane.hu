@@ -29,7 +29,7 @@ import { SuccessDialogComponent } from '../../../../components/dialogs/success-d
   ],
   templateUrl: './form-contact.component.html',
   styles: [`
-    .form-wrapper { background-color: #000d01 !important; position: relative; }
+    .form-wrapper { background-color: #000d01 !important; position: relative;  border-radius: 0.5rem!important; }
     ::ng-deep .custom-material-form .mat-mdc-text-field-wrapper { background-color: #000d01 !important; }
     ::ng-deep .custom-material-form .mat-mdc-form-field-focus-overlay { background-color: transparent !important; }
     ::ng-deep .custom-material-form .mdc-line-ripple::before { border-bottom-color: rgba(118, 229, 148, 0.3) !important; }

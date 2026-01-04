@@ -25,7 +25,7 @@ import { BlogHomeComponent } from '../../pages/blog-home/blog-home.component';
     <!--        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)"></div> -->
         </div>
         
-        <div class="absolute top-[28rem] left-10 z-20 pointer-events-none">
+        <div class="absolute top-[30rem] left-10 z-20 pointer-events-none">
           <div class="relative">
           <img
             src="/images/brand/befektetesjovobe.png"
@@ -40,7 +40,7 @@ import { BlogHomeComponent } from '../../pages/blog-home/blog-home.component';
 
         <app-navbar></app-navbar>
 
-        <main class="relative z-10">
+        <main class="relative z-10 min-h-screen w-full flex flex-col items-center justify-center">
           <app-home></app-home>
         </main>
 

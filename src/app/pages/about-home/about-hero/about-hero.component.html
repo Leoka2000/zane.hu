@@ -1,0 +1,80 @@
+<section class="bg-[#000d01] py-24 overflow-hidden relative">
+  <img
+    src="images/blog/bg-pattern-hero.svg"
+    alt="Background Pattern"
+    class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+  />
+
+  <div
+    class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#76e594]/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 z-0"
+  ></div>
+
+  <div
+    class=" mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10"
+  >
+    <div class="w-full lg:w-3/5 space-y-8">
+      <span
+        class="inline-flex items-center gap-3 px-2.5 py-1.5 rounded-md border border-[#76e594] text-[#76e594] text-xs font-bold tracking-wide"
+        style="line-height: 1"
+      >
+        <span class="uppercase" style="display: flex; align-items: center">
+          Kik Vagyunk
+        </span>
+
+        <mat-icon
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            line-height: 1;
+            height: 1rem;
+            width: 1rem;
+            color: #76e594;
+          "
+        >
+          quiz
+        </mat-icon>
+      </span>
+
+      <h2
+        class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight grotesk uppercase"
+      >
+        Vizionárius alapok, <br />
+        <span class="text-inherit">ahol az innováció</span> <br />
+        <span class="text-[#76e594]">precíz tervezéssel találkozik.</span>
+      </h2>
+
+      <p class="text-neutral-300 text-lg md:text-xl leading-relaxed max-w-2xl">
+        A <span class="text-white font-medium">ZANE systems</span>-t 2012-ben
+        alapította Erdei Zoltán villamosmérnök. Küldetésünk, hogy bebizonyítsuk:
+        a magyar mérnöki szaktudás nemcsak a gyártásban, hanem a világszínvonalú
+        elektronikai tervezésben is kiemelkedő helyet foglal el.
+      </p>
+
+      <div class="pt-4">
+        
+        <app-primary-button text="Explore" icon="play_circle"></app-primary-button>
+      </div>
+    </div>
+
+    <div
+      class="w-full lg:w-2/5 flex flex-col justify-center items-start lg:items-end gap-12"
+    >
+      @for (stat of stats; track stat.label) {
+      <div class="flex flex-col items-start lg:items-end group">
+        <span
+          class="text-5xl md:text-7xl font-bold text-[#76e594] grotesk transition-transform group-hover:scale-110 duration-300"
+        >
+          {{ stat.value }}
+        </span>
+        <span
+          class="text-neutral-500 text-xs font-bold tracking-[0.2em] uppercase mt-2"
+        >
+          {{ stat.label }}
+        </span>
+      </div>
+      }
+    </div>
+  </div>
+</section>

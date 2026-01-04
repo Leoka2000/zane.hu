@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common'; // Added
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { FormContactComponent } from './form-contact/form-contact.component';
+import { BelowBgShadesComponent } from "../../../shades/below-bg-shades/below-bg-shades.component";
  // Ensure path is correct
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, MatIconModule, FormContactComponent], // Added FormContactComponent
+  imports: [CommonModule, MatExpansionModule, MatIconModule, FormContactComponent, BelowBgShadesComponent], // Added FormContactComponent
   templateUrl: './contact-section.component.html',
   styles: [
     `
