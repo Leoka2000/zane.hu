@@ -6,14 +6,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { PrimaryButtonComponent } from '../../../components/primary-button/primary-button.component';
 
 @Component({
-  selector: 'app-about-zane',
+  selector: 'app-service-accordion',
   standalone: true,
   imports: [CommonModule, MatExpansionModule, MatIconModule, PrimaryButtonComponent],
-  templateUrl: './about-zane.component.html',
+  templateUrl: './service-accordion.component.html',
   styles: [`
-    
-
-    /* Ajustes para o tema dark do Angular Material */
+    /* Angular Material Dark téma igazítások */
     ::ng-deep .custom-dark-accordion .mat-expansion-panel {
       background: transparent !important;
     }
@@ -25,14 +23,13 @@ import { PrimaryButtonComponent } from '../../../components/primary-button/prima
       align-items: center;
     }
 
-    /* Esconde a seta padrão para usar o ícone customizado */
+    /* Egyedi ikon használata a gyári nyíl helyett */
     ::ng-deep .mat-expansion-indicator {
       display: none !important;
     }
   `]
 })
-export class AboutZaneComponent {
-navigateToService: any;
+export class ServiceAccordionComponent {
   constructor(private router: Router) {}
 
   services = [
@@ -40,33 +37,36 @@ navigateToService: any;
       id: 'rendszertervezes',
       title: 'Rendszertervezés',
       imgUrl: 'images/about/about-img1.jpg',
-      description: 'A tervezési folyamat az üzleti kereslet pontos felmérésével kezdődik, az úgynevezett BRS meghatározásával. Ez a rendszertervezés alapja. Ahogy fontos, hogy egy épület stabil alapokra épüljön, úgy az elektronikai tervezésben is ezeket az alapokat fektetjük le.'
+      description: 'A tervezési folyamat az üzleti kereslet pontos felmérésével kezdődik, az úgynevezett BRS meghatározásával. Ez a rendszertervezés alapja.'
     },
     {
       id: 'kapcsolasi-rajz',
       title: 'Kapcsolási rajz',
       imgUrl: 'images/about/about-img2.jpg',
-      description: 'Miután már van rendszertervünk, megtervezzük az áramkör kapcsolási rajzát. Több mint tízéves tapasztalatunk van nagy sebességű, RF, analóg áramkörök e komplex elektronikák tervezésében.'
+      description: 'Miután már van rendszertervünk, megtervezzük az áramkör kapcsolási rajzát. Több mint tízéves tapasztalatunk van RF és analóg áramkörök tervezésében.'
     },
     {
       id: 'nyomtatott-aramkor',
       title: 'Nyomtatott áramkör tervezés',
       imgUrl: 'images/about/about-img3.jpg',
-      description: 'A kapcsolási rajz tervezést követi munkánk egyik legfontosabb része a nyomtatott áramkörök tervezése. Áramkörtervezési kurzusokat tartunk partnereinknek és egyetemi hallgatóknak.'
+      description: 'A kapcsolási rajz tervezést követi munkánk egyik legfontosabb része a nyomtatott áramkörök tervezése.'
     },
     {
       id: 'mechanikai-tervezes',
       title: 'Mechanikai tervezés',
       imgUrl: 'images/about/about-img4.jpg',
-      description: 'Az elkészült nyomtatott áramkörhöz kollégáink burkolatot terveznek a megrendelő igényei szerint. Prototípus házakat tudunk készíteni 3D nyomtatással e CNC megmunkálással.'
+      description: 'Az elkészült nyomtatott áramkörhöz kollégáink burkolatot terveznek a megrendelő igényei szerint, akár 3D nyomtatással is.'
     },
     {
       id: 'beagyazott-szoftverek',
       title: 'Beágyazott szoftverek fejlesztése',
       imgUrl: 'images/about/about-img5.jpg',
-      description: 'Egyik legszebb része a munkánknak, amikor az elkészült áramkörökbe “életet lehelünk” okos algoritmusokkal, melyeknek köszönhetően eszközeink segítenek az élet számos területén.'
+      description: 'Az elkészült áramkörökbe “életet lehelünk” okos algoritmusokkal, melyek segítenek az élet számos területén.'
     }
   ];
 
- 
+  navigateToService(id: string) {
+    // Navigáció a dinamikus ID-val
+    this.router.navigate(['/services', id]);
+  }
 }

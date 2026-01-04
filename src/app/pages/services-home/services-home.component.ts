@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { ServicesHeroComponent } from "../../services-hero/services-hero.component";
+import { ServicesHeroComponent } from "./services-hero/services-hero.component";
+import { ZaneServicesComponent } from "./zane-services/zane-services.component";
+import { AboutZaneComponent } from "../about-home/about-zane/about-zane.component";
+import { ServiceAccordionComponent } from "./service-accordion/service-accordion.component";
 
 @Component({
   selector: 'app-services-home',
   standalone: true,
-  imports: [ServicesHeroComponent],
+  imports: [ServicesHeroComponent, ZaneServicesComponent, AboutZaneComponent, ServiceAccordionComponent],
   templateUrl: './services-home.component.html',
   styles: ``
 })

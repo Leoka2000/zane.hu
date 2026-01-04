@@ -1,1 +1,106 @@
+<main class="min-h-screen bg-[#000d01] relative flex flex-col overflow-x-hidden">
+  <div class="top-[4.6rem] fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100">
+    <div class="relative">
+      <img src="images/brand/szecsenytervplusz.jpg" alt="Szechenyi Terv Plusz" class="w-96 object-contain" />
+    </div>
 
+    <div class="absolute top-[30rem] left-10 z-20 pointer-events-none">
+      <div class="relative">
+        <img src="/images/brand/befektetesjovobe.png" alt="Befektetés a jövőbe" class="w-96 object-contain" />
+      </div>
+    </div>
+  </div>
+
+  <app-navbar></app-navbar>
+
+  <div class="flex-grow pt-32 lg:pt-40 pb-20">
+    @if (!selectedServiceId) {
+    <app-services-home></app-services-home>
+    } @else {
+
+    <section class="lg:px-[15%] text-white relative z-10 animate-in fade-in duration-700 min-h-full">
+      <div class="w-full mx-auto space-y-24">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-stretch">
+          <div class="flex flex-col justify-between h-full">
+            <div class="space-y-8">
+              <div class="space-y-4">
+                <div class="pt-4">
+                  <a href="/services" class="text-[#76e594] inline-flex items-center gap-2 group">
+                    <mat-icon class="transition-transform group-hover:-translate-x-1">arrow_back</mat-icon>
+                    <span class="font-bold uppercase tracking-widest text-sm">Vissza az összes szolgáltatáshoz</span>
+                  </a>
+                </div>
+                <h1 class="text-2xl md:text-5xl font-bold grotesk uppercase text-neutral-100 leading-tight">
+                  {{ getServiceData()?.title }}
+                </h1>
+                <div class="h-1 w-20 bg-[#76e594]"></div>
+              </div>
+
+              <div class="space-y-6 max-w-xl">
+                @for (sentence of getFormattedText('description'); track sentence; let last = $last) {
+                <p class="text-md text-neutral-400 leading-12">
+                  {{ sentence }}{{ !last ? "." : "." }}
+                </p>
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="relative group flex flex-col justify-between h-full">
+            <div class="absolute -inset-4 bg-[#76e594]/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 h-full"
+                 [class.light-bg-fix]="selectedServiceId === 'kapcsolasi-rajz'">
+              <img [src]="getServiceData()?.imgUrl" [alt]="getServiceData()?.title" class="w-full max-h-[500px] object-cover scale-125" />
+            </div>
+          </div>
+        </div>
+
+        @if (getServiceData()?.descriptionOne) {
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-full">
+            <img [src]="getServiceData()?.imgUrlOne" class="w-full max-h-[400px] object-cover" />
+          </div>
+          
+          <div class="order-1 lg:order-2 space-y-6 max-w-xl">
+            @for (sentence of getFormattedText('descriptionOne'); track sentence; let last = $last) {
+            <p class="text-md text-neutral-400 leading-12">
+              {{ sentence }}{{ !last ? "." : "." }}
+            </p>
+            }
+          </div>
+        </div>
+        }
+
+        @if (getServiceData()?.descriptionTwo) {
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div class="space-y-6 max-w-xl">
+            @for (sentence of getFormattedText('descriptionTwo'); track sentence; let last = $last) {
+            <p class="text-md text-neutral-400 leading-12">
+              {{ sentence }}{{ !last ? "." : "." }}
+            </p>
+            }
+            
+            @if (getServiceData()?.detailedContent) {
+            <div class="mt-8 p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl">
+              @for (sentence of getFormattedText('detailedContent'); track sentence; let last = $last) {
+              <p class="text-lg text-neutral-300 italic">
+                {{ sentence }}{{ !last ? "." : "." }}
+              </p>
+              }
+            </div>
+            }
+          </div>
+          <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-full">
+            <img [src]="getServiceData()?.imgUrlTwo" class="w-full max-h-[400px] object-cover" />
+          </div>
+        </div>
+        }
+
+      </div>
+    </section>
+    }
+  </div>
+
+  <app-footer></app-footer>
+</main>
