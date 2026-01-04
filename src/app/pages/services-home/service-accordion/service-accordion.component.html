@@ -1,7 +1,7 @@
 <section class="bg-[#000d01] py-12 relative overflow-hidden">
   <div class="absolute -top-96 right-0 w-[500px] h-[500px] bg-[#76e594]/10 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 z-0"></div>
 
-  <div class="max-w-4xl mx-auto relative z-10 px-6 lg:px-0">
+  <div class=" mx-auto relative z-10 px-6 lg:px-0">
     <div class="mb-16 space-y-4">
       <span class="inline-flex items-center gap-3 px-2.5 py-1.5 rounded-md border border-[#76e594] text-[#76e594] text-xs font-bold tracking-normal uppercase">
         <span>Mérnöki Szolgáltatások</span>
@@ -17,7 +17,7 @@
       @for (service of services; track service.id) {
       <mat-expansion-panel
         hideToggle
-        class="!bg-transparent !shadow-none border border-neutral-800 !rounded-xl overflow-hidden transition-all duration-300 hover:border-[#76e594]/30"
+        class="!bg-transparent w-full !shadow-none border border-neutral-800 !rounded-xl overflow-hidden transition-all duration-300 hover:border-[#76e594]/30"
         #panel
       >
         <mat-expansion-panel-header
