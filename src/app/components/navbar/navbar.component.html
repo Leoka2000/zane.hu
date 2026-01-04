@@ -3,7 +3,7 @@
 >
   <div
     [ngClass]="{
-      'backdrop-blur-sm bg-transparent border-b border-neutral-700 py-3':
+      'backdrop-blur-md bg-transparent border-b border-neutral-700 py-3':
         isScrolled,
       'bg-transparent border-transparent py-5': !isScrolled
     }"
@@ -24,42 +24,19 @@
     </div>
 
     <div
-      class="hidden md:flex items-center space-x-8 text-neutral-400 font-medium grotesk bg-transparent"
+      class="hidden md:flex items-center space-x-8 text-neutral-100 font-medium grotesk bg-transparent"
     >
-      <a href="#" class="hover:text-white transition-colors bg-transparent"
-        >Home</a
+      <a href="#" class="hover:text-[#76e594]  uppercase transition-colors bg-transparent"
+        >Főoldal</a
       >
-      <a href="#" class="hover:text-white transition-colors bg-transparent"
-        >Services</a
+      <a href="services" class="hover:text-[#76e594]   uppercase transition-colors bg-transparent"
+        >Szolgáltatásaink</a
       >
-      <a href="#" class="hover:text-white transition-colors bg-transparent"
-        >Blog</a
+      <a href="#" class="hover:text-[#76e594]  hover:text-[#76e594]  uppercase transition-colors bg-transparent"
+        >Rólunk</a
       >
-      <a href="#" class="hover:text-white transition-colors bg-transparent"
-        >About Us</a
-      >
-      <a href="#" class="hover:text-white transition-colors bg-transparent"
-        >Contact</a
-      >
-      <div
-        class="flex items-center space-x-1 hover:text-white cursor-pointer transition-colors bg-transparent"
-      >
-        <span class="bg-transparent">maybedropdown</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-      </div>
+      
+    
     </div>
 
     <div class="flex items-center bg-transparent">

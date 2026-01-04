@@ -22,7 +22,7 @@ import { BlogHomeComponent } from '../../pages/blog-home/blog-home.component';
             alt="Szechenyi Terv Plusz"
             class="w-96  object-contain"
           />
-           <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)"></div>
+    <!--        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)"></div> -->
         </div>
         
         <div class="absolute top-[28rem] left-10 z-20 pointer-events-none">
@@ -33,7 +33,7 @@ import { BlogHomeComponent } from '../../pages/blog-home/blog-home.component';
             class="w-96  object-contain"
         
           />
-             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)"></div>
+            <!--  <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)"></div> -->
           </div>
         </div>
         </div>
