@@ -6,7 +6,7 @@ import { PrimaryButtonComponent } from "../../../components/primary-button/prima
 @Component({
   selector: 'app-about-hero',
   standalone: true,
-  imports: [CommonModule, MatIconModule, PrimaryButtonComponent, MatIconModule],
+  imports: [CommonModule, MatIconModule, PrimaryButtonComponent,],
   templateUrl: './about-hero.component.html',
  /*  styles: [`
     .grotesk {

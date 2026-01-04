@@ -1,10 +1,11 @@
-<section class="bg-[#000d01] py-24 overflow-hidden relative">
+<section class="bg-[#000d01] md:px-24 py-24 overflow-hidden relative">
   <img
     src="images/blog/bg-pattern-hero.svg"
     alt="Background Pattern"
     class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
   />
 
+   
   <div
     class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#76e594]/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 z-0"
   ></div>
@@ -59,12 +60,12 @@
     </div>
 
     <div
-      class="w-full lg:w-2/5 flex flex-col justify-center items-start lg:items-end gap-12"
+      class="w-full md:w-2/5 flex flex-col justify-center items-start md:items-end gap-12"
     >
       @for (stat of stats; track stat.label) {
       <div class="flex flex-col items-start lg:items-end group">
         <span
-          class="text-5xl md:text-7xl font-bold text-[#76e594] grotesk transition-transform group-hover:scale-110 duration-300"
+          class="text-4xl md:text-5xl font-bold text-[#76e594] grotesk"
         >
           {{ stat.value }}
         </span>
@@ -78,3 +79,4 @@
     </div>
   </div>
 </section>
+

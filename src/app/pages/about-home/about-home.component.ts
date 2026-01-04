@@ -18,7 +18,7 @@ import { ContactSectionComponent } from "../home/contact-section/contact-section
         alt="Background Pattern"
         class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
       />
-      <div class="md:px-24">
+      <div>
         <app-about-hero></app-about-hero>
       </div>
     </div>
