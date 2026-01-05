@@ -53,9 +53,75 @@ export class ServicesLayoutComponent implements OnInit {
     imgUrlThree: '',
     imgUrlFour: '',
     
-    // Generált részletes tartalom (detailedContent)
+    // részletes tartalom (detailedContent)
     detailedContent: `A professzionális rendszertervezés során nem csupán áramköröket alkotunk, hanem egy teljes technológiai ökoszisztémát alapozunk meg, amely garantálja a hosszú távú fenntarthatóságot és a piaci versenyelőnyt.`
   },
+  { 
+      id: 'nyomtatott-aramkor', 
+      title: 'Nyomtatott áramkör tervezés', 
+      imgUrl: 'images/about/about-img3.jpg', 
+      description: 'A kapcsolási rajz tervezést követi munkánk egyik legfontosabb része a nyomtatott áramkörök tervezése. Áramkörtervezési kurzusokat tartunk évről évre partnereinknek, valamint egyetemi hallgatóknak. Az alábbi területeken rendelkezünk kiemelkedő tervezési tapasztalattal',
+      descriptionOne: 'Amikor 2012-ben megalapítottam a céget, akkor már több mint húszéves áramkörtervezési gyakorlattal rendelkeztem. Igazából ez a szerelem a nyomtatott áramkörökkel még a középiskola első éveiben kezdődött. Akkoriban még nem terjedtek el a számítógépek, kézzel rajzoltuk meg a nyomtatott áramkörök készítéséhez a mester filmeket. Az első program amit használtam áramkörtervezésre a DOS alatt használható Smartwork nevű nyáktervező program volt. Azóta nagyon sokat fejlődött a technológia, ma már szinte minden áramkör amit tervezünk nagyfokú integráltsággal rendelkezik, felületszerelt alkatrészeket tartalmaz. A munkánk során az alapokat az IPC-2221A szabvány írja le, amelyet a teljes tervezési folyamat során következetesen használunk is. A szabvány mellett a gyárthatósági paraméterek azok amik meghatározzák a kereteket a tervezési munka során, no és persze a legfontosabb szabályozó: a megrendelő kérése. A szabványok és a szabályok addig segítik a munkánkat, amíg nincs az adott kérdésre megrendelői instrukció. Alapszabály ugyanis, hogy a megrendelő utasítása, még a szabványokat is felülírhatja adott esetben. Természetesen amikor ilyen adódik, akkor ezt a megrendelővel is tisztázzuk még a munka megkezdése előtt.',
+      imgUrlOne: 'images/nyomtatott/img1.png',
+      descriptionTwo: 'A NYÁK tervezési munkánk során jellemzően több alkalommal kell a megrendelővel kommunikálnunk. Az első lépésben egy vázlat tervet készítünk. Ilyenkor már lehet látni a főbb méreteket, a csatlakozók, szenzorok és a fontosabb alkatrészek elhelyezkedését. A megrendelő ezt jóváhagyhatja, vagy kérhet módosításokat. Amikor az alkatrészek elrendezése eldőlt, akkor elrendezzük az összes alkatrészt a közel végleges pozíciójukba. Ebben a lépésben állítjuk be a tervezőrendszerben a szabályrendszereket a várható gyártási technológiához igazodóan.Ha szükséges az alkatrészek elrendezése után újból egyeztetünk a megrendelő szakembereivel, például a mechanikai tervezővel, aki megvizsgálhatja van-e esetleges ütközés a várható burkolati elemekkel.',
+      imgUrlTwo: 'images/nyomtatott/img3.png',
+      
+      // ÍGY ÁGYAZZUK BE A HTML-T ÉS IKONOKAT
+      descriptionThree: `
+  <p class="mb-6">A következő lépésben huzalozás történik. Egyszerűbb paneleknél ez tipikusan 2-4 réteg, de volt már szerencsénk számos esetben 6 réteg fölötti panelekkel is dolgozni. A modern PCB gyártási technológiáknak köszönhetően a kreativitásnak szinte csak a megrendelés költségvetése szabhat korlátot. Csak, hogy néhány szakmai érdekességet említsek:</p>
+  
+  <ul class="space-y-5">
+    <li class="flex items-start gap-4 group">
+      <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20">
+        <span class="material-icons !text-[#76e594] !text-[20px]">layers</span>
+      </div>
+      <div class="pt-1">
+        <span class="text-neutral-300"><strong class="text-neutral-100">Eltemetett és vak viák:</strong> amikor a via csak bizonyos rétegek között van átfúrva, nem az egész panelen.</span>
+      </div>
+    </li>
+
+    <li class="flex items-start gap-4 group">
+      <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20">
+        <span class="material-icons !text-[#76e594] !text-[20px]">memory</span>
+      </div>
+      <div class="pt-1">
+        <span class="text-neutral-300"><strong class="text-neutral-100">HDI:</strong> nagy sűrűségű rajzolat esetén lézerrel „fúrt” mikro viák.</span>
+      </div>
+    </li>
+
+    <li class="flex items-start gap-4 group">
+      <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20">
+        <span class="material-icons !text-[#76e594] !text-[20px]">settings_brightness</span>
+      </div>
+      <div class="pt-1">
+        <span class="text-neutral-300"><strong class="text-neutral-100">Alumínium hordozó:</strong> főképp LED világítótestekhez jó hővezetésű aluminium lap a hordozó lemez.</span>
+      </div>
+    </li>
+
+    <li class="flex items-start gap-4 group">
+      <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20">
+        <span class="material-icons !text-[#76e594] !text-[20px]">architecture</span>
+      </div>
+      <div class="pt-1">
+        <span class="text-neutral-300"><strong class="text-neutral-100">Rigid-flex:</strong> a nyák egyes részei merevek, más részei pedig hajlékonyak.</span>
+      </div>
+    </li>
+
+    <li class="flex items-start gap-4 group">
+      <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20">
+        <span class="material-icons !text-[#76e594] !text-[20px]">radar</span>
+      </div>
+      <div class="pt-1">
+        <span class="text-neutral-300"><strong class="text-neutral-100">Impedancia illesztett:</strong> nagy sebességű és rádiófrekvenciás paneleknél a gyártási paramétereket figyelembe véve tervezett áramkörök.</span>
+      </div>
+    </li>
+  </ul>
+`,
+      imgUrlThree: 'images/nyomtatott/img3.png',
+      descriptionFour: '',
+      imgUrlFour: '',
+      detailedContent: ''
+    },
   { 
     id: 'kapcsolasi-rajz', 
     title: 'Kapcsolási rajz', 
@@ -71,47 +137,6 @@ export class ServicesLayoutComponent implements OnInit {
     imgUrlFour: '',
     detailedContent: '' 
   },
- { 
-      id: 'nyomtatott-aramkor', 
-      title: 'Nyomtatott áramkör tervezés', 
-      imgUrl: 'images/about/about-img3.jpg', 
-      description: 'A kapcsolási rajz tervezést követi munkánk egyik legfontosabb része a nyomtatott áramkörök tervezése. Áramkörtervezési kurzusokat tartunk évről évre partnereinknek, valamint egyetemi hallgatóknak. Az alábbi területeken rendelkezünk kiemelkedő tervezési tapasztalattal',
-      descriptionOne: 'Amikor 2012-ben megalapítottam a céget, akkor már több mint húszéves áramkörtervezési gyakorlattal rendelkeztem. Igazából ez a szerelem a nyomtatott áramkörökkel még a középiskola első éveiben kezdődött. Akkoriban még nem terjedtek el a számítógépek, kézzel rajzoltuk meg a nyomtatott áramkörök készítéséhez a mester filmeket. Az első program amit használtam áramkörtervezésre a DOS alatt használható Smartwork nevű nyáktervező program volt. Azóta nagyon sokat fejlődött a technológia, ma már szinte minden áramkör amit tervezünk nagyfokú integráltsággal rendelkezik, felületszerelt alkatrészeket tartalmaz. A munkánk során az alapokat az IPC-2221A szabvány írja le, amelyet a teljes tervezési folyamat során következetesen használunk is. A szabvány mellett a gyárthatósági paraméterek azok amik meghatározzák a kereteket a tervezési munka során, no és persze a legfontosabb szabályozó: a megrendelő kérése. A szabványok és a szabályok addig segítik a munkánkat, amíg nincs az adott kérdésre megrendelői instrukció. Alapszabály ugyanis, hogy a megrendelő utasítása, még a szabványokat is felülírhatja adott esetben. Természetesen amikor ilyen adódik, akkor ezt a megrendelővel is tisztázzuk még a munka megkezdése előtt.',
-      imgUrlOne: 'images/nyomtatott/img1.png',
-      descriptionTwo: 'A NYÁK tervezési munkánk során jellemzően több alkalommal kell a megrendelővel kommunikálnunk. Az első lépésben egy vázlat tervet készítünk. Ilyenkor már lehet látni a főbb méreteket, a csatlakozók, szenzorok és a fontosabb alkatrészek elhelyezkedését. A megrendelő ezt jóváhagyhatja, vagy kérhet módosításokat. Amikor az alkatrészek elrendezése eldőlt, akkor elrendezzük az összes alkatrészt a közel végleges pozíciójukba. Ebben a lépésben állítjuk be a tervezőrendszerben a szabályrendszereket a várható gyártási technológiához igazodóan.Ha szükséges az alkatrészek elrendezése után újból egyeztetünk a megrendelő szakembereivel, például a mechanikai tervezővel, aki megvizsgálhatja van-e esetleges ütközés a várható burkolati elemekkel.',
-      imgUrlTwo: 'images/nyomtatott/img3.png',
-      
-      // ÍGY ÁGYAZZUK BE A HTML-T ÉS IKONOKAT
-      descriptionThree: `
-        <p class="mb-4">A következő lépésben huzalozás történik. Egyszerűbb paneleknél ez tipikusan 2-4 réteg, de volt már szerencsénk számos esetben 6 réteg fölötti panelekkel is dolgozni. A modern PCB gyártási technológiáknak köszönhetően a kreativitásnak szinte csak a megrendelés költségvetése szabhat korlátot. Csak, hogy néhány szakmai érdekességet említsek:</p>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-4">
-            <span class="material-icons text-[#76e594]">layers</span>
-            <span><strong>Eltemetett és vak viák:</strong> amikor a via csak bizonyos rétegek között van átfúrva, nem az egész panelen.</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-icons text-[#76e594]">memory</span>
-            <span><strong>HDI:</strong> nagy sűrűségű rajzolat esetén lézerrel „fúrt” mikro viák.</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-icons text-[#76e594]">settings_brightness</span>
-            <span><strong>Alumínium hordozó:</strong> főképp LED világítótestekhez jó hővezetésű aluminium lap a hordozó lemez. Természetesen ezt is tudunk nem csak tervezni, de beültetni is.</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-icons text-[#76e594]">architecture</span>
-            <span><strong>Rigid-flex:</strong> a nyák egyes részei merevek, más részei pedig hajlékonyak.</span>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-icons text-[#76e594]">radar</span>
-            <span><strong>Impedancia illesztett:</strong> nagy sebességű és rádiófrekvenciás paneleknél a gyártó által használt anyagokhoz és rétegrendekhez igazítva tervezzük meg az áramkört.</span>
-          </li>
-        </ul>
-      `,
-      imgUrlThree: 'images/nyomtatott/img3.png',
-      descriptionFour: '',
-      imgUrlFour: '',
-      detailedContent: ''
-    },
   { 
     id: 'mechanikai-tervezes', 
     title: 'Mechanikai tervezés', 
