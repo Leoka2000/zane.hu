@@ -37,9 +37,9 @@
               </div>
 
               <div class="space-y-6 max-w-xl">
-                @for (sentence of getFormattedText('description'); track sentence) {
-                <p class="text-md text-neutral-400 leading-12">
-                  {{ sentence }}
+                @for (paragraph of getFormattedText('description'); track paragraph) {
+                <p class="text-md text-neutral-400 leading-relaxed">
+                  {{ paragraph }}
                 </p>
                 }
               </div>
@@ -61,18 +61,18 @@
             <img [src]="getServiceData()?.imgUrlOne" class="w-full max-h-[400px] object-cover" />
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
-             @if (getServiceData()?.detailedContent) {
+            @if (getServiceData()?.detailedContent) {
             <div class="mt-8 p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl">
-              @for (sentence of getFormattedText('detailedContent'); track sentence) {
+              @for (paragraph of getFormattedText('detailedContent'); track paragraph) {
               <p class="text-lg text-neutral-300 italic">
-                {{ sentence }}
+                {{ paragraph }}
               </p>
               }
             </div>
             }
-            @for (sentence of getFormattedText('descriptionOne'); track sentence) {
-            <p class="text-md text-neutral-400 leading-12">
-              {{ sentence }}
+            @for (paragraph of getFormattedText('descriptionOne'); track paragraph) {
+            <p class="text-md text-neutral-400 leading-relaxed">
+              {{ paragraph }}
             </p>
             }
           </div>
@@ -82,9 +82,9 @@
         @if (getServiceData()?.descriptionTwo) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div class="space-y-6 max-w-xl">
-            @for (sentence of getFormattedText('descriptionTwo'); track sentence) {
-            <p class="text-md text-neutral-400 leading-12">
-              {{ sentence }}
+            @for (paragraph of getFormattedText('descriptionTwo'); track paragraph) {
+            <p class="text-md text-neutral-400 leading-relaxed">
+              {{ paragraph }}
             </p>
             }
           </div>
@@ -100,9 +100,9 @@
             <img [src]="getServiceData()?.imgUrlThree" class="w-full max-h-[400px] object-cover" />
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
-            @for (sentence of getFormattedText('descriptionThree'); track sentence) {
-            <p class="text-md text-neutral-400 leading-12">
-              {{ sentence }}
+            @for (paragraph of getFormattedText('descriptionThree'); track paragraph) {
+            <p class="text-md text-neutral-400 leading-relaxed">
+              {{ paragraph }}
             </p>
             }
           </div>
@@ -112,9 +112,9 @@
         @if (getServiceData()?.descriptionFour) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div class="space-y-6 max-w-xl">
-            @for (sentence of getFormattedText('descriptionFour'); track sentence) {
-            <p class="text-md text-neutral-400 leading-12">
-              {{ sentence }}
+            @for (paragraph of getFormattedText('descriptionFour'); track paragraph) {
+            <p class="text-md text-neutral-400 leading-relaxed">
+              {{ paragraph }}
             </p>
             }
           </div>

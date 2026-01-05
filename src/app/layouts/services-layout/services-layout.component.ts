@@ -129,13 +129,23 @@ export class ServicesLayoutComponent implements OnInit {
     return this.services.find(s => s.id === this.selectedServiceId);
   }
 
-  getFormattedText(fieldName: 'description' | 'detailedContent' | 'descriptionOne' | 'descriptionTwo' | 'descriptionThree' | 'descriptionFour'): string[] {
+ getFormattedText(fieldName: 'description' | 'detailedContent' | 'descriptionOne' | 'descriptionTwo' | 'descriptionThree' | 'descriptionFour'): string[] {
     const service = this.getServiceData();
     const text = service ? (service as any)[fieldName] : '';
     if (!text) return [];
 
-    // Változás: A pontot, kérdőjelet, felkiáltójelet megtartjuk a mondat végén a regex segítségével
-    const sentences = text.match(/[^.!?]+[.!?]+(?=\s|$)/g);
-    return sentences ? sentences : [text];
+    // Első lépés: Daraboljuk fel az összes mondatot
+    const allSentences = text.match(/[^.!?]+[.!?]+(?=\s|$)/g) || [text];
+    
+    // Második lépés: Csoportosítsuk őket 4-esével
+    const chunks: string[] = [];
+    const sentencesPerParagraph = 4;
+
+    for (let i = 0; i < allSentences.length; i += sentencesPerParagraph) {
+      const chunk = allSentences.slice(i, i + sentencesPerParagraph).join(' ');
+      chunks.push(chunk);
+    }
+
+    return chunks;
   }
 }
