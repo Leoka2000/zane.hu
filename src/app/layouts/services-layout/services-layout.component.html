@@ -33,7 +33,6 @@
       class="lg:px-[15%] text-white relative z-10 animate-in fade-in duration-700 min-h-full"
     >
       <div class="w-full mx-auto space-y-24">
-        <!-- TITLE SECTION -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div class="flex flex-col justify-start h-full">
             <div class="space-y-8">
@@ -71,32 +70,31 @@
             </div>
           </div>
 
-          <div class="relative group h-fit self-start">
+          <div class="relative group h-fit self-start w-full">
             <div
               class="absolute -inset-4 bg-[#76e594]/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity"
             ></div>
             <div
-              class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-500"
+              class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 w-full min-h-[300px] lg:min-h-[500px]"
               [class.light-bg-fix]="selectedServiceId === 'kapcsolasi-rajz'"
             >
               <img
                 [src]="getServiceData()?.imgUrl"
                 [alt]="getServiceData()?.title"
-                class="w-full h-full max-h-[500px] object-cover"
+                class="absolute inset-0 w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
-        <!-- TITLE SECTION EN -->
-        <!-- FIRST CARD -->
+
         @if (getServiceData()?.descriptionOne) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div
-            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start"
+            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px]"
           >
             <img
               [src]="getServiceData()?.imgUrlOne"
-              class="w-full max-h-[400px] object-cover"
+              class="absolute inset-0 w-full h-full object-cover"
             />
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
@@ -119,8 +117,6 @@
             }
           </div>
         </div>
-        <!-- FIRST CARD -->
-        <!-- 2 CARD -->
         } @if (getServiceData()?.descriptionTwo) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div class="space-y-6 max-w-xl">
@@ -131,25 +127,25 @@
             </p>
             }
           </div>
+
           <div
-            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start"
+            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px] bg-white p-6 flex items-center justify-center"
           >
             <img
               [src]="getServiceData()?.imgUrlTwo"
-              class="w-full max-h-[400px] object-cover"
+              class="max-w-full max-h-full object-contain"
+              alt="Service image"
             />
           </div>
         </div>
-        <!-- 2 CARD END -->
-        <!-- 3 CARD -->
         } @if (getServiceData()?.descriptionThree) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div
-            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start"
+            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px]"
           >
             <img
               [src]="getServiceData()?.imgUrlThree"
-              class="w-full max-h-[400px] object-cover"
+              class="absolute inset-0 w-full h-full object-cover"
             />
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
@@ -161,8 +157,6 @@
             }
           </div>
         </div>
-          <!-- 3 CARD END -->
-           <!-- 4 CARD -->
         } @if (getServiceData()?.descriptionFour) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div class="space-y-6 max-w-xl">
@@ -174,16 +168,15 @@
             }
           </div>
           <div
-            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start"
+            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px]"
           >
             <img
               [src]="getServiceData()?.imgUrlFour"
-              class="w-full max-h-[400px] object-cover"
+              class="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         </div>
         }
-            <!-- 4 CARD END -->
       </div>
     </section>
     }
