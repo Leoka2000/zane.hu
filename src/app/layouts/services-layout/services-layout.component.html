@@ -98,16 +98,15 @@
             />
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
-            @if (getServiceData()?.detailedContent) {
+            @if (getHighlightedSentence('descriptionOne')) {
             <div
-              class="mt-8 p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl"
+              class="p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl mb-8"
             >
-              @for (paragraph of getFormattedText('detailedContent'); track
-              paragraph) {
-              <p class="text-lg text-neutral-300 grotesk italic">
-                {{ paragraph }}
+              <p
+                class="text-lg text-neutral-300 grotesk italic leading-relaxed"
+              >
+                {{ getHighlightedSentence("descriptionOne") }}
               </p>
-              }
             </div>
             } @for (paragraph of getFormattedText('descriptionOne'); track
             paragraph) {
