@@ -71,21 +71,47 @@ export class ServicesLayoutComponent implements OnInit {
     imgUrlFour: '',
     detailedContent: '' 
   },
-  { 
-    id: 'nyomtatott-aramkor', 
-    title: 'Nyomtatott áramkör tervezés', 
-    imgUrl: 'images/about/about-img3.jpg', 
-    description: 'A kapcsolási rajz tervezést követi munkánk egyik legfontosabb része a nyomtatott áramkörök tervezése. Áramkörtervezési kurzusokat tartunk évről évre partnereinknek, valamint egyetemi hallgatóknak. Az alábbi területeken rendelkezünk kiemelkedő tervezési tapasztalattal',
-    descriptionOne: 'Áramkörtervezési kurzusokat tartunk partnereinknek és egyetemi hallgatóknak.',
-    imgUrlOne: 'images/about/about-img3.jpg',
-    descriptionTwo: 'A legmodernebb többrétegű technológiákat alkalmazzuk a minél kisebb méret érdekében.',
-    imgUrlTwo: 'images/about/about-img4.jpg',
-    descriptionThree: '',
-    imgUrlThree: '',
-    descriptionFour: '',
-    imgUrlFour: '',
-    detailedContent: ''
-  },
+ { 
+      id: 'nyomtatott-aramkor', 
+      title: 'Nyomtatott áramkör tervezés', 
+      imgUrl: 'images/about/about-img3.jpg', 
+      description: 'A kapcsolási rajz tervezést követi munkánk egyik legfontosabb része a nyomtatott áramkörök tervezése. Áramkörtervezési kurzusokat tartunk évről évre partnereinknek, valamint egyetemi hallgatóknak. Az alábbi területeken rendelkezünk kiemelkedő tervezési tapasztalattal',
+      descriptionOne: 'Amikor 2012-ben megalapítottam a céget, akkor már több mint húszéves áramkörtervezési gyakorlattal rendelkeztem. Igazából ez a szerelem a nyomtatott áramkörökkel még a középiskola első éveiben kezdődött. Akkoriban még nem terjedtek el a számítógépek, kézzel rajzoltuk meg a nyomtatott áramkörök készítéséhez a mester filmeket. Az első program amit használtam áramkörtervezésre a DOS alatt használható Smartwork nevű nyáktervező program volt. Azóta nagyon sokat fejlődött a technológia, ma már szinte minden áramkör amit tervezünk nagyfokú integráltsággal rendelkezik, felületszerelt alkatrészeket tartalmaz. A munkánk során az alapokat az IPC-2221A szabvány írja le, amelyet a teljes tervezési folyamat során következetesen használunk is. A szabvány mellett a gyárthatósági paraméterek azok amik meghatározzák a kereteket a tervezési munka során, no és persze a legfontosabb szabályozó: a megrendelő kérése. A szabványok és a szabályok addig segítik a munkánkat, amíg nincs az adott kérdésre megrendelői instrukció. Alapszabály ugyanis, hogy a megrendelő utasítása, még a szabványokat is felülírhatja adott esetben. Természetesen amikor ilyen adódik, akkor ezt a megrendelővel is tisztázzuk még a munka megkezdése előtt.',
+      imgUrlOne: 'images/nyomtatott/img1.png',
+      descriptionTwo: 'A NYÁK tervezési munkánk során jellemzően több alkalommal kell a megrendelővel kommunikálnunk. Az első lépésben egy vázlat tervet készítünk. Ilyenkor már lehet látni a főbb méreteket, a csatlakozók, szenzorok és a fontosabb alkatrészek elhelyezkedését. A megrendelő ezt jóváhagyhatja, vagy kérhet módosításokat. Amikor az alkatrészek elrendezése eldőlt, akkor elrendezzük az összes alkatrészt a közel végleges pozíciójukba. Ebben a lépésben állítjuk be a tervezőrendszerben a szabályrendszereket a várható gyártási technológiához igazodóan.Ha szükséges az alkatrészek elrendezése után újból egyeztetünk a megrendelő szakembereivel, például a mechanikai tervezővel, aki megvizsgálhatja van-e esetleges ütközés a várható burkolati elemekkel.',
+      imgUrlTwo: 'images/nyomtatott/img3.png',
+      
+      // ÍGY ÁGYAZZUK BE A HTML-T ÉS IKONOKAT
+      descriptionThree: `
+        <p class="mb-4">A következő lépésben huzalozás történik. Egyszerűbb paneleknél ez tipikusan 2-4 réteg, de volt már szerencsénk számos esetben 6 réteg fölötti panelekkel is dolgozni. A modern PCB gyártási technológiáknak köszönhetően a kreativitásnak szinte csak a megrendelés költségvetése szabhat korlátot. Csak, hogy néhány szakmai érdekességet említsek:</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4">
+            <span class="material-icons text-[#76e594]">layers</span>
+            <span><strong>Eltemetett és vak viák:</strong> amikor a via csak bizonyos rétegek között van átfúrva, nem az egész panelen.</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-icons text-[#76e594]">memory</span>
+            <span><strong>HDI:</strong> nagy sűrűségű rajzolat esetén lézerrel „fúrt” mikro viák.</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-icons text-[#76e594]">settings_brightness</span>
+            <span><strong>Alumínium hordozó:</strong> főképp LED világítótestekhez jó hővezetésű aluminium lap a hordozó lemez. Természetesen ezt is tudunk nem csak tervezni, de beültetni is.</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-icons text-[#76e594]">architecture</span>
+            <span><strong>Rigid-flex:</strong> a nyák egyes részei merevek, más részei pedig hajlékonyak.</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-icons text-[#76e594]">radar</span>
+            <span><strong>Impedancia illesztett:</strong> nagy sebességű és rádiófrekvenciás paneleknél a gyártó által használt anyagokhoz és rétegrendekhez igazítva tervezzük meg az áramkört.</span>
+          </li>
+        </ul>
+      `,
+      imgUrlThree: 'images/nyomtatott/img3.png',
+      descriptionFour: '',
+      imgUrlFour: '',
+      detailedContent: ''
+    },
   { 
     id: 'mechanikai-tervezes', 
     title: 'Mechanikai tervezés', 
@@ -129,21 +155,23 @@ export class ServicesLayoutComponent implements OnInit {
     return this.services.find(s => s.id === this.selectedServiceId);
   }
 
- getFormattedText(fieldName: 'description' | 'detailedContent' | 'descriptionOne' | 'descriptionTwo' | 'descriptionThree' | 'descriptionFour'): string[] {
+// MODOSÍTOTT FORMATTER: Ellenőrizzük, hogy HTML-e a tartalom
+  getFormattedText(fieldName: 'description' | 'detailedContent' | 'descriptionOne' | 'descriptionTwo' | 'descriptionThree' | 'descriptionFour'): string[] {
     const service = this.getServiceData();
     const text = service ? (service as any)[fieldName] : '';
     if (!text) return [];
 
-    // Első lépés: Daraboljuk fel az összes mondatot
+    // Ha HTML tag-eket találunk a szövegben, nem daraboljuk fel, hanem egyben adjuk vissza
+    if (text.includes('<') && text.includes('>')) {
+      return [text];
+    }
+
     const allSentences = text.match(/[^.!?]+[.!?]+(?=\s|$)/g) || [text];
-    
-    // Második lépés: Csoportosítsuk őket 4-esével
     const chunks: string[] = [];
     const sentencesPerParagraph = 4;
 
     for (let i = 0; i < allSentences.length; i += sentencesPerParagraph) {
-      const chunk = allSentences.slice(i, i + sentencesPerParagraph).join(' ');
-      chunks.push(chunk);
+      chunks.push(allSentences.slice(i, i + sentencesPerParagraph).join(' '));
     }
 
     return chunks;

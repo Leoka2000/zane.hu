@@ -151,9 +151,9 @@
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
             @for (paragraph of getFormattedText('descriptionThree'); track
             paragraph) {
-            <p class="text-md text-neutral-400 leading-relaxed">
-              {{ paragraph }}
-            </p>
+            <div [innerHTML]="paragraph" class="text-md text-neutral-400 leading-relaxed">
+      
+            </div>
             }
           </div>
         </div>
