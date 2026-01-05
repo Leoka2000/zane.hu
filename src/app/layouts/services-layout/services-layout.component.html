@@ -129,11 +129,11 @@
           </div>
 
           <div
-            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px] bg-white p-6 flex items-center justify-center"
+            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px] bg-neutral-600 p-6 flex items-center justify-center"
           >
             <img
               [src]="getServiceData()?.imgUrlTwo"
-              class="max-w-full max-h-full object-contain"
+              class="max-w-full rounded-2xl max-h-full object-contain"
               alt="Service image"
             />
           </div>
@@ -141,19 +141,20 @@
         } @if (getServiceData()?.descriptionThree) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div
-            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px]"
+            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl w-full aspect-[16/9] bg-black"
           >
             <img
               [src]="getServiceData()?.imgUrlThree"
-              class="absolute inset-0 w-full h-full object-cover"
+              class="w-full h-auto max-h-full object-contain mx-auto"
             />
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
             @for (paragraph of getFormattedText('descriptionThree'); track
             paragraph) {
-            <div [innerHTML]="paragraph" class="text-md text-neutral-400 leading-relaxed">
-      
-            </div>
+            <div
+              [innerHTML]="paragraph"
+              class="text-md text-neutral-400 leading-relaxed"
+            ></div>
             }
           </div>
         </div>
