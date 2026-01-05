@@ -1,10 +1,9 @@
 <main class="min-h-screen bg-[#000d01] relative flex flex-col overflow-x-hidden">
-  <div class="top-[4.6rem] fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100">
+  <div class="top-[4.6rem] bg-transparent fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100">
     <div class="relative">
-      <img src="images/brand/szecsenytervplusz.jpg" alt="Szechenyi Terv Plusz" class="w-96 object-contain" />
+      <img src="images/brand/szecsenytervplusz.jpg" alt="Szechenyi Terv Plusz" class="w-72 object-contain" />
     </div>
-
-    <div class="absolute top-[30rem] left-10 z-20 pointer-events-none">
+    <div class="absolute top-[33.5rem] left-10 z-20 pointer-events-none">
       <div class="relative">
         <img src="/images/brand/befektetesjovobe.png" alt="Befektetés a jövőbe" class="w-96 object-contain" />
       </div>
@@ -38,9 +37,9 @@
               </div>
 
               <div class="space-y-6 max-w-xl">
-                @for (sentence of getFormattedText('description'); track sentence; let last = $last) {
+                @for (sentence of getFormattedText('description'); track sentence) {
                 <p class="text-md text-neutral-400 leading-12">
-                  {{ sentence }}{{ !last ? "." : "." }}
+                  {{ sentence }}
                 </p>
                 }
               </div>
@@ -61,11 +60,19 @@
           <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-full">
             <img [src]="getServiceData()?.imgUrlOne" class="w-full max-h-[400px] object-cover" />
           </div>
-          
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
-            @for (sentence of getFormattedText('descriptionOne'); track sentence; let last = $last) {
+             @if (getServiceData()?.detailedContent) {
+            <div class="mt-8 p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl">
+              @for (sentence of getFormattedText('detailedContent'); track sentence) {
+              <p class="text-lg text-neutral-300 italic">
+                {{ sentence }}
+              </p>
+              }
+            </div>
+            }
+            @for (sentence of getFormattedText('descriptionOne'); track sentence) {
             <p class="text-md text-neutral-400 leading-12">
-              {{ sentence }}{{ !last ? "." : "." }}
+              {{ sentence }}
             </p>
             }
           </div>
@@ -75,24 +82,44 @@
         @if (getServiceData()?.descriptionTwo) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div class="space-y-6 max-w-xl">
-            @for (sentence of getFormattedText('descriptionTwo'); track sentence; let last = $last) {
+            @for (sentence of getFormattedText('descriptionTwo'); track sentence) {
             <p class="text-md text-neutral-400 leading-12">
-              {{ sentence }}{{ !last ? "." : "." }}
+              {{ sentence }}
             </p>
-            }
-            
-            @if (getServiceData()?.detailedContent) {
-            <div class="mt-8 p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl">
-              @for (sentence of getFormattedText('detailedContent'); track sentence; let last = $last) {
-              <p class="text-lg text-neutral-300 italic">
-                {{ sentence }}{{ !last ? "." : "." }}
-              </p>
-              }
-            </div>
             }
           </div>
           <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-full">
             <img [src]="getServiceData()?.imgUrlTwo" class="w-full max-h-[400px] object-cover" />
+          </div>
+        </div>
+        }
+
+        @if (getServiceData()?.descriptionThree) {
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-full">
+            <img [src]="getServiceData()?.imgUrlThree" class="w-full max-h-[400px] object-cover" />
+          </div>
+          <div class="order-1 lg:order-2 space-y-6 max-w-xl">
+            @for (sentence of getFormattedText('descriptionThree'); track sentence) {
+            <p class="text-md text-neutral-400 leading-12">
+              {{ sentence }}
+            </p>
+            }
+          </div>
+        </div>
+        }
+
+        @if (getServiceData()?.descriptionFour) {
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div class="space-y-6 max-w-xl">
+            @for (sentence of getFormattedText('descriptionFour'); track sentence) {
+            <p class="text-md text-neutral-400 leading-12">
+              {{ sentence }}
+            </p>
+            }
+          </div>
+          <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-full">
+            <img [src]="getServiceData()?.imgUrlFour" class="w-full max-h-[400px] object-cover" />
           </div>
         </div>
         }

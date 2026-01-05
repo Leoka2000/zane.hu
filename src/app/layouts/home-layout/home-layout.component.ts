@@ -9,7 +9,7 @@ import { BlogHomeComponent } from '../../pages/blog-home/blog-home.component';
   standalone: true,
   imports: [NavbarComponent, FooterComponent, BlogHomeComponent, HomeComponent],
   template: `
-    <main class="min-h-screen w-full relative flex flex-col">
+    <main class="min-h-screen w-full  relative flex flex-col">
       <div class="relative min-h-screen bg-[#000d01] overflow-hidden">
         <div
           class=" top-[4.6rem]   fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100"
@@ -18,12 +18,12 @@ import { BlogHomeComponent } from '../../pages/blog-home/blog-home.component';
             <img
               src="images/brand/szecsenytervplusz.jpg"
               alt="Szechenyi Terv Plusz"
-              class="w-96  object-contain"
+              class="w-72  object-contain"
             />
             <!--        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)"></div> -->
           </div>
 
-          <div class="absolute top-[30rem] left-10 z-20 pointer-events-none">
+          <div class="absolute top-[33.5rem] left-10 z-20 pointer-events-none">
             <div class="relative">
               <img
                 src="/images/brand/befektetesjovobe.png"
