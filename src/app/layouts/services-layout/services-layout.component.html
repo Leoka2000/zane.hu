@@ -1,34 +1,29 @@
-<main
-  class="min-h-screen bg-[#000d01] relative flex flex-col overflow-x-hidden"
->
-  <div
-    class="top-[4.6rem] bg-transparent fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100"
-  >
+<main class="min-h-screen bg-[#000d01] relative flex flex-col overflow-x-hidden">
+  
+  <div class="fixed inset-0 z-0 pointer-events-none opacity-100">
+    <img
+      src="images/blog/bg-pattern-hero.svg"
+      alt="Background Pattern"
+      class="w-full h-full  object-cover"
+    />
+  </div>
+
+  <div class="top-[4.6rem] bg-transparent fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100">
     <div class="relative">
-      <img
-        src="images/brand/szecsenytervplusz.jpg"
-        alt="Szechenyi Terv Plusz"
-        class="w-72 object-contain"
-      />
+      <img src="images/brand/szecsenytervplusz.jpg" alt="Szechenyi Terv Plusz" class="w-72 object-contain" />
     </div>
     <div class="absolute top-[33.5rem] left-10 z-20 pointer-events-none">
       <div class="relative">
-        <img
-          src="/images/brand/befektetesjovobe.png"
-          alt="Befektetés a jövőbe"
-          class="w-96 object-contain"
-        />
+        <img src="/images/brand/befektetesjovobe.png" alt="Befektetés a jövőbe" class="w-96 object-contain" />
       </div>
     </div>
   </div>
-
   <app-navbar></app-navbar>
 
   <div class="flex-grow pt-32 lg:pt-40 pb-20">
     @if (!selectedServiceId) {
     <app-services-home></app-services-home>
     } @else {
-
     <section
       class="lg:px-[15%] text-white relative z-10 animate-in fade-in duration-700 min-h-full"
     >
@@ -58,7 +53,6 @@
                 </h1>
                 <div class="h-1 w-20 bg-[#76e594]"></div>
               </div>
-
               <div class="space-y-6 max-w-xl">
                 @for (paragraph of getFormattedText('description'); track
                 paragraph) {
@@ -69,7 +63,6 @@
               </div>
             </div>
           </div>
-
           <div class="relative group h-fit self-start w-full">
             <div
               class="absolute -inset-4 bg-[#76e594]/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity"
@@ -83,6 +76,9 @@
                 [alt]="getServiceData()?.title"
                 class="absolute inset-0 w-full h-full object-cover"
               />
+              <div
+                class="absolute inset-0 bg-black/40 pointer-events-none"
+              ></div>
             </div>
           </div>
         </div>
@@ -96,6 +92,7 @@
               [src]="getServiceData()?.imgUrlOne"
               class="absolute inset-0 w-full h-full object-cover"
             />
+            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
             @if (getHighlightedSentence('descriptionOne')) {
@@ -119,22 +116,31 @@
         } @if (getServiceData()?.descriptionTwo) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div class="space-y-6 max-w-xl">
-            @for (paragraph of getFormattedText('descriptionTwo'); track
+            @if (getHighlightedSentence('descriptionTwo')) {
+            <div
+              class="p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl mb-8"
+            >
+              <p
+                class="text-lg text-neutral-300 grotesk italic leading-relaxed"
+              >
+                {{ getHighlightedSentence("descriptionTwo") }}
+              </p>
+            </div>
+            } @for (paragraph of getFormattedText('descriptionTwo'); track
             paragraph) {
             <p class="text-md text-neutral-400 leading-relaxed">
               {{ paragraph }}
             </p>
             }
           </div>
-
           <div
-            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px] bg-neutral-600 p-6 flex items-center justify-center"
+            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px] bg-neutral-800 p-6 flex items-center justify-center"
           >
             <img
               [src]="getServiceData()?.imgUrlTwo"
               class="max-w-full rounded-2xl max-h-full object-contain"
-              alt="Service image"
             />
+            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
           </div>
         </div>
         } @if (getServiceData()?.descriptionThree) {
@@ -146,9 +152,20 @@
               [src]="getServiceData()?.imgUrlThree"
               class="w-full h-auto max-h-full object-contain mx-auto"
             />
+            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
-            @for (paragraph of getFormattedText('descriptionThree'); track
+            @if (getHighlightedSentence('descriptionThree')) {
+            <div
+              class="p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl mb-8"
+            >
+              <p
+                class="text-lg text-neutral-300 grotesk italic leading-relaxed"
+              >
+                {{ getHighlightedSentence("descriptionThree") }}
+              </p>
+            </div>
+            } @for (paragraph of getFormattedText('descriptionThree'); track
             paragraph) {
             <div
               [innerHTML]="paragraph"
@@ -160,7 +177,17 @@
         } @if (getServiceData()?.descriptionFour) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div class="space-y-6 max-w-xl">
-            @for (paragraph of getFormattedText('descriptionFour'); track
+            @if (getHighlightedSentence('descriptionFour')) {
+            <div
+              class="p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl mb-8"
+            >
+              <p
+                class="text-lg text-neutral-300 grotesk italic leading-relaxed"
+              >
+                {{ getHighlightedSentence("descriptionFour") }}
+              </p>
+            </div>
+            } @for (paragraph of getFormattedText('descriptionFour'); track
             paragraph) {
             <p class="text-md text-neutral-400 leading-relaxed">
               {{ paragraph }}
@@ -174,6 +201,7 @@
               [src]="getServiceData()?.imgUrlFour"
               class="absolute inset-0 w-full h-full object-cover"
             />
+            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
           </div>
         </div>
         }

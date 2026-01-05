@@ -11,6 +11,7 @@ import { BlogHomeComponent } from '../../pages/blog-home/blog-home.component';
   template: `
     <main class="min-h-screen w-full  relative flex flex-col">
       <div class="relative min-h-screen bg-[#000d01] overflow-hidden">
+        
         <div
           class=" top-[4.6rem]   fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100"
         >

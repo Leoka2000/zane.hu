@@ -181,13 +181,19 @@ export class ServicesLayoutComponent implements OnInit {
   getServiceData() {
     return this.services.find((s) => s.id === this.selectedServiceId);
   }
-// Új metódus: Kinyeri az első mondatot a kiemeléshez
+ /**
+   * Kinyeri az első HÁROM mondatot a kiemeléshez.
+   * HTML tartalom esetén (pl. <ul>, <p>) null-t ad vissza, hogy ne rontsa el a formázást.
+   */
   getHighlightedSentence(fieldName: string): string | null {
     const service = this.getServiceData();
     const text = service ? (service as any)[fieldName] : '';
-    if (!text || text.includes('<')) return null;
 
-    const match = text.match(/[^.!?]+[.!?]+/);
+    // Biztonsági ellenőrzés: Ha HTML van benne, ne vágjuk szét
+    if (!text || (text.includes('<') && text.includes('>'))) return null;
+
+    // Regex: 1-től 3 mondatig terjedő szakasz keresése
+    const match = text.match(/([^.!?]+[.!?]+(?:\s|$)){1,3}/);
     return match ? match[0].trim() : null;
   }
 
@@ -196,14 +202,16 @@ export class ServicesLayoutComponent implements OnInit {
     let text = service ? (service as any)[fieldName] : '';
     if (!text) return [];
 
+    // Ha HTML tartalom van benne, egyben adjuk vissza a listában
     if (text.includes('<') && text.includes('>')) {
       return [text];
     }
 
-    // Ha ez a descriptionOne, vegyük ki az első mondatot a listából, 
-    // mert az külön div-be kerül a HTML-ben
+    // Minden leírás mezőnél megpróbáljuk a kiemelést
+    const fieldsWithHighlight = ['descriptionOne', 'descriptionTwo', 'descriptionThree', 'descriptionFour'];
+    
     const highlight = this.getHighlightedSentence(fieldName);
-    if (fieldName === 'descriptionOne' && highlight) {
+    if (fieldsWithHighlight.includes(fieldName) && highlight) {
       text = text.replace(highlight, '').trim();
     }
 
@@ -218,4 +226,6 @@ export class ServicesLayoutComponent implements OnInit {
 
     return chunks;
   }
+
+
 }

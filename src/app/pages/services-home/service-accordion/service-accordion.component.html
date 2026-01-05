@@ -1,5 +1,5 @@
-<section class="bg-[#000d01] py-12 relative overflow-hidden">
-  <div class="absolute -top-96 right-0 w-[500px] h-[500px] bg-[#76e594]/10 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 z-0"></div>
+<section class="bg-transparent py-12 relative overflow-hidden">
+  <div class="absolute -top-96 right-0 w-[500px] h-[500px]  bg-transparent blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 z-0"></div>
 
   <div class=" mx-auto relative z-10 px-6 lg:px-0">
     <div class="mb-16 space-y-4">
@@ -17,11 +17,11 @@
       @for (service of services; track service.id) {
       <mat-expansion-panel
         hideToggle
-        class="!bg-transparent w-full !shadow-none border border-neutral-800 !rounded-xl overflow-hidden transition-all duration-300 hover:border-[#76e594]/30"
+        class="!bg-transparent w-full !shadow-none border border-neutral-800  !rounded-xl overflow-hidden transition-all duration-300 hover:border-[#76e594]/30"
         #panel
       >
         <mat-expansion-panel-header
-          class="!h-24 !px-8 !pl-0 hover:!bg-white/5 transition-colors overflow-hidden"
+          class="!h-24 !px-8 !pl-0 !bg-neutral-950 hover:!bg-white/5 transition-colors overflow-hidden"
         >
           <mat-panel-title class="!text-neutral-100 !text-xl grotesk tracking-tight !flex items-center gap-6 h-full">
             <div class="h-24 w-24 md:w-32 flex-shrink-0 border-r border-neutral-800 overflow-hidden">
