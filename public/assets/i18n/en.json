@@ -1,5 +1,8 @@
 {
-  "navbar": {
-    "HOME": "Home"
+ "navbar": {
+    "HOME": "Home",
+    "SERVICES": "Services",
+    "ABOUT": "About Us",
+    "CTA_BUTTON": "Get a Quote"
   }
 } 

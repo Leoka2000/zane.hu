@@ -20,7 +20,8 @@
 
       <button mat-button routerLink="/services" routerLinkActive="active-link" class="nav-mat-btn !uppercase !text-sm px-6">
         <mat-icon class="mr-2">design_services</mat-icon>
-        {{ 'navbar.SHOP' | translate }} </button>
+        {{ 'navbar.SERVICES' | translate }}
+      </button>
 
       <button mat-button routerLink="/about" routerLinkActive="active-link" class="nav-mat-btn !uppercase !text-sm px-6">
         <mat-icon class="mr-2">info</mat-icon>
@@ -30,22 +31,38 @@
 
     <div class="flex items-center space-x-4 bg-transparent">
       
-      <button mat-button [matMenuTriggerFor]="langMenu" class="text-white !min-w-0 px-2 opacity-80 hover:opacity-100">
-        <span class="uppercase text-xs font-bold">{{ currentLang }}</span>
-        <mat-icon class="!m-0 !text-xs">expand_more</mat-icon>
+      <button mat-button [matMenuTriggerFor]="langMenu" class="text-white !min-w-0 px-3 opacity-90 hover:opacity-100 transition-opacity">
+        <div class="flex items-center gap-2">
+          <span class="text-base line-height-1">
+            {{ currentLang === 'hu' ? '🇭🇺' : '🇺🇸' }}
+          </span>
+          <span class="uppercase text-xs font-bold tracking-wider">{{ currentLang }}</span>
+          <mat-icon class="!m-0 !text-[16px] opacity-50">expand_more</mat-icon>
+        </div>
       </button>
       
       <mat-menu #langMenu="matMenu" class="dark-menu">
         <button mat-menu-item (click)="changeLang('hu')">
-          <span class="flex items-center gap-2">🇭🇺 Magyar</span>
+          <div class="flex items-center gap-3 w-full">
+            <span class="text-lg">🇭🇺</span>
+            <span class="font-medium">Magyar</span>
+            <mat-icon *ngIf="currentLang === 'hu'" class="!text-[#76e594] !mr-0 !ml-auto">check</mat-icon>
+          </div>
         </button>
         <button mat-menu-item (click)="changeLang('en')">
-          <span class="flex items-center gap-2">🇺🇸 English</span>
+          <div class="flex items-center gap-3 w-full">
+            <span class="text-lg">🇺🇸</span>
+            <span class="font-medium">English</span>
+            <mat-icon *ngIf="currentLang === 'en'" class="!text-[#76e594] !mr-0 !ml-auto">check</mat-icon>
+          </div>
         </button>
       </mat-menu>
 
       <div class="hidden xl:block">
-        <app-primary-button text="Ajánlatkérés" (click)="openQuoteDialog()"></app-primary-button>
+        <app-primary-button 
+          [text]="'navbar.CTA_BUTTON' | translate" 
+          (click)="openQuoteDialog()">
+        </app-primary-button>
       </div>
 
       <button mat-icon-button (click)="openMobileMenu()" class="text-white xl:!hidden">

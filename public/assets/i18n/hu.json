@@ -1,5 +1,8 @@
 {
-  "navbar": {
-    "HOME": "Főoldal"
+ "navbar": {
+    "HOME": "Főoldal",
+    "SERVICES": "Szolgáltatásaink",
+    "ABOUT": "Rólunk",
+    "CTA_BUTTON": "Ajánlatkérés"
   }
 }

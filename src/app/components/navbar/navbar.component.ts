@@ -6,8 +6,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu'; // ✅ Új import a dropdownhoz
-import { TranslateModule, TranslateService } from '@ngx-translate/core'; // ✅ Új import
+import { MatMenuModule } from '@angular/material/menu';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { QuotationDialogComponent } from '../dialogs/quotation-dialog/quotation-dialog.component';
 import { NavMobileSheetComponent } from './nav-mobile-sheet/nav-mobile-sheet.component';
 
@@ -22,8 +22,8 @@ import { NavMobileSheetComponent } from './nav-mobile-sheet/nav-mobile-sheet.com
     MatBottomSheetModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule, // ✅
-    TranslateModule, // ✅
+    MatMenuModule,
+    TranslateModule,
   ],
   templateUrl: './navbar.component.html',
   styles: [
@@ -47,14 +47,30 @@ import { NavMobileSheetComponent } from './nav-mobile-sheet/nav-mobile-sheet.com
         background: rgba(255, 255, 255, 0.05) !important;
       }
 
+      .line-height-1 {
+        line-height: 1;
+        display: flex;
+        align-items: center;
+      }
+
       /* Dropdown stílus a sötét témához */
       ::ng-deep .dark-menu {
         background-color: #000d01 !important;
-        border: 1px solid rgba(118, 229, 148, 0.2);
+        border: 1px solid rgba(118, 229, 148, 0.2) !important;
+        margin-top: 10px !important;
       }
+      
+      ::ng-deep .dark-menu .mat-mdc-menu-content {
+        padding: 8px !important;
+      }
+
       ::ng-deep .dark-menu .mat-mdc-menu-item {
         color: #f5f5f5 !important;
+        border-radius: 6px !important;
+        margin-bottom: 2px;
+        transition: background-color 0.2s ease;
       }
+
       ::ng-deep .dark-menu .mat-mdc-menu-item:hover {
         background-color: rgba(118, 229, 148, 0.1) !important;
       }
@@ -67,14 +83,12 @@ export class NavbarComponent implements OnInit {
 
   private dialog = inject(MatDialog);
   private _bottomSheet = inject(MatBottomSheet);
-  private translate = inject(TranslateService); // ✅ Injektálás
+  private translate = inject(TranslateService);
 
   constructor() {
-    // Alapértelmezett nyelv beállítása
     this.translate.addLangs(['hu', 'en']);
     this.translate.setDefaultLang('hu');
 
-    // Korábban elmentett nyelv betöltése
     const savedLang = localStorage.getItem('lang');
     this.currentLang = savedLang || 'hu';
     this.translate.use(this.currentLang);
