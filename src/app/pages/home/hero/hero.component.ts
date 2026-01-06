@@ -26,6 +26,18 @@ import { QuotationDialogComponent } from '../../../components/dialogs/quotation-
 export class HeroComponent {
   private dialog = inject(MatDialog);
 
+  scrollToFeatures() {
+    const element = document.getElementById('protection-section');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', // Lágy görgetés
+        block: 'start',     // Az elem tetejére ugorjon
+        inline: 'nearest' 
+      });
+    }
+  }
+
+  
   openQuoteDialog() {
     this.dialog.open(QuotationDialogComponent, {
       width: '600px', 

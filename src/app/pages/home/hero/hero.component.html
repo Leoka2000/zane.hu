@@ -1,16 +1,16 @@
 <main
   class="min-h-screen w-full px-6 lg:px-[15%] md:mt-0 mt-44 flex items-center justify-center relative bg-[#000d01] z-0"
 >
-<style>
-  .cdk-overlay-dark-backdrop {
-  background: rgba(0, 0, 0, 0.7) !important;
-}
+  <style>
+    .cdk-overlay-dark-backdrop {
+      background: rgba(0, 0, 0, 0.7) !important;
+    }
 
-.mat-mdc-dialog-container .mdc-dialog__surface {
-  background-color: #000d01 !important;
-  border: 1px solid rgba(118, 229, 148, 0.2);
-}
-</style>
+    .mat-mdc-dialog-container .mdc-dialog__surface {
+      background-color: #000d01 !important;
+      border: 1px solid rgba(118, 229, 148, 0.2);
+    }
+  </style>
   <img
     src="images/blog/bg-pattern-hero.svg"
     alt="Background Pattern"
@@ -49,7 +49,9 @@
 
       <div class="flex flex-wrap items-center gap-4 pt-4">
         <app-primary-button (click)="openQuoteDialog()"></app-primary-button>
-        <app-secondary-button></app-secondary-button>
+        <app-secondary-button
+          (click)="scrollToFeatures()"
+        ></app-secondary-button>
       </div>
     </div>
 

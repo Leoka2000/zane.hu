@@ -1,88 +1,46 @@
-<div class="w-full form-wrapper max-w-4xl mx-auto border border-white/10 bg-[#020f03]">
-  
-  <div class="grid grid-cols-1 p-6 gap-1 mb-2">
-    
-    <div class="relative group">
-      <div class="absolute -inset-2 rounded-lg translate-x-3 translate-y-3 -z-10 transition-all duration-500 group-hover:translate-x-1 group-hover:translate-y-1"></div>
-      <div class="relative rounded-lg overflow-hidden shadow-2xl">
-        <img 
-          src="images/zanelogo.png" 
-          alt="ZANE Systems HQ" 
-          class="w-36 h-auto object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
-        />
-      </div>
-    </div>
-
-    <div class="flex flex-col justify-center space-y-4">
-      <div class="space-y-4">
-        <h2 class="text-neutral-100 md:text-4xl font-bold grotesk leading-tight">
-          Kérdése van? <br>
-          <span class="text-[#76e594] md:tex-4xl">Vedd fel velünk a kapcsolatot.</span>
-        </h2>
-      </div>
-
-      <div class="space-y-4">
-        <div class="flex items-center gap-4 group">
-          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20">
-            <mat-icon class="!text-[#76e594] !text-[20px] !w-[20px] !h-[20px]">call</mat-icon>
-          </div>
-          <span class="text-neutral-300 text-lg font-medium">Telefonszám: +36/30-299-77-77</span>
-        </div>
-
-       <div class="flex items-center gap-4 group">
-          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20">
-            <mat-icon class="!text-[#76e594] !text-[20px] !w-[20px] !h-[20px]">mail</mat-icon>
-          </div>
-          <a href="mailto:sales@zane.hu" class="text-neutral-300 text-lg font-medium hover:text-[#76e594] transition-colors">sales&#64;zane.hu</a>
-        </div>
-
-        <div class="flex items-center gap-4 group">
-          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/10">
-            <mat-icon class="!text-[#76e594] !text-[20px] !w-[20px] !h-[20px]">location_on</mat-icon>
-          </div>
-          <span class="text-neutral-300 text-lg font-medium">4251 Hajdúsámson, Heveder utca 19.</span>
-        </div>
-      </div>
-    </div>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="w-full custom-material-form mx-auto p-6">
+  <div class="mb-10">
+    <h3 class="text-neutral-200 text-xl font-bold grotesk border-l-4 border-[#76e594] pl-4">
+      Küldjön üzenetet
+    </h3>
   </div>
 
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="w-full custom-material-form mx-auto p-6">
-    <div class="mb-10">
-      <h3 class="text-neutral-200 text-xl font-bold grotesk border-l-4 border-[#76e594] pl-4">Küldjön üzenetet</h3>
-    </div>
+  <mat-form-field appearance="fill" class="w-full mb-4">
+    <mat-label class="text-neutral-400">Név</mat-label>
+    <input matInput formControlName="name" placeholder="Adja meg a nevét">
+    <mat-icon matPrefix [ngClass]="isInvalid('name') ? 'icon-error' : 'icon-success'" class="mr-3">person</mat-icon>
+    <mat-error *ngIf="contactForm.get('name')?.hasError('required')">A név megadása kötelező</mat-error>
+    <mat-error *ngIf="contactForm.get('name')?.hasError('minlength')">Minimum 3 karakter szükséges</mat-error>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill" class="w-full mb-4">
-      <mat-label class="grotesk font-medium text-neutral-50">Név</mat-label>
-      <input matInput formControlName="name" placeholder="Adja meg a nevét">
-      <mat-icon matSuffix class="!text-[#76e594]">person</mat-icon>
-      <mat-hint class="text-neutral-500">Teljes név megadása javasolt</mat-hint>
-    </mat-form-field>
+  <mat-form-field appearance="fill" class="w-full mb-4">
+    <mat-label class="text-neutral-400">Email</mat-label>
+    <input matInput type="email" formControlName="email" placeholder="pelda@email.hu">
+    <mat-icon matPrefix [ngClass]="isInvalid('email') ? 'icon-error' : 'icon-success'" class="mr-3">email</mat-icon>
+    <mat-error *ngIf="contactForm.get('email')?.invalid">Kérjük, érvényes email címet adjon meg</mat-error>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill" class="w-full mb-4">
-      <mat-label class="grotesk font-medium text-neutral-50">Email</mat-label>
-      <input matInput type="email" formControlName="email" placeholder="pelda@email.hu">
-      <mat-icon matSuffix class="!text-[#76e594]">attach_email</mat-icon>
-      <mat-hint class="text-neutral-500">Email címét nem osztjuk meg harmadik féllel</mat-hint>
-    </mat-form-field>
+  <mat-form-field appearance="fill" class="w-full mb-6">
+    <mat-label class="text-neutral-400">Üzenet</mat-label>
+    <textarea matInput formControlName="message" rows="5" placeholder="Miben segíthetünk?"></textarea>
+    <mat-icon matPrefix [ngClass]="isInvalid('message') ? 'icon-error' : 'icon-success'" class="mr-3">add_comment</mat-icon>
+    <mat-error *ngIf="contactForm.get('message')?.invalid">Kérjük, írjon legalább 10 karaktert</mat-error>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill" class="w-full mb-6">
-      <mat-label class="grotesk font-medium text-neutral-50">Üzenet</mat-label>
-      <textarea matInput formControlName="message" rows="5" placeholder="Miben segíthetünk?"></textarea>
-      <mat-icon matSuffix class="!text-[#76e594]">add_comment</mat-icon>
-    </mat-form-field>
+  <div class="mb-8 flex flex-col">
+    <mat-checkbox formControlName="terms" class="custom-checkbox">
+      <span class="text-neutral-400 grotesk">Elfogadom az Általános Szerződési Feltételeket.</span>
+    </mat-checkbox>
+    <small class="text-[#ff5252] mt-2 grotesk" *ngIf="isInvalid('terms')">
+      A feltételek elfogadása kötelező a küldéshez.
+    </small>
+  </div>
 
-    <div class="mb-8">
-      <mat-checkbox formControlName="terms" class="custom-checkbox">
-        <span class="text-neutral-400 grotesk">Elfogadom az Általános Szerződési Feltételeket.</span>
-      </mat-checkbox>
-    </div>
-
-    <app-primary-button 
-      type="submit" 
-      [text]="'Üzenet küldése'" 
-      [icon]="'send'" 
-      [disabled]="contactForm.invalid || isLoading"
-      [loading]="isLoading">
-    </app-primary-button>
-  </form>
-</div>
+  <app-primary-button 
+    type="submit" 
+    [text]="'Üzenet küldése'" 
+    [icon]="'send'" 
+    [disabled]="contactForm.invalid || isLoading"
+    [loading]="isLoading">
+  </app-primary-button>
+</form>
