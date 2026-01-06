@@ -1,4 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  inject,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
@@ -7,6 +13,7 @@ import { ServicesHomeComponent } from '../../pages/services-home/services-home.c
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-services-layout',
@@ -23,7 +30,6 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './services-layout.component.html',
   styles: [
     `
-      /* Kép konténer javítás világos hátterű logókhoz/tervekhez */
       .light-bg-fix {
         background-color: #e5e7eb !important;
         padding: 1.5rem;
@@ -39,14 +45,15 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     `,
   ],
 })
-export class ServicesLayoutComponent implements OnInit {
+export class ServicesLayoutComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private translate = inject(TranslateService);
   private sanitizer = inject(DomSanitizer);
-  
+  private cdr = inject(ChangeDetectorRef);
+
+  private langSub?: Subscription;
   selectedServiceId: string | null = null;
 
-  // Szolgáltatások adatai: ID és kapcsolódó képek
   services = [
     {
       id: 'rendszertervezes',
@@ -91,20 +98,25 @@ export class ServicesLayoutComponent implements OnInit {
   ];
 
   ngOnInit() {
-    // Figyeljük az URL paraméter változását (szolgáltatás váltás)
     this.route.paramMap.subscribe((params) => {
       this.selectedServiceId = params.get('id');
-      // Visszagörgetés az oldal tetejére váltáskor
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Nyelvi változás figyelése: A fordítás betöltésekor frissítünk
+    this.langSub = this.translate.onLangChange.subscribe(() => {
+      this.cdr.detectChanges();
     });
   }
 
-  // Aktuális szolgáltatás adatainak lekérése
+  ngOnDestroy() {
+    if (this.langSub) this.langSub.unsubscribe();
+  }
+
   getServiceData() {
     return this.services.find((s) => s.id === this.selectedServiceId);
   }
 
-  // Fordítás lekérése dinamikus kulcs alapján
   getTranslation(field: string): string {
     if (!this.selectedServiceId) return '';
     const key = `serv_layout.services.${this.selectedServiceId}.${field}`;
@@ -112,41 +124,47 @@ export class ServicesLayoutComponent implements OnInit {
     return translation === key ? '' : translation;
   }
 
-  // Kiemelt mondat kinyerése (ha nem HTML tartalomról van szó)
-  getHighlightedSentence(field: string): string | null {
-    const text = this.getTranslation(field);
-    if (!text || text.includes('<')) return null;
-    const match = text.match(/([^.!?]+[.!?]+(?:\s|$)){1,3}/);
-    return match ? match[0].trim() : null;
-  }
-
-  // Szöveg formázása parágrafusokra és HTML biztonságossá tétele
+  // Hibajavítás: Ez a funkció most már biztosan visszaadja a szöveget, még ha nincs is írásjel
   getFormattedText(field: string): SafeHtml[] {
     const text = this.getTranslation(field);
     if (!text) return [];
 
-    // Ha a szöveg HTML (mint a d3 szekció), biztonságos HTML-ként adjuk vissza
+    // 1. Ha HTML (ikonok listája), azonnal küldjük vissza
     if (text.includes('<') && text.includes('>')) {
       return [this.sanitizer.bypassSecurityTrustHtml(text)];
     }
 
+    // 2. A 'desc' mezőhöz egyszerűsített logika: ne keressen kiemelést, csak adja vissza a szöveget
+    if (field === 'desc') {
+      return [this.sanitizer.bypassSecurityTrustHtml(text)];
+    }
+
+    // 3. Egyéb mezőkhöz (d1, d2) marad a mondatos logika
     let cleanText = text;
     const highlight = this.getHighlightedSentence(field);
-    if (highlight) {
+    if (highlight && cleanText.includes(highlight)) {
       cleanText = text.replace(highlight, '').trim();
     }
 
-    // Mondatokra bontás pontok alapján
-    const allSentences = cleanText.match(/[^.!?]+[.!?]+(?=\s|$)/g) || [cleanText];
-    
-    const chunks: SafeHtml[] = [];
-    // 4 mondatonként csoportosítjuk a parágrafusokat
-    for (let i = 0; i < allSentences.length; i += 4) {
-      const chunk = allSentences.slice(i, i + 4).join(' ');
-      if (chunk.trim()) {
-        chunks.push(this.sanitizer.bypassSecurityTrustHtml(chunk));
-      }
-    }
-    return chunks;
+    // Ha a tisztítás után üres maradt (mert a highlight == teljes szöveg)
+    if (!cleanText) return [this.sanitizer.bypassSecurityTrustHtml(text)];
+
+    const sentences = cleanText.match(/[^.!?]+[.!?]+(?=\s|$)/g);
+    const allSentences =
+      sentences && sentences.length > 0 ? sentences : [cleanText];
+
+    return allSentences.map((s) =>
+      this.sanitizer.bypassSecurityTrustHtml(s.trim())
+    );
+  }
+
+  getHighlightedSentence(field: string): string | null {
+    // A 'desc' esetében nem akarunk kiemelt mondatot a design miatt
+    if (field === 'desc') return null;
+
+    const text = this.getTranslation(field);
+    if (!text || text.includes('<')) return null;
+    const match = text.match(/([^.!?]+[.!?]+(?:\s|$)){1,2}/);
+    return match ? match[0].trim() : null;
   }
 }
