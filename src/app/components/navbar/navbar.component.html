@@ -34,7 +34,8 @@
       <button mat-button [matMenuTriggerFor]="langMenu" class="text-white !min-w-0 px-3 opacity-90 hover:opacity-100 transition-opacity">
         <div class="flex items-center gap-2">
           <span class="text-base line-height-1">
-            {{ currentLang === 'hu' ? '🇭🇺' : '🇺🇸' }}
+            <img [src]="currentLang === 'hu' ? 'images/flags/hu.png' : 'images/flags/uk.png'" 
+                 class="w-5 h-3.5 object-cover rounded-[1px]" />
           </span>
           <span class="uppercase text-xs font-bold tracking-wider">{{ currentLang }}</span>
           <mat-icon class="!m-0 !text-[16px] opacity-50">expand_more</mat-icon>
@@ -44,14 +45,14 @@
       <mat-menu #langMenu="matMenu" class="dark-menu">
         <button mat-menu-item (click)="changeLang('hu')">
           <div class="flex items-center gap-3 w-full">
-            <span class="text-lg">🇭🇺</span>
+            <img src="images/flags/hu.png" class="w-5 h-3.5 object-cover rounded-[1px]" />
             <span class="font-medium">Magyar</span>
             <mat-icon *ngIf="currentLang === 'hu'" class="!text-[#76e594] !mr-0 !ml-auto">check</mat-icon>
           </div>
         </button>
         <button mat-menu-item (click)="changeLang('en')">
           <div class="flex items-center gap-3 w-full">
-            <span class="text-lg">🇺🇸</span>
+            <img src="images/flags/uk.png" class="w-5 h-3.5 object-cover rounded-[1px]" />
             <span class="font-medium">English</span>
             <mat-icon *ngIf="currentLang === 'en'" class="!text-[#76e594] !mr-0 !ml-auto">check</mat-icon>
           </div>

@@ -74,7 +74,35 @@ import { NavMobileSheetComponent } from './nav-mobile-sheet/nav-mobile-sheet.com
       ::ng-deep .dark-menu .mat-mdc-menu-item:hover {
         background-color: rgba(118, 229, 148, 0.1) !important;
       }
-    `,
+   .flag-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 14px; /* Maintaining standard flag aspect ratio */
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .flag-icon {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .flag-icon-sm {
+      width: 18px;
+      height: 13px;
+      object-fit: cover;
+      border-radius: 1px;
+    }
+
+    /* Standardizes the alignment for the menu items */
+    ::ng-deep .dark-menu .mat-mdc-menu-item .flex {
+      display: flex;
+      align-items: center;
+    }
+  `
   ],
 })
 export class NavbarComponent implements OnInit {

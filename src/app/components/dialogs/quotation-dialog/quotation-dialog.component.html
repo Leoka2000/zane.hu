@@ -1,6 +1,6 @@
 <div class="dialog-container">
   <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-light text-white grotesk">Ajánlatkérés</h2>
+    <h2 class="text-2xl font-light text-white grotesk">{{ 'QUOTE_DIALOG.TITLE' | translate }}</h2>
     <button mat-icon-button (click)="closeDialog()" class="text-neutral-500 hover:text-white" [disabled]="isLoading">
       <mat-icon>close</mat-icon>
     </button>
@@ -8,52 +8,52 @@
 
   <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
     <mat-form-field appearance="fill" class="w-full custom-field">
-      <mat-label class="text-neutral-400">Teljes név</mat-label>
-      <input matInput formControlName="name" placeholder="Minta János">
+      <mat-label class="text-neutral-400">{{ 'QUOTE_DIALOG.LABELS.NAME' | translate }}</mat-label>
+      <input matInput formControlName="name" [placeholder]="'QUOTE_DIALOG.LABELS.PLACEHOLDER_NAME' | translate">
       <mat-icon matPrefix [ngClass]="isInvalid('name') ? 'icon-error' : 'icon-success'" class="mr-2">person</mat-icon>
-      <mat-error *ngIf="quoteForm.get('name')?.hasError('required')">A név megadása kötelező</mat-error>
-      <mat-error *ngIf="quoteForm.get('name')?.hasError('minlength')">Minimum 3 karakter szükséges</mat-error>
+      <mat-error *ngIf="quoteForm.get('name')?.hasError('required')">{{ 'QUOTE_DIALOG.ERRORS.NAME_REQ' | translate }}</mat-error>
+      <mat-error *ngIf="quoteForm.get('name')?.hasError('minlength')">{{ 'QUOTE_DIALOG.ERRORS.NAME_MIN' | translate }}</mat-error>
     </mat-form-field>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <mat-form-field appearance="fill" class="custom-field">
-        <mat-label class="text-neutral-400">Email cím</mat-label>
-        <input matInput type="email" formControlName="email" placeholder="pelda@email.hu">
+        <mat-label class="text-neutral-400">{{ 'QUOTE_DIALOG.LABELS.EMAIL' | translate }}</mat-label>
+        <input matInput type="email" formControlName="email" [placeholder]="'QUOTE_DIALOG.LABELS.PLACEHOLDER_EMAIL' | translate">
         <mat-icon matPrefix [ngClass]="isInvalid('email') ? 'icon-error' : 'icon-success'" class="mr-2">email</mat-icon>
-        <mat-error>Kérjük, érvényes email címet adjon meg</mat-error>
+        <mat-error>{{ 'QUOTE_DIALOG.ERRORS.EMAIL' | translate }}</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="custom-field">
-        <mat-label class="text-neutral-400">Telefonszám</mat-label>
-        <input matInput formControlName="phone" placeholder="+36 00 000 0000">
+        <mat-label class="text-neutral-400">{{ 'QUOTE_DIALOG.LABELS.PHONE' | translate }}</mat-label>
+        <input matInput formControlName="phone" [placeholder]="'QUOTE_DIALOG.LABELS.PLACEHOLDER_PHONE' | translate">
         <mat-icon matPrefix [ngClass]="isInvalid('phone') ? 'icon-error' : 'icon-success'" class="mr-2">phone</mat-icon>
-        <mat-error *ngIf="quoteForm.get('phone')?.hasError('required')">A telefonszám kötelező</mat-error>
-        <mat-error *ngIf="quoteForm.get('phone')?.hasError('pattern')">Csak számok és szimbólumok (+, -)</mat-error>
+        <mat-error *ngIf="quoteForm.get('phone')?.hasError('required')">{{ 'QUOTE_DIALOG.ERRORS.PHONE_REQ' | translate }}</mat-error>
+        <mat-error *ngIf="quoteForm.get('phone')?.hasError('pattern')">{{ 'QUOTE_DIALOG.ERRORS.PHONE_PAT' | translate }}</mat-error>
       </mat-form-field>
     </div>
 
     <mat-form-field appearance="fill" class="w-full custom-field">
-      <mat-label class="text-neutral-400">Választott szolgáltatás</mat-label>
+      <mat-label class="text-neutral-400">{{ 'QUOTE_DIALOG.LABELS.SERVICE' | translate }}</mat-label>
       <mat-select formControlName="service">
-        <mat-option value="Tervezés">Rendszertervezés</mat-option>
-        <mat-option value="Gyártás">PCB Gyártás és beültetés</mat-option>
-        <mat-option value="Komplex">Komplex fejlesztés (Hardware + Software)</mat-option>
+        <mat-option value="Tervezés">{{ 'QUOTE_DIALOG.SERVICES.DESIGN' | translate }}</mat-option>
+        <mat-option value="Gyártás">{{ 'QUOTE_DIALOG.SERVICES.MANUFACTURING' | translate }}</mat-option>
+        <mat-option value="Komplex">{{ 'QUOTE_DIALOG.SERVICES.COMPLEX' | translate }}</mat-option>
       </mat-select>
       <mat-icon matPrefix [ngClass]="isInvalid('service') ? 'icon-error' : 'icon-success'" class="mr-2">settings</mat-icon>
-      <mat-error>Kérjük, válasszon egy szolgáltatást</mat-error>
+      <mat-error>{{ 'QUOTE_DIALOG.ERRORS.SERVICE_REQ' | translate }}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="w-full custom-field">
-      <mat-label class="text-neutral-400">További részletek</mat-label>
-      <textarea matInput formControlName="message" rows="3" placeholder="Írja le röviden az igényeit..."></textarea>
+      <mat-label class="text-neutral-400">{{ 'QUOTE_DIALOG.LABELS.MESSAGE' | translate }}</mat-label>
+      <textarea matInput formControlName="message" rows="3" [placeholder]="'QUOTE_DIALOG.LABELS.PLACEHOLDER_MESSAGE' | translate"></textarea>
       <mat-icon matPrefix [ngClass]="isInvalid('message') ? 'icon-error' : 'icon-success'" class="mr-2">message</mat-icon>
-      <mat-error>Kérjük, írjon legalább 10 karaktert</mat-error>
+      <mat-error>{{ 'QUOTE_DIALOG.ERRORS.MESSAGE_MIN' | translate }}</mat-error>
     </mat-form-field>
 
     <div class="mt-4 flex justify-end">
       <app-primary-button 
         type="submit" 
-        text="Ajánlat kérése" 
+        [text]="'QUOTE_DIALOG.SUBMIT' | translate" 
         icon="send" 
         [disabled]="quoteForm.invalid || isLoading"
         [loading]="isLoading">

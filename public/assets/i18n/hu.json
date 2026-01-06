@@ -270,5 +270,34 @@
     },
 
     "LOCATION": "Hajdúsámson, Heveder utca 19, Hungary"
+  },
+  "QUOTE_DIALOG": {
+    "TITLE": "Ajánlatkérés",
+    "LABELS": {
+      "NAME": "Teljes név",
+      "EMAIL": "Email cím",
+      "PHONE": "Telefonszám",
+      "SERVICE": "Választott szolgáltatás",
+      "MESSAGE": "További részletek",
+      "PLACEHOLDER_NAME": "Minta János",
+      "PLACEHOLDER_EMAIL": "pelda@email.hu",
+      "PLACEHOLDER_PHONE": "+36 00 000 0000",
+      "PLACEHOLDER_MESSAGE": "Írja le röviden az igényeit..."
+    },
+    "SERVICES": {
+      "DESIGN": "Rendszertervezés",
+      "MANUFACTURING": "PCB Gyártás és beültetés",
+      "COMPLEX": "Komplex fejlesztés (Hardware + Software)"
+    },
+    "ERRORS": {
+      "NAME_REQ": "A név megadása kötelező",
+      "NAME_MIN": "Minimum 3 karakter szükséges",
+      "EMAIL": "Kérjük, érvényes email címet adjon meg",
+      "PHONE_REQ": "A telefonszám kötelező",
+      "PHONE_PAT": "Csak számok és szimbólumok (+, -)",
+      "SERVICE_REQ": "Kérjük, válasszon egy szolgáltatást",
+      "MESSAGE_MIN": "Kérjük, írjon legalább 10 karaktert"
+    },
+    "SUBMIT": "Ajánlat kérése"
   }
 }

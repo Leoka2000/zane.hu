@@ -5,7 +5,16 @@
 
   <div class="flex-grow pt-32 lg:pt-40 pb-20">
     @if (!selectedServiceId) {
-    <app-services-home></app-services-home>
+    <div class="relative overflow-hidden">
+      <app-services-home></app-services-home>
+      <div class="overflow-hidden relative">
+        <img
+          src="images/blog/bg-pattern-hero.svg"
+          alt="Background Pattern"
+          class="absolute inset-0 w-full h-full object-cover pointer-events-none z-20"
+        />
+      </div>
+    </div>
     } @else {
     <section
       class="lg:px-[15%] text-white relative z-10 animate-in fade-in duration-700 min-h-full"

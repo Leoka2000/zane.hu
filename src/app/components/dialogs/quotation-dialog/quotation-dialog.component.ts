@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import emailjs from '@emailjs/browser';
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component';
 import { PrimaryButtonComponent } from '../../primary-button/primary-button.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-quotation-dialog',
@@ -22,7 +23,8 @@ import { PrimaryButtonComponent } from '../../primary-button/primary-button.comp
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    PrimaryButtonComponent
+    PrimaryButtonComponent,
+    TranslateModule
   ],
   templateUrl: './quotation-dialog.component.html',
   styles: [`

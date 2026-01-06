@@ -12,7 +12,7 @@ import { AboutHomeComponent } from '../../pages/about-home/about-home.component'
     class="min-h-screen bg-[#000d01] relative overflow-visible flex flex-col"
   >
     <div
-      class=" top-[4.6rem] bg-transparent  fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100"
+      class=" top-[4.6rem] bg-transparent  fixed right-0 z- pointer-events-none opacity-40 md:opacity-100"
     >
       <div class="relative">
         <img

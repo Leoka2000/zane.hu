@@ -269,5 +269,34 @@
       "PART2": "hold their own in the world market, not only in electronic contract manufacturing but also in design."
     },
     "LOCATION": "Hajdúsámson, Heveder utca 19, Hungary"
+  },
+  "QUOTE_DIALOG": {
+    "TITLE": "Request a Quote",
+    "LABELS": {
+      "NAME": "Full Name",
+      "EMAIL": "Email Address",
+      "PHONE": "Phone Number",
+      "SERVICE": "Selected Service",
+      "MESSAGE": "Further Details",
+      "PLACEHOLDER_NAME": "John Doe",
+      "PLACEHOLDER_EMAIL": "example@email.com",
+      "PLACEHOLDER_PHONE": "+44 00 000 0000",
+      "PLACEHOLDER_MESSAGE": "Briefly describe your requirements..."
+    },
+    "SERVICES": {
+      "DESIGN": "System Design",
+      "MANUFACTURING": "PCB Manufacturing & Assembly",
+      "COMPLEX": "Complex Development (Hardware + Software)"
+    },
+    "ERRORS": {
+      "NAME_REQ": "Name is required",
+      "NAME_MIN": "Minimum 3 characters required",
+      "EMAIL": "Please enter a valid email address",
+      "PHONE_REQ": "Phone number is required",
+      "PHONE_PAT": "Only numbers and symbols allowed (+, -)",
+      "SERVICE_REQ": "Please select a service",
+      "MESSAGE_MIN": "Please write at least 10 characters"
+    },
+    "SUBMIT": "Request Quote"
   }
 }
