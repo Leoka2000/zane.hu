@@ -241,5 +241,33 @@
         "d3": "As an application server, in this case, we use the service of TagoIO, where it is possible both to display data graphically and to set monitoring for values."
       }
     }
+  },
+  "ABOUT_HERO": {
+    "BADGE": "Who We Are",
+    "TITLE_1": "Visionary foundations,",
+    "TITLE_2": "where innovation",
+    "TITLE_3": "meets precision design.",
+    "DESCRIPTION": "ZANE systems was founded in 2012 by electrical engineer Zoltán Erdei...",
+    "BUTTON": "Explore",
+    "STATS": {
+      "FOUNDED": "Founded",
+      "SATISFACTION": "Satisfaction Rate",
+      "CLIENTS": "Happy Clients"
+    }
+  },
+  "ABOUT_ZANE_HOUSE": {
+    "TITLE": "ZANE systems Ltd.",
+    "PARAGRAPH_1": {
+      "PART1": "was founded in 2012 by",
+      "NAME": "Zoltán Erdei",
+      "PART2": "electrical engineer. The company was established to meet both foreign and domestic circuit design needs."
+    },
+    "PARAGRAPH_2": "Accordingly, the company's main activity from the beginning has been the design and development of electronic circuits. A key role in founding the company was the creation of an engineering office suitable for designing world-class electronic products.",
+    "PARAGRAPH_3": {
+      "PART1": "Our mission is to prove that",
+      "HIGHLIGHT": "Hungarian electronic professionals",
+      "PART2": "hold their own in the world market, not only in electronic contract manufacturing but also in design."
+    },
+    "LOCATION": "Hajdúsámson, Heveder utca 19, Hungary"
   }
 }

@@ -241,5 +241,34 @@
         "d3": "Applikációs szerverként ebben az esetben a TagoIO szolgáltatását használjuk, ahol lehetőség van egyaránt az adatok grafikus megjelenítésére valamint az értékekre figyelést is be tudunk állítani."
       }
     }
+  },
+  "ABOUT_HERO": {
+    "BADGE": "Kik Vagyunk",
+    "TITLE_1": "Vizionárius alapok,",
+    "TITLE_2": "ahol az innováció",
+    "TITLE_3": "precíz tervezéssel találkozik.",
+    "DESCRIPTION": "A ZANE systems-t 2012-ben alapította Erdei Zoltán villamosmérnök...",
+    "BUTTON": "Tovább",
+    "STATS": {
+      "FOUNDED": "Alapítva",
+      "SATISFACTION": "Elégedettségi mutató",
+      "CLIENTS": "Elégedett ügyfél"
+    }
+  },
+  "ABOUT_ZANE_HOUSE": {
+    "TITLE": "ZANE systems Kft.",
+    "PARAGRAPH_1": {
+      "PART1": "-t 2012-ben alapította",
+      "NAME": "Erdei Zoltán",
+      "PART2": "villamosmérnök. A céget a külföldi és hazai áramkörtervezési igények kielégítésére hoztuk létre."
+    },
+    "PARAGRAPH_2": "Ennek megfelelően a vállalat fő tevékenysége a kezdetektől fogva az elektronikai áramkörök tervezése és fejlesztése. A cég alapításakor kiemelt szerepet játszott egy világszínvonalú elektronikai termékek tervezésére alkalmas mérnöki iroda létrehozása.",
+    "PARAGRAPH_3": {
+      "PART1": "Küldetésünk annak bizonyítása, hogy a",
+      "HIGHLIGHT": "magyar elektronikai szakemberek",
+      "PART2": "nemcsak az elektronikai bérgyártásban, hanem a tervezésben is megállják a helyüket a világpiacon."
+    },
+
+    "LOCATION": "Hajdúsámson, Heveder utca 19, Hungary"
   }
 }
