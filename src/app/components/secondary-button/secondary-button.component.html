@@ -1,31 +1,11 @@
-<button
-  style="
-    background-color: rgba(255, 255, 255, 0.03) !important;
-    border: 2px solid rgba(255, 255, 255, 0.15) !important;
-  "
-  class="group inline-flex items-center justify-center gap-2 px-6 py-[0.70rem] rounded-md transition-all duration-300 ease-in-out text-neutral-100 text-[15px] font-normal tracking-wide /* Glassmorphism Core */ border backdrop-blur-[10px] /* Hover & State Effects */ hover:bg-white/[0.08] hover:border-white/30 hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]"
->
-  <span
-    class="uppercase font-bold text-xs"
-    style="background-color: transparent !important; color: inherit"
-  >
-    Discover more
-  </span>
-
-  <mat-icon
-    class="transition-transform duration-300 ease-in-out group-hover:rotate-[-45deg]"
-    style="
-      background-color: transparent !important;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      font-size: 18px;
-      color: rgba(255, 255, 255, 0.7);
-      margin-top: 1px;
-    "
-  >
-    arrow_forward
-  </mat-icon>
+<button mat-stroked-button class="zane-secondary group">
+  <div class="btn-content">
+    <span class="uppercase font-bold text-xs tracking-wide">
+      {{ text }}
+    </span>
+    
+    <mat-icon>
+      {{ icon }}
+    </mat-icon>
+  </div>
 </button>

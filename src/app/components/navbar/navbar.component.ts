@@ -1,11 +1,14 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'; 
-import { PrimaryButtonComponent } from "../primary-button/primary-button.component";
+import { RouterModule } from '@angular/router';
+import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import {
+  MatBottomSheet,
+  MatBottomSheetModule,
+} from '@angular/material/bottom-sheet';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button'; // Új import
+import { MatButtonModule } from '@angular/material/button';
 import { QuotationDialogComponent } from '../dialogs/quotation-dialog/quotation-dialog.component';
 import { NavMobileSheetComponent } from './nav-mobile-sheet/nav-mobile-sheet.component';
 
@@ -13,38 +16,37 @@ import { NavMobileSheetComponent } from './nav-mobile-sheet/nav-mobile-sheet.com
   selector: 'app-navbar',
   standalone: true,
   imports: [
-    PrimaryButtonComponent, 
-    CommonModule, 
-    RouterModule, 
-    MatDialogModule, 
-    MatBottomSheetModule, 
+    PrimaryButtonComponent,
+    CommonModule,
+    RouterModule,
+    MatDialogModule,
+    MatBottomSheetModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './navbar.component.html',
-  styles: [`
-    /* Desktop Material Gomb Aktív Stílusa - Aláhúzás nélkül */
-    .active-link {
-      color: #76e594 !important;
-      background: rgba(118, 229, 148, 0.1) !important; /* Finom zöldes háttér marad */
-      font-weight: 600 !important; /* Kiemeljük a szöveget egy kicsit */
-    }
+  styles: [
+    `
+      .active-link {
+        color: #76e594 !important;
+        background: rgba(118, 229, 148, 0.1) !important;
+        font-weight: 600 !important;
+      }
 
-    /* Eltávolítottuk az .active-link::after blokkot, így nincs aláhúzás */
+      .nav-mat-btn {
+        color: #f5f5f5 !important;
+        font-family: inherit;
+        letter-spacing: 1px;
+        transition: all 0.3s ease !important;
+        border-radius: 8px !important;
+      }
 
-    .nav-mat-btn {
-      color: #f5f5f5 !important;
-      font-family: inherit;
-      letter-spacing: 1px;
-      transition: all 0.3s ease !important;
-      border-radius: 8px !important; /* Kerekítünk a gombok sarkain a modern hatásért */
-    }
-
-    .nav-mat-btn:hover {
-      color: #76e594 !important;
-      background: rgba(255, 255, 255, 0.05) !important;
-    }
-  `]
+      .nav-mat-btn:hover {
+        color: #76e594 !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+      }
+    `,
+  ],
 })
 export class NavbarComponent {
   isScrolled = false;
@@ -59,7 +61,7 @@ export class NavbarComponent {
   openQuoteDialog() {
     this.dialog.open(QuotationDialogComponent, {
       width: '600px',
-      panelClass: 'custom-dialog-container'
+      panelClass: 'custom-dialog-container',
     });
   }
 

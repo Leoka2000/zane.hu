@@ -8,16 +8,11 @@
     }"
     class="flex items-center justify-between w-full px-6 py-4 z-30 transition-all duration-300"
   >
-    <div class="flex items-center space-x-4 bg-transparent">
-      <button 
-        mat-icon-button 
-        (click)="openMobileMenu()" 
-        class="text-white xl:!hidden"
+    <div class="flex items-center bg-transparent">
+      <div
+        class="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer"
+        routerLink="/"
       >
-        <mat-icon>menu</mat-icon>
-      </button>
-
-      <div class="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer" routerLink="/">
         <img
           src="/images/zane-logo-small.png"
           alt="Zane Logo"
@@ -34,34 +29,46 @@
         [routerLinkActiveOptions]="{ exact: true }"
         class="nav-mat-btn !uppercase !text-sm px-6"
       >
+        <mat-icon class="mr-2">home</mat-icon>
         Főoldal
-        <mat-icon>home</mat-icon>
       </button>
-      
+
       <button
         mat-button
         routerLink="/services"
         routerLinkActive="active-link"
         class="nav-mat-btn !uppercase !text-sm px-6"
       >
+        <mat-icon class="mr-2">design_services</mat-icon>
         Szolgáltatásaink
-        <mat-icon>design_services</mat-icon>
       </button>
-      
+
       <button
         mat-button
         routerLink="/about"
         routerLinkActive="active-link"
         class="nav-mat-btn !uppercase !text-sm px-6"
       >
-        <mat-icon>info</mat-icon>
+        <mat-icon class="mr-2">info</mat-icon>
         Rólunk
       </button>
     </div>
 
-    <div class="flex items-center bg-transparent">
-      <app-primary-button text="Ajánlatkérés" (click)="openQuoteDialog()">
-      </app-primary-button>
+    <div class="flex items-center space-x-4 bg-transparent">
+      <div class="hidden xl:block">
+        <app-primary-button
+          text="Ajánlatkérés"
+          (click)="openQuoteDialog()"
+        ></app-primary-button>
+      </div>
+
+      <button
+        mat-icon-button
+        (click)="openMobileMenu()"
+        class="text-white xl:!hidden"
+      >
+        <mat-icon class="!mb-10">menu</mat-icon>
+      </button>
     </div>
   </div>
 </nav>
