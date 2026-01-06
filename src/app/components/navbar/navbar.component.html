@@ -8,8 +8,16 @@
     }"
     class="flex items-center justify-between w-full px-6 py-4 z-30 transition-all duration-300"
   >
-    <div class="flex items-center space-x-2 bg-transparent">
-      <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+    <div class="flex items-center space-x-4 bg-transparent">
+      <button 
+        mat-icon-button 
+        (click)="openMobileMenu()" 
+        class="text-white xl:!hidden"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer" routerLink="/">
         <img
           src="/images/zane-logo-small.png"
           alt="Zane Logo"
@@ -18,40 +26,41 @@
       </div>
     </div>
 
-    <div
-      class="hidden md:flex items-center space-x-8 text-neutral-100 font-medium grotesk bg-transparent"
-    >
-      <a 
-        routerLink="/" 
-        routerLinkActive="active-link" 
-        [routerLinkActiveOptions]="{exact: true}"
-        class="hover:text-[#76e594] uppercase transition-colors bg-transparent cursor-pointer"
+    <div class="hidden xl:flex items-center space-x-4 bg-transparent">
+      <button
+        mat-button
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-mat-btn !uppercase !text-sm px-6"
       >
         Főoldal
-      </a>
-
-      <a 
-        routerLink="/services" 
-        routerLinkActive="active-link" 
-        class="hover:text-[#76e594] uppercase transition-colors bg-transparent cursor-pointer"
+        <mat-icon>home</mat-icon>
+      </button>
+      
+      <button
+        mat-button
+        routerLink="/services"
+        routerLinkActive="active-link"
+        class="nav-mat-btn !uppercase !text-sm px-6"
       >
         Szolgáltatásaink
-      </a>
-
-      <a 
-        routerLink="/about" 
-        routerLinkActive="active-link" 
-        class="hover:text-[#76e594] uppercase transition-colors bg-transparent cursor-pointer"
+        <mat-icon>design_services</mat-icon>
+      </button>
+      
+      <button
+        mat-button
+        routerLink="/about"
+        routerLinkActive="active-link"
+        class="nav-mat-btn !uppercase !text-sm px-6"
       >
+        <mat-icon>info</mat-icon>
         Rólunk
-      </a>
+      </button>
     </div>
- 
+
     <div class="flex items-center bg-transparent">
-      <app-primary-button
-        text="Ajánlatkérés"
-        (click)="openQuoteDialog()"
-      >
+      <app-primary-button text="Ajánlatkérés" (click)="openQuoteDialog()">
       </app-primary-button>
     </div>
   </div>

@@ -65,3 +65,24 @@ body {
   --mdc-outlined-text-field-label-text-color: rgba(255, 255, 255, 0.7);
   --mdc-outlined-text-field-focus-label-text-color: #76e594;
 }
+
+
+
+
+
+
+
+
+
+.custom-blur-backdrop {
+  background: rgba(0, 13, 1, 0.6) !important; /* A sötét zöld háttér színe, 60% átlátszósággal */
+  backdrop-filter: blur(8px) !important; /* Itt állíthatod a homályosítás mértékét */
+  -webkit-backdrop-filter: blur(8px) !important; /* Safari támogatás */
+}
+
+/* Opcionális: A Bottom Sheet konténer finomhangolása */
+.dark-bottom-sheet {
+  background: #000d01 !important;
+  border-top: 2px solid #76e594 !important;
+  border-radius: 20px 20px 0 0 !important;
+}
