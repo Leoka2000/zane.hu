@@ -5,13 +5,12 @@
     class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
   />
 
-   
   <div
     class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#76e594]/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 z-0"
   ></div>
 
   <div
-    class=" mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10"
+    class="mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10"
   >
     <div class="w-full lg:w-3/5 space-y-8">
       <span
@@ -54,8 +53,12 @@
       </p>
 
       <div class="pt-4">
-        
-        <app-primary-button text="Explore" icon="play_circle"></app-primary-button>
+        <app-primary-button
+          text="Explore"
+          icon="play_circle"
+          (click)="scrollToSection('zane-house-section')"
+        >
+        </app-primary-button>
       </div>
     </div>
 
@@ -64,9 +67,7 @@
     >
       @for (stat of stats; track stat.label) {
       <div class="flex flex-col items-start lg:items-end group">
-        <span
-          class="text-4xl md:text-5xl font-bold text-[#76e594] grotesk"
-        >
+        <span class="text-4xl md:text-5xl font-bold text-[#76e594] grotesk">
           {{ stat.value }}
         </span>
         <span
@@ -79,4 +80,3 @@
     </div>
   </div>
 </section>
-

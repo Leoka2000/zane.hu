@@ -1,8 +1,245 @@
 {
- "navbar": {
+  "navbar": {
     "HOME": "Főoldal",
     "SERVICES": "Szolgáltatásaink",
     "ABOUT": "Rólunk",
     "CTA_BUTTON": "Ajánlatkérés"
+  },
+  "badge": {
+    "TRUST_TEXT": "Több mint 1000 vállalkozás bizalmát élvezzük világszerte"
+  },
+  "hero": {
+    "BADGE": "Innováció és Minőség",
+    "TITLE_PART1": "PROFESSZIONÁLIS",
+    "TITLE_PART2": "SMT beültetés és elektronikai tervezés",
+    "TITLE_PART3": "2012 óta",
+    "SUBTITLE": "Tudjuk, hogy a nyomtatott áramkör tervezési feladatához a legjobb szakértőkre van szüksége. Nálunk jó helyen jár! Mérnökeink szaktudása a garancia a minőségre.",
+    "PRIMARY_BTN": "Ajánlatkérés",
+    "SECONDARY_BTN": "Részletek"
+  },
+  "features_top": {
+    "BADGE": "Működés",
+    "TITLE_PART1": "Védelem minden",
+    "TITLE_PART2": "rétegben",
+    "DESCRIPTION": "A tervezéstől a gyártásig, a hardvertől a szoftverig a rendszer minden eleme maximális biztonságban marad. Precizitás és megbízhatóság minden fázisban."
+  },
+  "feat_1_tag": "Stabil alapok, precíz elvirajzok.",
+  "feat_1_title": "Rendszertervezés és Kapcsolási rajz",
+  "feat_1_desc": "A tervezés a BRS meghatározásával és a rendszer alapjainak lefektetésével kezdődik. Tapasztalt mérnökeink nagy sebességű RF, analóg áramkörök és komplex, magas integráltságú elektronikák precíz kapcsolási rajzait készítik el.",
+  "feat_2_tag": "Profi NYÁK design és burkolat.",
+  "feat_2_title": "PCB Design és Mechanika",
+  "feat_2_desc": "Kiemelkedő tapasztalattal tervezünk több rétegű nyomtatott áramköröket (Low EMI/EMC). Emellett vállaljuk a kész elektronikák mechanikai tervezését, burkolatok 3D nyomtatását és professzionális megmunkálását.",
+  "feat_3_tag": "Életet lehelünk az áramkörökbe.",
+  "feat_3_title": "Beágyazott Szoftverek és IoT",
+  "feat_3_desc": "Okos algoritmusokkal és firmware fejlesztéssel tesszük intelligensé az eszközeinket. Megoldásaink a Bluetooth, WiFi, LoRa és NB-IoT technológiák révén az élet számos területén, az orvosi műszerektől az iparig segítenek.",
+
+  "cap_badge": "Fejlett képességek",
+  "cap_title_1": "Fejlett automatizációs megoldások",
+  "cap_title_2": "Mindent testreszabhat",
+  "cap_desc": "Ezek a fejlett funkciók biztosítják az automatizálást, rugalmasságot és ellenállóképességet a fejlődő fenyegetésekkel szemben",
+  "features": {
+    "feat_1_tag": "Stabil alapok, precíz elvirajzok.",
+    "feat_1_title": "Rendszertervezés és Kapcsolási rajz",
+    "feat_1_desc": "A tervezés a BRS meghatározásával és a rendszer alapjainak lefektetésével kezdődik. Tapasztalt mérnökeink nagy sebességű RF, analóg áramkörök és komplex, magas integráltságú elektronikák precíz kapcsolási rajzait készítik el.",
+    "feat_2_tag": "Profi NYÁK design és burkolat.",
+    "feat_2_title": "PCB Design és Mechanika",
+    "feat_2_desc": "Kiemelkedő tapasztalattal tervezünk több rétegű nyomtatott áramköröket (Low EMI/EMC). Emellett vállaljuk a kész elektronikák mechanikai tervezését, burkolatok 3D nyomtatását és professzionális megmunkálását.",
+    "feat_3_tag": "Életet lehelünk az áramkörökbe.",
+    "feat_3_title": "Beágyazott Szoftverek és IoT",
+    "feat_3_desc": "Okos algoritmusokkal és firmware fejlesztéssel tesszük intelligensé az eszközeinket. Megoldásaink a Bluetooth, WiFi, LoRa és NB-IoT technológiák révén az élet számos területén, az orvosi műszerektől az iparig segítenek."
+  },
+  "capabilities": {
+    "pcb_tag": "NYÁK tervezési tapasztalat",
+    "pcb_title": "Nyomtatott áramkör tervezés",
+    "pcb_desc": "Nagyáramú és analóg áramkörök, RF és high-speed PCB design. Kiemelkedő tapasztalat Bluetooth, WiFi, LoRa és GSM megoldások terén.",
+    "system_title": "Rendszertervezés",
+    "system_desc": "Az üzleti kereslet felmérése és a BRS meghatározása, a stabil elektronikai alapok lefektetése.",
+    "schematic_title": "Kapcsolási rajz",
+    "schematic_desc": "Nagy sebességű, RF és komplex, magas integráltságú áramkörök tervezése 10+ év tapasztalattal.",
+    "embedded_tag": "Életet lehelünk a hardverbe",
+    "embedded_title": "Beágyazott szoftverek",
+    "embedded_desc": "Okos algoritmusok fejlesztése, melyeknek köszönhetően eszközeink az élet számos területén nyújtanak segítséget.",
+    "mechanical_tag": "3D nyomtatás és CNC",
+    "mechanical_title": "Mechanikai tervezés",
+    "mechanical_desc": "Prototípus házak készítése 3D nyomtatással, vákuumöntéssel és LPM technológiával."
+  },
+  "contact": {
+    "badge": "Kapcsolat",
+    "title_step": "Mindig egy lépéssel előrébb.",
+    "title_sub": "Precíz tervezés. Gyors gyártás. Gondtalan megvalósítás.",
+    "features": [
+      "ISO 9001 Minőség",
+      "Gyors prototípusok",
+      "EU-s gyártás",
+      "Szakértő mérnökök",
+      "GDPR Megfelelőség",
+      "Modern technológia"
+    ],
+    "faq_q1": "Szükséges szoftver telepítése a kezeléshez?",
+    "faq_a1": "A Zane Systems felhőalapú megoldásokat kínál. Hardveres eszközeit böngészőn keresztül kezelheti, így nincs szükség helyi telepítésre a távfelügyelethez.",
+    "faq_q2": "Kérhetek egyedi árajánlatot prototípusra?",
+    "faq_a2": "Igen, mérnöki csapatunk készséggel segít az ötlettől a prototípus gyártásáig. Vegye fel velünk a kapcsolatot az egyedi igények megbeszéléséhez.",
+    "faq_q3": "Hol készülnek a termékek?",
+    "faq_a3": "Minden tervezési és gyártási folyamat az Európai Unióban történik, garantálva a legmagasabb minőségi szabványokat és az adatbiztonságot."
+  },
+  "form": {
+    "title": "Küldjön üzenetet",
+    "name_label": "Név",
+    "name_placeholder": "Adja meg a nevét",
+    "name_error_req": "A név megadása kötelező",
+    "name_error_min": "Minimum 3 karakter szükséges",
+    "email_label": "Email",
+    "email_placeholder": "pelda@email.hu",
+    "email_error": "Kérjük, érvényes email címet adjon meg",
+    "message_label": "Üzenet",
+    "message_placeholder": "Miben segíthetünk?",
+    "message_error": "Kérjük, írjon legalább 10 karaktert",
+    "terms_text": "Elfogadom az Általános Szerződési Feltételeket.",
+    "terms_error": "A feltételek elfogadása kötelező a küldéshez.",
+    "submit_btn": "Üzenet küldése"
+  },
+  "contact_form": {
+    "title": "Küldjön üzenetet",
+    "name_label": "Név",
+    "name_placeholder": "Adja meg a nevét",
+    "err_name_req": "A név megadása kötelező",
+    "err_name_min": "Minimum 3 karakter szükséges",
+    "email_label": "Email",
+    "email_placeholder": "pelda@email.hu",
+    "err_email": "Kérjük, érvényes email címet adjon meg",
+    "msg_label": "Üzenet",
+    "msg_placeholder": "Miben segíthetünk?",
+    "err_msg": "Kérjük, írjon legalább 10 karaktert",
+    "terms_text": "Elfogadom az Általános Szerződési Feltételeket.",
+    "err_terms": "A feltételek elfogadása kötelező a küldéshez.",
+    "submit_btn": "Üzenet küldése"
+  },
+  "blog": {
+    "badge": "Sikereseink",
+    "title_main": "Elnyert pályázataink és fejlesztéseink",
+    "title_sub": "Innováció. Megbízhatóság. Fejlődés.",
+    "btn_more": "Tovább",
+    "posts": [
+      {
+        "title": "Hordozható EKG-mérő műszer prototípusának megtervezése",
+        "date": "Október 4, 2024",
+        "desc": "Sajtóközlemény\nHordozható EKG-mérő műszer prototípusának megtervezése, gyártása és szoftverkidolgozása.\n\nA ZANE systems Kft. 29,4 millió forint vissza nem térítendő támogatást nyert a Magyar-Üzbég Startup Program (HU-UZB-Startup-2022) pályázatán. A projekt eredményeként egy korszerű, hordozható EKG mérőműszer prototípusa jön létre.\n\nA projekt keretében olyan eszközt fejlesztünk, amely a páciens jeleit akár otthonában, 24 órás folyamatos méréssel képes ellenőrizni. A készülék a legkorszerűbb wavelet-delta jelfeldolgozó algoritmust használja, megbízhatóbb működést és precízebb diagnózist tesz lehetővé."
+      },
+      {
+        "title": "Modern üzleti és termelési kihívásokhoz való alkalmazkodás",
+        "date": "Május 18, 2022",
+        "desc": "GINOP_PLUSZ-1.2.3-21-2022-01595 A ZANE systems Kft. modern üzleti és termelési kihívásokhoz való alkalmazkodását segítő fejlesztések megvalósítása\n\nCégünk jelenlegi épületének kihasználtsága maximális, éppen ezért szükséges ingatlan beruházást megvalósítani annak érdekében, hogy a fejlesztések során a tevékenységünkhöz kapcsolódó logisztikai és gyártási feladatok egy önálló épületben tudjanak működni. Lézervágó berendezéseket kívánunk beszerezni, amelyekkel az általunk gyártott készülékekbe alkatrészeket fogunk tudni legyártani házon belül. Az informatikai WorkCent csomag beszerzése a tervezési és programfejlesztési tevékenységünk fejlesztéséhez nélkülözhetetlen. A beruházás megvalósításával új technológiák alkalmazása és a vállalati folyamatok hatékonyságának javítása is megvalósul. Kedvezményezett neve: ZANE systems Kft. Támogatás összege: 34.033.062 Ft. Támogatás mértéke: 70%."
+      },
+      {
+        "title": "Kapacitás- és gyártástechnológia fejlesztése",
+        "date": "Október 10, 2021",
+        "desc": "2015-ben adtuk be a „Kapacitás- és gyártástechnológia fejlesztése a ZANE systems Kft-nél” című pályázatunkat, melynek célja gépparkunk fejlesztése volt egy beültetőgép megvásárlásával. A projekt a GINOP-1.2.2-15-2015-00476 azonosítószám alatt futott. Az elnyert 9 025 563 Ft támogatásból egy Mechatronika M10V beültető gépet vásároltunk. A géppel az SMT laboratóriumunkban mostantól akár 0201, QFN és BGA alkatrészek beültetésére is alkalmas technológiával rendelkezünk. Támogatás mértéke: 70%."
+      },
+      {
+        "title": "Gépbeszerzés és háztartási kisgépszervíz építése",
+        "date": "December 12, 2020",
+        "desc": "A projekt célja a technológiai háttér modernizálása és a szervizszolgáltatások bővítése volt. A fejlesztés során új precíziós mérőeszközök és diagnosztikai berendezések kerültek beszerzésre, amelyek lehetővé teszik a komplex háztartási elektronika gyors és hatékony javítását. A beruházás hozzájárult a munkahelyek megőrzéséhez és a szolgáltatási paletta diverzifikálásához."
+      },
+      {
+        "title": "Innovatív technológiai beruházás a ZANE systems-nél",
+        "date": "Június 21, 2019",
+        "desc": "Projekt azonosító száma: GINOP-1.2.10-19-2019-00076. A projekt megvalósítása során beszerzésre és beüzemelésre került 1 db M10V gép, amely jelentősen növelte az SMT gyártókapacitásunkat. A szerződött támogatás összege: 10 563 637 Ft. Támogatás mértéke: 69,99%. A fejlesztés célja a gyártási precizitás fokozása és az átfutási idők csökkentése volt az innovatív elektronikai gyártás területén."
+      }
+    ]
+  },
+  "footer": {
+    "iso_text": "A ZANE Systems Kft. MSZ EN ISO9001:2015 minőségirányítási rendszert működtet.",
+    "services_title": "Szolgáltatások",
+    "serv_shop": "Webáruház",
+    "serv_proto": "Prototípus fejlesztés",
+    "serv_embedded": "Beágyazott szoftverek",
+    "serv_quote": "Ajánlatkérés",
+    "serv_jobs": "SMT operátor állások",
+    "info_title": "Információk",
+    "info_about": "Rólunk",
+    "info_blog": "Blog",
+    "info_contact": "Kapcsolat",
+    "info_data": "Adatkezelés",
+    "info_tos": "Á.SZ.F.",
+    "info_cert": "Tanúsítvány",
+    "info_policy": "Minőségpolitika",
+    "info_support": "Támogatás",
+    "follow_us": "Kövess minket",
+    "address": "4251 Hajdúsámson, Heveder utca 19."
+  },
+
+  "services_hero": {
+    "badge": "Szolgáltatásaink",
+    "title_p1": "Szakértő",
+    "title_p2": "megbízható",
+    "title_p3": "elektronikai",
+    "title_p4": "tervezésben",
+    "desc": "A legmagasabb szintű tervezési tapasztalat a nagy megbízhatóságú elektronikai áramkörök területén 2012 óta."
+  },
+  "service_acc": {
+    "badge": "Mérnöki Szolgáltatások",
+    "title_main": "Teljes körű megoldások",
+    "title_sub": "az ötlettől a prototípusig.",
+    "btn_details": "További részletek",
+    "items": [
+      {
+        "title": "Rendszertervezés",
+        "desc": "A tervezési folyamat az üzleti kereslet pontos felmérésével kezdődik, az úgynevezett BRS (Business Requirements Specification) meghatározásával. Ez képezi a teljes rendszertervezés alapját, ahol lefektetjük a technikai kereteket."
+      },
+      {
+        "title": "Kapcsolási rajz",
+        "desc": "Miután már rendelkezünk egy szilárd rendszertervvel, megtervezzük az áramkör részletes kapcsolási rajzát. Több mint tízéves tapasztalatunk van nagysebességű digitális, RF és analóg áramkörök precíziós tervezésében."
+      },
+      {
+        "title": "Nyomtatott áramkör tervezés",
+        "desc": "A kapcsolási rajz tervezést követi munkánk egyik legkritikusabb része: a nyomtatott áramkörök (PCB) fizikai tervezése, figyelembe véve az EMI/EMC szempontokat és a gyártástechnológiai korlátokat."
+      },
+      {
+        "title": "Mechanikai tervezés",
+        "desc": "Az elkészült nyomtatott áramkörhöz mérnökeink egyedi burkolatot terveznek a megrendelő igényei szerint. Legyen szó egyedi műanyag házról vagy fém alkatrészről, 3D nyomtatással is támogatjuk a prototípus fázist."
+      },
+      {
+        "title": "Beágyazott szoftverek fejlesztése",
+        "desc": "Az elkészült áramkörökbe “életet lehelünk” optimalizált algoritmusokkal és firmware fejlesztéssel. Intelligens szoftvereink segítik az eszközök működését az élet számos területén, az ipartól az orvostechnikáig."
+      }
+    ]
+  },
+  "serv_layout": {
+    "back_link": "Vissza az összes szolgáltatáshoz",
+    "services": {
+      "rendszertervezes": {
+        "title": "Rendszertervezés",
+        "desc": "A tervezési folyamat az üzleti kereslet pontos felmérésével kezdődik, az úgynevezett BRS meghatározásával. Ez a rendszertervezés alapja. Ahogy fontos, hogy egy épület stabil alapokra épüljön, úgy az elektronikai tervezésben is ezeket az alapokat fektetjük le a rendszertervezésben.",
+        "d1": "Azt szokták mondani, hogy ha valaki házat épít, az alapra nagyon oda kell figyelnie, mert az fogja az egész épületet megtartani. Ez pontosan ugyanígy igaz az elektronikában is. A tervezés során már az első pillanatoktól fontos, hogy céltudatosan az adott feladatra építsük fel az elektronikát. A jól megtervezett áramkör pontosan annyi alkatrészt tartalmaz, mint amennyi ahhoz szükséges, hogy a feladatát megfelelően lássa el. A tervező a folyamat során egy percig sem veszíti el a fókuszt, hogy mi a célja annak a projektnek amin épp dolgozik. Egy gyermekek számára tervezett eszköz megbízhatósága is ugyanúgy fontos, mint egy ipari körülmények közé tervezett elektronikáé. Ugyanakkor a két esetben szinte biztos, hogy teljesen eltérő megoldásokat fogunk választani a munkánk során. A rendszertervezés magában foglalja a megfelelő szabványok alkalmazására való felkészülést, hiszen ha ezekkel csak a tervezés későbbi szakaszaiban kezdenénk el komolyabban foglalkozni akkor az már időben és költségben is veszteséget okozhatna.",
+        "d2": "A felhasználói interakciók, kommunikációs csatornák, felhasználói felületek, design, sorozat gyárthatóság, mind mind olyan területek, ahol vagy a saját munkatársaink, vagy állandó megbízott külső szakértő partnereink, vagy az ügyfelünk által biztosított erőforrások szinergiáit kell megteremtenünk és hasznosítanunk. Rendkívül mély több évtizedes szaktudásunk mellett úgy hiszem ez a másik nagyon fontos kulcsa annak, hogy a projektjeink, ügyfeleink és ezeken keresztül mi magunk is sikeresek legyünk."
+      },
+      "nyomtatott-aramkor": {
+        "title": "Nyomtatott áramkör tervezés",
+        "desc": "A kapcsolási rajz tervezést követi munkánk egyik legfontosabb része a nyomtatott áramkörök tervezése. Áramkörtervezési kurzusokat tartunk évről évre partnereinknek, valamint egyetemi hallgatóknak. Az alábbi területeken rendelkezünk kiemelkedő tervezési tapasztalattal",
+        "d1": "Amikor 2012-ben megalapítottam a céget, akkor már több mint húszéves áramkörtervezési gyakorlattal rendelkeztem. Igazából ez a szerelem a nyomtatott áramkörökkel még a középiskola első éveiben kezdődött. Akkoriban még nem terjedtek el a számítógépek, kézzel rajzoltuk meg a nyomtatott áramkörök készítéséhez a mester filmeket. Az első program amit használtam áramkörtervezésre a DOS alatt használható Smartwork nevű nyáktervező program volt. Azóta nagyon sokat fejlődött a technológia, ma már szinte minden áramkör amit tervezünk nagyfokú integráltsággal rendelkezik, felületszerelt alkatrészeket tartalmaz. A munkánk során az alapokat az IPC-2221A szabvány írja le, amelyet a teljes tervezési folyamat során következetesen használunk is.",
+        "d2": "A NYÁK tervezési munkánk során jellemzően több alkalommal kell a megrendelővel kommunikálnunk. Az első lépésben egy vázlat tervet készítünk. Ilyenkor már lehet látni a főbb méreteket, a csatlakozók, szenzorok és a fontosabb alkatrészek elhelyezkedését. A megrendelő ezt jóváhagyhatja, vagy kérhet módosításokat.",
+        "d3": "<p class='mb-6'>A következő lépésben huzalozás történik. Egyszerűbb paneleknél ez tipikusan 2-4 réteg, de volt már szerencsénk számos esetben 6 réteg fölötti panelekkel is dolgozni. A modern PCB gyártási technológiáknak köszönhetően a kreativitásnak szinte csak a megrendelés költségvetése szabhat korlátot. Csak, hogy néhány szakmai érdekességet említsek:</p><ul class='space-y-5'><li class='flex items-start gap-4 group'><div class='flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20'><span class='material-icons !text-[#76e594] !text-[20px]'>layers</span></div><div class='pt-1'><span class='text-neutral-300'><strong class='text-neutral-100'>Eltemetett és vak viák:</strong> amikor a via csak bizonyos rétegek között van átfúrva, nem az egész panelen.</span></div></li><li class='flex items-start gap-4 group'><div class='flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20'><span class='material-icons !text-[#76e594] !text-[20px]'>radar</span></div><div class='pt-1'><span class='text-neutral-300'><strong class='text-neutral-100'>Impedancia illesztett:</strong> nagy sebességű és rádiófrekvenciás paneleknél a gyártási paramétereket figyelembe véve tervezett áramkörök.</span></div></li></ul>"
+      },
+      "kapcsolasi-rajz": {
+        "title": "Kapcsolási rajz",
+        "desc": "Miután már van rendszertervünk, megtervezzük az áramkör kapcsolási rajzát. Több mint tízéves tapasztalatunk van nagy sebességű, RF, analóg áramkörök, tápegységek és komplex, magas intergáltságú elektronikák tervezésében.",
+        "d1": "Sokan nem is gondolnák, de az elvirajzok tervezése gyakran táblán, papírlapon, szalvétán, vagy épp valamilyen szimulációs szoftverben kezdődik el. Aztán természetesen az integrált tervezőrendszerünk elvi kapcsolási rajz tervező részében folytatódik.",
+        "d2": "Az elvi kapcsolási rajz egy absztrakciós eszköz, egy grafikus nyelv. A kapcsolási rajz nem azt kell tükrözze, hogyan fog kinézni a megtervezendő panel, sokkal inkább azt kell megmutassa, hogyan fog működni a megtervezett áramkör.",
+        "d3": "Arra is sor szokott kerülni hogy olyan partnerekkel dolgozunk együtt, akik hozzánk hasonlóan szintén áramkörtervezéssel foglalkoznak. Számos ilyen partnerünk van. Egy részük saját termékét fejleszti, gyártja, míg mások hozzánk hasonlóun tervezőirodát működtetnek."
+      },
+      "mechanikai-tervezes": {
+        "title": "Mechanikai tervezés",
+        "desc": "Az elkészült nyomtatott áramkörhöz kollégáink burkolatot terveznek a megrendelő igényei szerint. Prototípus házakat tudunk készíteni 3D nyomtatással, CNC megmunkálással, PU vákuumöntéssel LPM technológiával.",
+        "d1": "Elektronikai fejlesztő cég vagyunk, ez nem vitás. Ez az amihez a legjobban értünk. Jogosan merül fel tehát a kérdés, miért foglalkozunk akkor mechanikai tervezéssel? Amikor egy elektronikát legyártunk, az szinte minden esetben valamilyen készülékházba fog kerülni.",
+        "d2": "Egyszerűbb tervezési feladatokat saját munkatársaink is el tudnak végezni. Abban az esetben, ha komplex készüléket, professzionális burkolatot kell tervezni, az együttműködő partnereinkhez fordulunk segítségért."
+      },
+      "beagyazott-szoftverek": {
+        "title": "Vezérlőszekrény tervezése célgépekhez, PLC programozás",
+        "desc": "Vezérlőszekrény tervezése célgépekhez, PLC programozás. Ebben az üzletágban elsősorban ipari partnereink számára építünk vezérlőszekrényeket, PLC-s vezérléseket.",
+        "d1": "A cégünk név választásakor a RENDSZER szó belefoglalása tudatos volt. Nap mint nap rendszereket építünk, a munkánk során folyamatosan rendszerekben gondolkodunk.",
+        "d2": "Az ügyfél hűtőházakat üzemeltető és karbantartó cég, azt szeretnék, hogy amennyiben valahol a hőmérséklet emelkedni kezd a megengedett érték fölé, akkor erről a karbantartó személyzet azonnal riasztást kapjon.",
+        "d3": "Applikációs szerverként ebben az esetben a TagoIO szolgáltatását használjuk, ahol lehetőség van egyaránt az adatok grafikus megjelenítésére valamint az értékekre figyelést is be tudunk állítani."
+      }
+    }
   }
 }

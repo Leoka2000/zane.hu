@@ -20,4 +20,12 @@ export class AboutHeroComponent {
     { label: 'Elégedettségi mutató', value: '126' },
     { label: 'Elégedett ügyfél', value: '87+' }
   ];
+
+
+ scrollToSection(id: string) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 }

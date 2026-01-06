@@ -4,42 +4,40 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start">
       
       <div class="space-y-6">
-        <img src="images/brand/IPC.png" alt="IPC Certified" class="h-24 object-contain rounded-md" />
+        <img src="images/brand/IPC.png" alt="IPC Certified" class="h-24 object-contain" />
         <div class="text-[10px] leading-relaxed text-neutral-500 italic">
-          <p>A ZANE Systems Kft.</p>
-          <p>MSZ EN ISO9001:2015 minőségirányítási</p>
-          <p>rendszert működtet.</p>
+          <p>{{ 'footer.iso_text' | translate }}</p>
         </div>
       </div>
 
       <div>
-        <h4 class="text-[#76e594] text-lg font-bold mb-6 grotesk">Szolgáltatások</h4>
+        <h4 class="text-[#76e594] text-lg font-bold mb-6 grotesk">{{ 'footer.services_title' | translate }}</h4>
         <ul class="space-y-3 text-sm">
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Webáruház</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Prototípus fejlesztés</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Beágyazott szoftverek</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Ajánlatkérés</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">SMT operátor állások</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_shop' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_proto' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_embedded' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_quote' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_jobs' | translate }}</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-[#76e594] text-lg font-bold mb-6 grotesk">Információk</h4>
+        <h4 class="text-[#76e594] text-lg font-bold mb-6 grotesk">{{ 'footer.info_title' | translate }}</h4>
         <ul class="space-y-3 text-sm">
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Rólunk</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Blog</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Kapcsolat</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Adatkezelés</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Á.SZ.F.</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Tanúsítvány</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Minőségpolitika</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">Támogatás</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_about' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_blog' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_contact' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_data' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_tos' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_cert' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_policy' | translate }}</a></li>
+          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_support' | translate }}</a></li>
         </ul>
       </div>
 
       <div class="flex flex-col items-start lg:items-end">
         <img src="images/zanelogo.png" alt="ZANE Systems" class="h-12 mb-6 object-contain" />
-        <h4 class="text-white text-sm font-bold mb-4">Kövess minket</h4>
+        <h4 class="text-white text-sm font-bold mb-4">{{ 'footer.follow_us' | translate }}</h4>
         <div class="flex gap-4">
           <a href="#" class="bg-white rounded-full p-2 hover:bg-[#76e594] transition-all">
             <svg class="w-5 h-5 fill-[#000d01]" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
@@ -62,7 +60,7 @@
       </div>
       <div class="flex items-center gap-2">
         <span class="text-[#76e594]">📍</span>
-        <span class="text-white">4251 Hajdúsámson, Heveder utca 19.</span>
+        <span class="text-white">{{ 'footer.address' | translate }}</span>
       </div>
     </div>
 

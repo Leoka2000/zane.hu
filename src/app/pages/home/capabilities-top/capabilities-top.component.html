@@ -1,49 +1,49 @@
-<header class="w-full bg-[#000d01] text-center overflow-visible flex flex-col items-center">
+<header
+  class="w-full bg-[#000d01] text-center overflow-visible flex flex-col items-center"
+>
   <div class="mb-6">
-   <span
-            class="inline-flex items-center gap-3 px-2.5 py-1.5 rounded-md   border border-[#76e594] text-[#76e594] text-xs font-bold tracking-wide"
-            style="line-height: 1;"
-          >
-            <span class="uppercase" style="display: flex; align-items: center;">
-           Fejlett képességek
-            </span>
+    <span
+      class="inline-flex items-center gap-3 px-2.5 py-1.5 rounded-md border border-[#76e594] text-[#76e594] text-xs font-bold tracking-wide"
+      style="line-height: 1"
+    >
+      <span class="uppercase" style="display: flex; align-items: center">
+        {{ "cap_badge" | translate }}
+      </span>
 
-            <mat-icon
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.2rem;
-                line-height: 1;
-                height: 1.2rem;
-                width: 1.2rem;
-                color: #76e594;
-              "
-            >
-             memory
-            </mat-icon>
-          </span>
+      <mat-icon
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          line-height: 1;
+          height: 1.2rem;
+          width: 1.2rem;
+          color: #76e594;
+        "
+      >
+        memory
+      </mat-icon>
+    </span>
   </div>
 
-  <div class="max-w-4xl space-y-2 ">
-  
+  <div class="max-w-4xl space-y-2">
     <h2
       class="text-neutral-200 text-4xl md:text-6xl font-bold tracking-tight leading-tight grotesk"
     >
-
-   <span style="color: #76e594;">Fejlett automatizációs megoldások</span>
+      <span style="color: #76e594">{{ "cap_title_1" | translate }}</span>
     </h2>
     <h2
       class="text-white text-4xl isolate relative md:text-6xl font-bold tracking-tight leading-tight grotesk"
     >
       <app-bg-shades></app-bg-shades>
-  Mindent testreszabhat
+      {{ "cap_title_2" | translate }}
     </h2>
   </div>
 
   <div class="mt-8 max-w-2xl">
     <p class="text-neutral-400 text-lg md:text-xl leading-relaxed opacity-80">
-     Ezek a fejlett funkciók biztosítják az automatizálást, rugalmasságot és ellenállóképességet a fejlődő fenyegetésekkel szemben
+      {{ "cap_desc" | translate }}
     </p>
   </div>
 </header>

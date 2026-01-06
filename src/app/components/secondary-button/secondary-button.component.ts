@@ -12,13 +12,14 @@ import { CommonModule } from '@angular/common';
     .zane-secondary {
       /* Glassmorphism alapstílus */
       background-color: rgba(255, 255, 255, 0.03) !important;
-      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border: 2px solid rgba(255, 255, 255, 0.15) !important;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 6px !important;
       padding: 1.2rem 1.5rem !important;
       transition: all 0.3s ease-in-out !important;
       line-height: 1 !important;
+    
     }
 
     .zane-secondary:hover {
@@ -32,6 +33,8 @@ import { CommonModule } from '@angular/common';
       align-items: center;
       gap: 8px;
       color: #f5f5f5;
+     
+     
    
     }
 

@@ -1,24 +1,22 @@
 <div class="relative w-full bg-transparent overflow-visible z-0">
-  
-  
- <img
+  <img
     src="shades/shade-green2.png"
     alt="Green shade"
-    class="absolute right-0 top-60  -translate-y-1/2 z-[-2]  max-w-[300px] opacity-30 rounded-2xl  h-full object-cover  pointer-events-none"
-  />                                                           <!-- max-w-[600px] se eu tirar isso fica legal tbm -->
-            
+    class="absolute right-0 top-60 -translate-y-1/2 z-[-2] max-w-[300px] opacity-30 rounded-2xl h-full object-cover pointer-events-none"
+  />
+
   <header class="w-full text-white bg-transparent py-20 lg:py-32 relative z-10">
     <div class="mx-auto container px-6 lg:px-[0%]">
-      
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-12 lg:gap-24">
-         
+      <div
+        class="flex flex-col lg:flex-row lg:items-end justify-between gap-12 lg:gap-24"
+      >
         <div class="flex flex-col items-start w-full lg:w-1/2">
           <div class="mb-8">
             <span
               class="inline-flex items-center gap-3 px-2.5 py-1.5 rounded-md border border-[#76e594] text-[#76e594] text-xs font-bold tracking-wide uppercase"
-              style="line-height: 1;"
+              style="line-height: 1"
             >
-              <span>Szolgáltatásaink</span>
+              <span>{{ "services_hero.badge" | translate }}</span>
               <mat-icon
                 style="
                   display: flex;
@@ -35,21 +33,27 @@
               </mat-icon>
             </span>
           </div>
-          
-          <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-neutral-100 max-w-xl leading-[1.1] grotesk uppercase">
-            Szakértő <br>
-            <span class="text-[#76e594]">megbízható</span> <br>
-            elektronikai <br>
-            tervezésben
+
+          <h2
+            class="text-4xl md:text-6xl font-bold tracking-tight text-neutral-100 max-w-xl leading-[1.1] grotesk uppercase"
+          >
+            {{ "services_hero.title_p1" | translate }} <br />
+            <span class="text-[#76e594]">{{
+              "services_hero.title_p2" | translate
+            }}</span>
+            <br />
+            {{ "services_hero.title_p3" | translate }} <br />
+            {{ "services_hero.title_p4" | translate }}
           </h2>
         </div>
 
         <div class="w-full bg-transparent max-w-md pb-2">
-          <p class="text-neutral-400 text-base md:text-xl leading-relaxed grotesk">
-            A legmagasabb szintű tervezési tapasztalat a nagy megbízhatóságú elektronikai áramkörök területén 2012 óta.
+          <p
+            class="text-neutral-400 text-base md:text-xl leading-relaxed grotesk"
+          >
+            {{ "services_hero.desc" | translate }}
           </p>
         </div>
-
       </div>
     </div>
   </header>

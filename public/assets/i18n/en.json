@@ -1,8 +1,245 @@
 {
- "navbar": {
+  "navbar": {
     "HOME": "Home",
     "SERVICES": "Services",
     "ABOUT": "About Us",
     "CTA_BUTTON": "Get a Quote"
+  },
+  "badge": {
+    "TRUST_TEXT": "Trusted by over 1,000 businesses worldwide"
+  },
+  "hero": {
+    "BADGE": "Innovation & Quality",
+    "TITLE_PART1": "PROFESSIONAL",
+    "TITLE_PART2": "SMT Assembly and Electronic Design",
+    "TITLE_PART3": "Since 2012",
+    "SUBTITLE": "We know you need the best experts for printed circuit board design tasks. You've come to the right place! The expertise of our engineers is the guarantee for quality.",
+    "PRIMARY_BTN": "Get a Quote",
+    "SECONDARY_BTN": "Learn More"
+  },
+  "features_top": {
+    "BADGE": "Operation",
+    "TITLE_PART1": "Protection in every",
+    "TITLE_PART2": "layer",
+    "DESCRIPTION": "From design to manufacturing, from hardware to software, every element of the system remains in maximum safety. Precision and reliability in every phase."
+  },
+  "feat_1_tag": "Stable foundations, precise schematics.",
+  "feat_1_title": "System Design & Schematics",
+  "feat_1_desc": "Design begins with BRS definition and laying system foundations. Our experienced engineers create precise schematics for high-speed RF, analog circuits, and complex, highly integrated electronics.",
+  "feat_2_tag": "Professional PCB design and housing.",
+  "feat_2_title": "PCB Design & Mechanics",
+  "feat_2_desc": "We design multi-layer printed circuit boards with outstanding experience (Low EMI/EMC). We also undertake mechanical design, 3D printing of enclosures, and professional machining.",
+  "feat_3_tag": "Breathing life into circuits.",
+  "feat_3_title": "Embedded Software & IoT",
+  "feat_3_desc": "We make our devices intelligent with smart algorithms and firmware development. Our solutions using Bluetooth, WiFi, LoRa, and NB-IoT technologies help in many areas from medical instruments to industry.",
+
+  "cap_badge": "Advanced Capabilities",
+  "cap_title_1": "Advanced Automation Solutions",
+  "cap_title_2": "Everything is Customizable",
+  "cap_desc": "These advanced features provide automation, flexibility, and resilience against evolving threats",
+  "features": {
+    "feat_1_tag": "Stable foundations, precise schematics.",
+    "feat_1_title": "System Design & Schematics",
+    "feat_1_desc": "Design begins with BRS definition and laying system foundations. Our experienced engineers create precise schematics for high-speed RF, analog circuits, and complex, highly integrated electronics.",
+    "feat_2_tag": "Professional PCB design and housing.",
+    "feat_2_title": "PCB Design & Mechanics",
+    "feat_2_desc": "We design multi-layer printed circuit boards with outstanding experience (Low EMI/EMC). We also undertake mechanical design, 3D printing of enclosures, and professional machining.",
+    "feat_3_tag": "Breathing life into circuits.",
+    "feat_3_title": "Embedded Software & IoT",
+    "feat_3_desc": "We make our devices intelligent with smart algorithms and firmware development. Our solutions using Bluetooth, WiFi, LoRa, and NB-IoT technologies help in many areas from medical instruments to industry."
+  },
+  "capabilities": {
+    "pcb_tag": "PCB Design Experience",
+    "pcb_title": "Printed Circuit Board Design",
+    "pcb_desc": "High-current and analog circuits, RF and high-speed PCB design. Outstanding experience in Bluetooth, WiFi, LoRa, and GSM solutions.",
+    "system_title": "System Design",
+    "system_desc": "Assessing business demand and defining BRS, laying down stable electronic foundations.",
+    "schematic_title": "Schematic Design",
+    "schematic_desc": "Designing high-speed, RF, and complex, highly integrated circuits with 10+ years of experience.",
+    "embedded_tag": "Breathing life into hardware",
+    "embedded_title": "Embedded Software",
+    "embedded_desc": "Development of smart algorithms, thanks to which our devices provide help in many areas of life.",
+    "mechanical_tag": "3D Printing & CNC",
+    "mechanical_title": "Mechanical Design",
+    "mechanical_desc": "Prototyping enclosures using 3D printing, vacuum casting, and LPM technology."
+  },
+  "contact": {
+    "badge": "Contact",
+    "title_step": "Always one step ahead.",
+    "title_sub": "Precise design. Fast production. Carefree implementation.",
+    "features": [
+      "ISO 9001 Quality",
+      "Fast prototyping",
+      "EU Manufacturing",
+      "Expert Engineers",
+      "GDPR Compliance",
+      "Modern Technology"
+    ],
+    "faq_q1": "Is software installation required for operation?",
+    "faq_a1": "Zane Systems offers cloud-based solutions. You can manage your hardware devices through a browser, so no local installation is needed for remote monitoring.",
+    "faq_q2": "Can I request a custom quote for a prototype?",
+    "faq_a2": "Yes, our engineering team is ready to help from the idea to prototype production. Contact us to discuss your unique requirements.",
+    "faq_q3": "Where are the products manufactured?",
+    "faq_a3": "All design and manufacturing processes take place within the European Union, guaranteeing the highest quality standards and data security."
+  },
+  "form": {
+    "title": "Send a message",
+    "name_label": "Name",
+    "name_placeholder": "Enter your name",
+    "name_error_req": "Name is required",
+    "name_error_min": "Minimum 3 characters required",
+    "email_label": "Email",
+    "email_placeholder": "example@email.com",
+    "email_error": "Please enter a valid email address",
+    "message_label": "Message",
+    "message_placeholder": "How can we help?",
+    "message_error": "Please write at least 10 characters",
+    "terms_text": "I accept the General Terms and Conditions.",
+    "terms_error": "Accepting the terms is required to send.",
+    "submit_btn": "Send Message"
+  },
+  "contact_form": {
+    "title": "Send a message",
+    "name_label": "Name",
+    "name_placeholder": "Enter your name",
+    "err_name_req": "Name is required",
+    "err_name_min": "Minimum 3 characters required",
+    "email_label": "Email",
+    "email_placeholder": "example@email.com",
+    "err_email": "Please enter a valid email address",
+    "msg_label": "Message",
+    "msg_placeholder": "How can we help?",
+    "err_msg": "Please write at least 10 characters",
+    "terms_text": "I accept the General Terms and Conditions.",
+    "err_terms": "Acceptance is required to send.",
+    "submit_btn": "Send message"
+  },
+  "blog": {
+    "badge": "Our Successes",
+    "title_main": "Our Awarded Grants and Developments",
+    "title_sub": "Innovation. Reliability. Progress.",
+    "btn_more": "More Info",
+    "posts": [
+      {
+        "title": "Design of a Portable ECG Meter Prototype",
+        "date": "October 4, 2024",
+        "desc": "Press Release\nDesign, manufacturing, and software development of a portable ECG measurement device prototype.\n\nZANE systems Kft. has won HUF 29.4 million in non-refundable support from the Hungarian-Uzbek Startup Program (HU-UZB-Startup-2022). As a result of the project, a modern, portable ECG prototype is being created.\n\nWithin the project, we are developing a device capable of monitoring patient signals 24/7 in their own homes. The device uses the latest wavelet-delta signal processing algorithms, ensuring more reliable operation and precise diagnosis."
+      },
+      {
+        "title": "Adapting to Modern Business and Production Challenges",
+        "date": "May 18, 2022",
+        "desc": "GINOP_PLUSZ-1.2.3-21-2022-01595 Implementation of developments helping ZANE systems Kft. adapt to modern business and production challenges.\n\nOur current building usage is at maximum capacity; therefore, a real estate investment is being implemented to allow logistics and production tasks to operate in an independent building. We are acquiring laser cutting equipment to manufacture components for our devices in-house. The procurement of the WorkCent IT package is essential for our design and software development activities. Through the investment, new technologies and improved corporate process efficiency are realized. Beneficiary name: ZANE systems Kft. Grant amount: HUF 34,033,062. Support rate: 70%."
+      },
+      {
+        "title": "Capacity and Manufacturing Technology Development",
+        "date": "October 10, 2021",
+        "desc": "In 2015, we submitted our application 'Capacity and Manufacturing Technology Development at ZANE systems Kft.' to upgrade our machinery with a mounting machine. The project operated under ID GINOP-1.2.2-15-2015-00476. From the HUF 9,025,563 grant, we purchased a Mechatronika M10V pick-and-place machine. Our SMT laboratory is now equipped with technology suitable for 0201, QFN, and BGA component mounting. Support rate: 70%."
+      },
+      {
+        "title": "Machinery Procurement and Small Home Appliance Service Construction",
+        "date": "December 12, 2020",
+        "desc": "The project aimed to modernize the technological background and expand service capabilities. During the development, new precision measuring instruments and diagnostic equipment were acquired, enabling fast and efficient repair of complex household electronics. The investment contributed to job retention and service palette diversification."
+      },
+      {
+        "title": "Innovative Technological Investment at ZANE systems",
+        "date": "June 21, 2019",
+        "desc": "Project ID: GINOP-1.2.10-19-2019-00076. During the project, 1 unit of M10V machine was procured and commissioned, significantly increasing our SMT production capacity. Contracted grant amount: HUF 10,563,637. Support rate: 69.99%. The development aimed to enhance manufacturing precision and reduce lead times in innovative electronic production."
+      }
+    ]
+  },
+  "footer": {
+    "iso_text": "ZANE Systems Kft. operates an MSZ EN ISO9001:2015 quality management system.",
+    "services_title": "Services",
+    "serv_shop": "Webshop",
+    "serv_proto": "Prototype Development",
+    "serv_embedded": "Embedded Software",
+    "serv_quote": "Get a Quote",
+    "serv_jobs": "SMT Operator Jobs",
+    "info_title": "Information",
+    "info_about": "About Us",
+    "info_blog": "Blog",
+    "info_contact": "Contact",
+    "info_data": "Privacy Policy",
+    "info_tos": "T&C",
+    "info_cert": "Certificate",
+    "info_policy": "Quality Policy",
+    "info_support": "Support",
+    "follow_us": "Follow us",
+    "address": "19 Heveder Street, Hajdúsámson 4251, Hungary"
+  },
+
+  "services_hero": {
+    "badge": "Our Services",
+    "title_p1": "Expert",
+    "title_p2": "reliable",
+    "title_p3": "electronic",
+    "title_p4": "design",
+    "desc": "The highest level of design experience in the field of high-reliability electronic circuits since 2012."
+  },
+  "service_acc": {
+    "badge": "Engineering Services",
+    "title_main": "End-to-end solutions",
+    "title_sub": "from idea to prototype.",
+    "btn_details": "More details",
+    "items": [
+      {
+        "title": "System Design",
+        "desc": "The design process begins with a precise assessment of business demand, defining the so-called BRS (Business Requirements Specification). This forms the foundation of system design, where we set the technical framework."
+      },
+      {
+        "title": "Schematic Design",
+        "desc": "Once we have a solid system plan, we design the detailed circuit schematic. We have over ten years of experience in the precision design of high-speed digital, RF, and analog circuits."
+      },
+      {
+        "title": "PCB Design",
+        "desc": "Following the schematic design is one of the most critical parts of our work: the physical design of printed circuit boards (PCB), considering EMI/EMC aspects and manufacturing constraints."
+      },
+      {
+        "title": "Mechanical Design",
+        "desc": "Our engineers design custom enclosures for the finished PCB according to the customer's needs. Whether it's a custom plastic housing or a metal part, we support the prototyping phase with 3D printing."
+      },
+      {
+        "title": "Embedded Software Development",
+        "desc": "We \"breathe life\" into the completed circuits with optimized algorithms and firmware development. Our intelligent software helps devices operate in many areas of life, from industry to medical technology."
+      }
+    ]
+  },
+  "serv_layout": {
+    "back_link": "Back to all services",
+    "services": {
+      "rendszertervezes": {
+        "title": "System Design",
+        "desc": "The design process begins with a precise assessment of business demand, defining the so-called BRS. This is the foundation of system design. Just as it is important for a building to be built on stable foundations, in electronic design, we lay these foundations in system design.",
+        "d1": "It is often said that when someone builds a house, they must pay great attention to the foundation because it will support the entire building. This is exactly the same in electronics. From the first moments of design, it is important to build the electronics purposefully for the given task. A well-designed circuit contains exactly as many components as necessary to perform its task properly. The designer never loses focus on the goal of the project they are working on for a minute. The reliability of a device designed for children is just as important as that of electronics designed for industrial environments. At the same time, in the two cases, it is almost certain that we will choose completely different solutions. System design includes preparing for the application of appropriate standards, as starting to deal with these seriously only in later stages of design could result in losses in time and cost.",
+        "d2": "User interactions, communication channels, user interfaces, design, mass producibility are all areas where we must create and utilize the synergies of our own employees, permanent external expert partners, or resources provided by our client. In addition to our extremely deep, multi-decade expertise, I believe this is the other very important key to making our projects, clients, and through them, ourselves successful."
+      },
+      "nyomtatott-aramkor": {
+        "title": "PCB Design",
+        "desc": "Following the schematic design is one of the most critical parts of our work: the design of printed circuit boards. We hold circuit design courses year after year for our partners and university students. We have outstanding design experience in the following areas:",
+        "d1": "When I founded the company in 2012, I already had more than twenty years of experience in circuit design. In truth, this love for printed circuit boards began in the first years of high school. At that time, computers were not yet widespread; we drew the master films for making printed circuit boards by hand. The first program I used for circuit design was a PCB design program called Smartwork for DOS. Technology has developed a lot since then; today almost every circuit we design has a high degree of integration and contains surface-mounted components. In our work, the basics are described by the IPC-2221A standard, which we use consistently throughout the entire design process.",
+        "d2": "During our PCB design work, we typically need to communicate with the customer several times. In the first step, we prepare a sketch plan. At this stage, the main dimensions and the location of connectors, sensors, and more important components can already be seen. The customer can approve this or request modifications.",
+        "d3": "<p class='mb-6'>In the next step, routing takes place. For simpler boards, this is typically 2-4 layers, but we have had the pleasure of working with boards over 6 layers in many cases. Thanks to modern PCB manufacturing technologies, creativity is limited almost only by the project budget. Just to mention a few professional curiosities:</p><ul class='space-y-5'><li class='flex items-start gap-4 group'><div class='flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20'><span class='material-icons !text-[#76e594] !text-[20px]'>layers</span></div><div class='pt-1'><span class='text-neutral-300'><strong class='text-neutral-100'>Buried and blind vias:</strong> when the via is drilled only between certain layers, not through the entire panel.</span></div></li><li class='flex items-start gap-4 group'><div class='flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#76e594]/10 border border-[#76e594]/20 transition-colors group-hover:bg-[#76e594]/20'><span class='material-icons !text-[#76e594] !text-[20px]'>radar</span></div><div class='pt-1'><span class='text-neutral-300'><strong class='text-neutral-100'>Impedance matched:</strong> circuits designed taking into account manufacturing parameters for high-speed and radio frequency panels.</span></div></li></ul>"
+      },
+      "kapcsolasi-rajz": {
+        "title": "Schematic Design",
+        "desc": "Once we have a system plan, we design the schematic of the circuit. We have over ten years of experience in designing high-speed, RF, analog circuits, power supplies, and complex, highly integrated electronics.",
+        "d1": "Many people would not think so, but the design of schematics often begins on a board, a piece of paper, a napkin, or in some simulation software. Then, of course, it continues in the schematic design part of our integrated design system. Usually, the schematic will not be drawn on one large sheet, as we want individual details of the work to be clearly visible.",
+        "d2": "The schematic is an abstraction tool, a graphic language. The schematic should not reflect what the panel to be designed will look like, but rather it should show how the designed circuit will function. Do not be misled by the stereotype that circuit design is mostly drawing work. Both in working hours and expertise, choosing the right components is a very important part of circuit design.",
+        "d3": "We also work with partners who, like us, are also engaged in circuit design. We have many such partners. Some of them develop and manufacture their own products, while others, like us, operate a design office."
+      },
+      "mechanikai-tervezes": {
+        "title": "Mechanical Design",
+        "desc": "Our colleagues design enclosures for the finished PCB according to the customer's needs. We can create prototype housings with 3D printing, CNC machining, PU vacuum casting with LPM technology.",
+        "d1": "We are an electronic development company, no doubt about it. This is what we are best at. The question arises: why do we deal with mechanical design? When we manufacture electronics, it will almost always go into some kind of enclosure.",
+        "d2": "Simpler design tasks can be performed by our own staff. In case a complex device or professional enclosure needs to be designed, we turn to our cooperating partners for help."
+      },
+      "beagyazott-szoftverek": {
+        "title": "Control Cabinet Design for Machines, PLC Programming",
+        "desc": "Control cabinet design for special machines, PLC programming. In this business line, we primarily build control cabinets and PLC controls for our industrial partners.",
+        "d1": "When choosing our company name, the inclusion of the word SYSTEM was intentional. We build systems every day; we constantly think in systems during our work.",
+        "d2": "The client is a company operating and maintaining cold storage facilities; they want to receive an immediate alert if the temperature starts to rise above the permitted value anywhere.",
+        "d3": "As an application server, in this case, we use the service of TagoIO, where it is possible both to display data graphically and to set monitoring for values."
+      }
+    }
   }
-} 
+}

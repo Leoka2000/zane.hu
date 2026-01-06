@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Added
+import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { FormContactComponent } from './form-contact/form-contact.component';
 import { BelowBgShadesComponent } from "../../../shades/below-bg-shades/below-bg-shades.component";
- // Ensure path is correct
+import { TranslateModule } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, MatIconModule, FormContactComponent, BelowBgShadesComponent], // Added FormContactComponent
+  imports: [
+    CommonModule, 
+    MatExpansionModule, 
+    MatIconModule, 
+    FormContactComponent, 
+    BelowBgShadesComponent,
+    TranslateModule 
+  ],
   templateUrl: './contact-section.component.html',
   styles: [
     `
-      /* Essential for removing Material default paddings/shadows */
       ::ng-deep .custom-dark-accordion .mat-expansion-panel-header-description,
       ::ng-deep .custom-dark-accordion .mat-content {
         flex-grow: 1;
@@ -24,8 +30,6 @@ import { BelowBgShadesComponent } from "../../../shades/below-bg-shades/below-bg
       ::ng-deep .mat-expansion-indicator {
         display: none !important;
       }
-      
-      /* Target the form wrapper inside this section to ensure no double backgrounds */
       :host ::ng-deep .form-wrapper {
         padding-top: 0 !important;
         padding-bottom: 0 !important;

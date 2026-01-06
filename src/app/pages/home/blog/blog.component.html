@@ -1,85 +1,45 @@
 <section class="bg-[#000d01] py-20">
-  <div class="mx-auto  ">
+  <div class="mx-auto">
     <div class="mb-16 space-y-6">
-      <div
-        class="inline-flex max-h-8 max-w-[8.5rem] items-center gap-2 px-2 rounded-md border border-[#76e594] bg-[#76e594]/5"
-      >
-        <span class="text-[#76e594] text-xs font-bold tracking-widest uppercase"
-          >Sikereseink</span
-        >
-        <mat-icon class="!text-[#76e594] mt-2 !text-lg !h-10 !w-10"
-          >menu_book</mat-icon
-        >
+      <div class="inline-flex max-h-10 max-w-[12rem] items-center gap-2 px-2 rounded-md border border-[#76e594] bg-[#76e594]/5">
+        <span class="text-[#76e594] text-xs font-bold tracking-widest uppercase">
+          {{ 'blog.badge' | translate }}
+        </span>
+        <mat-icon class="!text-[#76e594] mt-2 !text-lg !h-10 !w-10">menu_book</mat-icon>
       </div>
 
       <div class="space-y-2">
-        <h2
-          class="text-white text-3xl md:text-5xl font-medium tracking-tight leading-tight grotesk"
-        >
-        Elnyert pályázataink és fejlesztéseink
+        <h2 class="text-white text-3xl md:text-5xl font-medium tracking-tight leading-tight grotesk">
+          {{ 'blog.title_main' | translate }}
         </h2>
-        <p
-          class="text-neutral-200 text-3xl md:text-5xl font-medium tracking-tight leading-tight grotesk"
-        >
-        Innováció. Megbízhatóság. Fejlődés.
+        <p class="text-neutral-200 text-3xl md:text-5xl font-medium tracking-tight leading-tight grotesk">
+          {{ 'blog.title_sub' | translate }}
         </p>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      @for (post of blogPosts; track post.title) {
-      <div
-        (click)="openPost(post)"
-        class="group flex flex-col bg-transparent overflow-hidden  duration-300 rounded-md hover:border-[#76e594] cursor-pointer border p-4 border-1 border-white/10"
-      >
+      @for (post of blogPosts; track $index) {
+      <div (click)="openPost(post, $index)" class="group flex flex-col bg-transparent overflow-hidden duration-300 rounded-md hover:border-[#76e594] cursor-pointer border p-4 border-1 border-white/10">
         <div class="relative aspect-[4/3] overflow-hidden rounded-t-sm">
-          <div class="absolute top-4 left-4 z-10"></div>
-          <div class="relative">
-            <img
-              [src]="post.imageUrl"
-              [alt]="post.title"
-              class="w-full h-full object-cover rounded-md transition-transform "
-            />
-            <div
-              style="
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(
-                  to top,
-                  rgba(0, 0, 0, 0.9) 0%,
-                  rgba(0, 0, 0, 0.1) 60%,
-                  rgba(0, 0, 0, 0) 100%
-                );
-              "
-            ></div>
-          </div>
+          <img [src]="post.imageUrl" [alt]="'blog.posts.' + $index + '.title' | translate" class="w-full h-full object-cover rounded-md transition-transform" />
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%);"></div>
         </div>
 
-        <div
-          class="bg-black py-2 flex items-center justify-between border-b border-neutral-800"
-        >
-          <app-primary-button
-            [text]="'Tovább'"
-            [icon]="'visibility'"
-            class="w-full transition-colors hover:opacity-80 pointer-events-none"
-          ></app-primary-button>
+        <div class="bg-black py-2 flex items-center justify-between border-b border-neutral-800">
+          <app-primary-button [text]="'blog.btn_more' | translate" [icon]="'visibility'" class="w-full pointer-events-none"></app-primary-button>
         </div>
 
         <div class="py-6 space-y-3">
           <div class="flex items-center gap-2">
             <p class="text-neutral-500 text-sm font-medium tracking-wide">
-              {{ post.date }}
+              {{ 'blog.posts.' + $index + '.date' | translate }}
             </p>
             <span class="text-neutral-700">•</span>
-            <span
-              class="text-[#76e594] text-[10px] font-bold uppercase tracking-widest"
-              >{{ post.link }}</span
-            >
+            <span class="text-[#76e594] text-[10px] font-bold uppercase tracking-widest">{{ post.link }}</span>
           </div>
-          <h3
-            class="text-neutral-200 text-xl md:text-2xl font-bold leading-tight grotesk group-hover:text-[#76e594] transition-colors"
-          >
-            {{ post.title }}
+          <h3 class="text-neutral-200 text-xl md:text-2xl font-bold leading-tight grotesk group-hover:text-[#76e594] transition-colors">
+            {{ 'blog.posts.' + $index + '.title' | translate }}
           </h3>
         </div>
       </div>

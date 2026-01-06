@@ -1,15 +1,19 @@
-<section class="bg-transparent   relative overflow-hidden">
-  <div class="absolute -top-96 right-0 w-[500px] h-[500px]  bg-transparent blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 z-0"></div>
-
-  <div class=" mx-auto relative z-10 px-6 lg:px-0">
+<section class="bg-transparent relative overflow-hidden">
+  <div class="mx-auto relative z-10 px-6 lg:px-0">
     <div class="mb-16 space-y-4">
-      <span class="inline-flex items-center gap-3 px-2.5 py-1.5 rounded-md border border-[#76e594] text-[#76e594] text-xs font-bold tracking-normal uppercase">
-        <span>Mérnöki Szolgáltatások</span>
-        <mat-icon class="!flex !items-center !justify-center !text-base">build_circle</mat-icon>
+      <span
+        class="inline-flex items-center gap-3 px-2.5 py-1.5 rounded-md border border-[#76e594] text-[#76e594] text-xs font-bold tracking-normal uppercase"
+      >
+        <span>{{ "service_acc.badge" | translate }}</span>
+        <mat-icon class="!flex !items-center !justify-center !text-base"
+          >build_circle</mat-icon
+        >
       </span>
-      <h3 class="text-neutral-200 text-4xl md:text-5xl font-bold grotesk uppercase leading-tight">
-        Teljes körű megoldások <br />
-        az ötlettől a prototípusig.
+      <h3
+        class="text-neutral-200 text-4xl md:text-5xl font-bold grotesk uppercase leading-tight"
+      >
+        {{ "service_acc.title_main" | translate }} <br />
+        {{ "service_acc.title_sub" | translate }}
       </h3>
     </div>
 
@@ -17,43 +21,54 @@
       @for (service of services; track service.id) {
       <mat-expansion-panel
         hideToggle
-        class="!bg-transparent w-full !shadow-none border border-neutral-800  !rounded-xl overflow-hidden transition-all duration-300 hover:border-[#76e594]/30"
+        class="!bg-transparent w-full !shadow-none border border-neutral-800 !rounded-xl overflow-hidden transition-all duration-300 hover:border-[#76e594]/30"
         #panel
       >
         <mat-expansion-panel-header
           class="!h-24 !px-8 !pl-0 !bg-neutral-950 hover:!bg-white/5 transition-colors overflow-hidden"
         >
-          <mat-panel-title class="!text-neutral-100 !text-xl grotesk tracking-tight !flex items-center gap-6 h-full">
-            <div class="h-24 w-24 md:w-32 flex-shrink-0 border-r border-neutral-800 overflow-hidden">
+          <mat-panel-title
+            class="!text-neutral-100 !text-xl grotesk tracking-tight !flex items-center gap-6 h-full"
+          >
+            <div
+              class="h-24 w-24 md:w-32 flex-shrink-0 border-r border-neutral-800 overflow-hidden"
+            >
               <img
                 [src]="service.imgUrl"
-                [alt]="service.title"
+                [alt]="'service_acc.items.' + $index + '.title' | translate"
                 class="w-full h-full object-cover transition-transform duration-500"
                 [class.scale-110]="panel.expanded"
               />
             </div>
-            <span class="font-bold text-neutral-200">{{ service.title }}</span>
+            <span class="font-bold text-neutral-200">{{
+              "service_acc.items." + $index + ".title" | translate
+            }}</span>
           </mat-panel-title>
 
           <mat-icon
             class="text-[#76e594] transition-transform duration-300"
-            [style.transform]="panel.expanded ? 'rotate(45deg)' : 'rotate(0deg)'"
+            [style.transform]="
+              panel.expanded ? 'rotate(45deg)' : 'rotate(0deg)'
+            "
           >
             add
           </mat-icon>
         </mat-expansion-panel-header>
 
         <div class="pb-10 px-8 pt-8">
-          <div class="space-y-8 animate-in fade-in slide-in-from-top-2 duration-300">
+          <div
+            class="space-y-8 animate-in fade-in slide-in-from-top-2 duration-300"
+          >
             <p class="text-neutral-400 text-lg leading-relaxed max-w-3xl">
-              {{ service.description }}
+              {{ "service_acc.items." + $index + ".desc" | translate }}
             </p>
 
             <div class="flex items-center gap-4">
-              <app-primary-button 
-                text="További részletek" 
+              <app-primary-button
+                [text]="'service_acc.btn_details' | translate"
                 icon="arrow_forward"
-                (click)="navigateToService(service.id)">
+                (click)="navigateToService(service.id)"
+              >
               </app-primary-button>
             </div>
           </div>
@@ -62,6 +77,4 @@
       }
     </mat-accordion>
   </div>
-
-  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#76e594]/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 z-0"></div>
 </section>

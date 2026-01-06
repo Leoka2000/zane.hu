@@ -1,57 +1,54 @@
 <main
   class="min-h-screen w-full px-6 lg:px-[15%] md:mt-0 mt-44 flex items-center justify-center relative bg-[#000d01] z-0"
 >
- <div class=" bottom-0 fixed right-0 z-30 pointer-events-none">
-            <div class="relative">
-              <img
-                src="/images/brand/befektetesjovobe.png"
-                alt="Befektetés a jövőbe"
-                class="w-96  object-contain"
-              />
-              <!--  <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%)"></div> -->
-            </div>
-          </div>
-  <style>
-    .cdk-overlay-dark-backdrop {
-      background: rgba(0, 0, 0, 0.7) !important;
-    }
-
-    .mat-mdc-dialog-container .mdc-dialog__surface {
-      background-color: #000d01 !important;
-      border: 1px solid rgba(118, 229, 148, 0.2);
-    }
-  </style>
- 
-  <!-- manter max-w-[600px] no mkbile? -->
+  <div class="bottom-0 fixed right-0 z-30 pointer-events-none">
+    <div class="relative">
+      <img
+        src="/images/brand/befektetesjovobe.png"
+        alt="Befektetés a jövőbe"
+        class="w-80 object-contain"
+      />
+    </div>
+  </div>
 
   <section
-    class="flex flex-col  lg:flex-row items-center justify-between w-full relative z-[10]"
+    class="flex flex-col lg:flex-row items-center justify-between w-full relative z-[10]"
   >
     <div
       class="flex flex-col items-start text-left space-y-6 w-full md:-ms-[8.7rem] lg:w-1/2 z-[20]"
     >
-      <app-badge></app-badge>
+      <app-badge label="'hero.BADGE' | translate"></app-badge>
 
       <div class="space-y-4">
         <h1
           class="text-neutral-100 text-4xl md:text-6xl font-bold tracking-tight grotesk leading-[1.1]"
         >
-          <span class="text-[#76e594]">PROFESSZIONÁLIS</span> SMT beültetés és
+          <span class="text-[#76e594]">{{
+            "hero.TITLE_PART1" | translate
+          }}</span>
+          {{ "hero.TITLE_PART2" | translate }}
           <br class="hidden lg:block" />
-          elektronikai tervezés <span class="text-[#76e594]"> 2012 óta</span>
+          <span class="text-[#76e594]">{{
+            "hero.TITLE_PART3" | translate
+          }}</span>
         </h1>
         <p class="text-neutral-400 text-base md:text-lg max-w-xl">
-          Tudjuk, hogy a nyomtatott áramkör tervezési feladatához a legjobb
-          szakértőkre van szüksége. Nálunk jó helyen jár! Mérnökeink szaktudása
-          a garancia a minőségre.
+          {{ "hero.SUBTITLE" | translate }}
         </p>
       </div>
 
       <div class="flex flex-wrap items-center gap-4 pt-4">
-        <app-primary-button (click)="openQuoteDialog()"></app-primary-button>
+        <app-primary-button
+          [text]="'hero.PRIMARY_BTN' | translate"
+          (click)="openQuoteDialog()"
+        >
+        </app-primary-button>
+
         <app-secondary-button
+          [text]="'hero.SECONDARY_BTN' | translate"
           (click)="scrollToFeatures()"
-        ></app-secondary-button>
+        >
+        </app-secondary-button>
       </div>
     </div>
 
@@ -61,10 +58,9 @@
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[400px] max-h-[400px] blur-[120px] bg-[#76e594]/10 rounded-full z-0"
       ></div>
-
       <img
         src="images/hero-photo.png"
-        alt="Hand holding microcontroller"
+        alt="Hardware Engineering"
         class="relative z-10 w-full max-w-[550px] rounded-xl h-auto object-cover animate-in fade-in zoom-in duration-1000"
       />
     </div>

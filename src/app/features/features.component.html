@@ -1,47 +1,87 @@
 <section class="w-full bg-[#000d01]">
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full mx-auto">
-    
-    <div class="w-full rounded-lg border border-white/10 bg-[#000d01] p-10 space-y-8 overflow-hidden group">
+    <div
+      class="w-full rounded-lg border border-white/10 bg-[#000d01] p-10 space-y-8 overflow-hidden group"
+    >
       <div class="relative flex items-center justify-center py-10">
-        <div class="absolute inset-0 bg-[#53db78]/5 blur-3xl rounded-full group-hover:bg-[#53db78]/10 transition-colors duration-500"></div>
-        <img src="images/feat-img3.svg" alt="Rendszertervezés" class="relative z-10 w-full max-w-[220px] h-auto transform transition-transform duration-500 bg-transparent" />
+        <div
+          class="absolute inset-0 bg-[#53db78]/5 blur-3xl rounded-full group-hover:bg-[#53db78]/10 transition-colors duration-500"
+        ></div>
+        <img
+          src="images/feat-img3.svg"
+          [alt]="'feat_1_title' | translate"
+          class="relative z-10 w-full max-w-[220px] h-auto transform transition-transform duration-500 bg-transparent"
+        />
       </div>
       <div class="space-y-4">
-        <p class="text-[#76e594] font-medium text-base tracking-wide grotesk">Stabil alapok, precíz elvirajzok.</p>
-        <h3 class="text-neutral-200 text-2xl font-bold tracking-tight grotesk leading-tight">Rendszertervezés és Kapcsolási rajz</h3>
+        <p class="text-[#76e594] font-medium text-base tracking-wide grotesk">
+          {{ "feat_1_tag" | translate }}
+        </p>
+        <h3
+          class="text-neutral-200 text-2xl font-bold tracking-tight grotesk leading-tight"
+        >
+          {{ "feat_1_title" | translate }}
+        </h3>
         <p class="text-neutral-400 text-md leading-24">
-          A tervezés a BRS meghatározásával és a rendszer alapjainak lefektetésével kezdődik. Tapasztalt mérnökeink nagy sebességű RF, analóg áramkörök és komplex, magas integráltságú elektronikák precíz kapcsolási rajzait készítik el.
+          {{ "feat_1_desc" | translate }}
         </p>
       </div>
     </div>
 
-    <div class="w-full rounded-lg border border-white/10 bg-[#000d01] p-10 space-y-8 overflow-hidden group">
+    <div
+      class="w-full rounded-lg border border-white/10 bg-[#000d01] p-10 space-y-8 overflow-hidden group"
+    >
       <div class="relative flex items-center justify-center py-10">
-        <div class="absolute inset-0 bg-[#53db78]/5 blur-3xl rounded-full group-hover:bg-[#53db78]/10 transition-colors duration-500"></div>
-        <img src="images/feat-img2.svg" alt="NYÁK Gyártás" class="relative z-10 w-full max-w-[220px] h-auto transform transition-transform duration-500 bg-transparent" />
+        <div
+          class="absolute inset-0 bg-[#53db78]/5 blur-3xl rounded-full group-hover:bg-[#53db78]/10 transition-colors duration-500"
+        ></div>
+        <img
+          src="images/feat-img2.svg"
+          [alt]="'feat_2_title' | translate"
+          class="relative z-10 w-full max-w-[220px] h-auto transform transition-transform duration-500 bg-transparent"
+        />
       </div>
       <div class="space-y-4">
-        <p class="text-[#76e594] font-medium text-base tracking-wide grotesk">Profi NYÁK design és burkolat.</p>
-        <h3 class="text-neutral-200 text-2xl font-bold tracking-tight grotesk leading-tight">PCB Design és Mechanika</h3>
+        <p class="text-[#76e594] font-medium text-base tracking-wide grotesk">
+          {{ "feat_2_tag" | translate }}
+        </p>
+        <h3
+          class="text-neutral-200 text-2xl font-bold tracking-tight grotesk leading-tight"
+        >
+          {{ "feat_2_title" | translate }}
+        </h3>
         <p class="text-neutral-400 text-md leading-24">
-          Kiemelkedő tapasztalattal tervezünk több rétegű nyomtatott áramköröket (Low EMI/EMC). Emellett vállaljuk a kész elektronikák mechanikai tervezését, burkolatok 3D nyomtatását és professzionális megmunkálását.
+          {{ "feat_2_desc" | translate }}
         </p>
       </div>
     </div>
 
-    <div class="w-full rounded-lg border border-white/10 bg-[#000d01] p-10 space-y-8 overflow-hidden group">
+    <div
+      class="w-full rounded-lg border border-white/10 bg-[#000d01] p-10 space-y-8 overflow-hidden group"
+    >
       <div class="relative flex items-center justify-center py-10">
-        <div class="absolute inset-0 bg-[#53db78]/5 blur-3xl rounded-full group-hover:bg-[#53db78]/10 transition-colors duration-500"></div>
-        <img src="images/feat-img1.svg" alt="Szoftverfejlesztés" class="relative z-10 w-full max-w-[220px] h-auto transform transition-transform duration-500 bg-transparent" />
+        <div
+          class="absolute inset-0 bg-[#53db78]/5 blur-3xl rounded-full group-hover:bg-[#53db78]/10 transition-colors duration-500"
+        ></div>
+        <img
+          src="images/feat-img1.svg"
+          [alt]="'feat_3_title' | translate"
+          class="relative z-10 w-full max-w-[220px] h-auto transform transition-transform duration-500 bg-transparent"
+        />
       </div>
       <div class="space-y-4">
-        <p class="text-[#76e594] font-medium text-base tracking-wide grotesk">Életet lehelünk az áramkörökbe.</p>
-        <h3 class="text-neutral-200 text-2xl font-bold tracking-tight grotesk leading-tight">Beágyazott Szoftverek és IoT</h3>
+        <p class="text-[#76e594] font-medium text-base tracking-wide grotesk">
+          {{ "feat_3_tag" | translate }}
+        </p>
+        <h3
+          class="text-neutral-200 text-2xl font-bold tracking-tight grotesk leading-tight"
+        >
+          {{ "feat_3_title" | translate }}
+        </h3>
         <p class="text-neutral-400 text-md leading-24">
-          Okos algoritmusokkal és firmware fejlesztéssel tesszük intelligensé az eszközeinket. Megoldásaink a Bluetooth, WiFi, LoRa és NB-IoT technológiák révén az élet számos területén, az orvosi műszerektől az iparig segítenek.
+          {{ "feat_3_desc" | translate }}
         </p>
       </div>
     </div>
-
   </div>
 </section>

@@ -1,46 +1,98 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="w-full custom-material-form mx-auto p-6">
+<form
+  [formGroup]="contactForm"
+  (ngSubmit)="onSubmit()"
+  class="w-full custom-material-form mx-auto p-6"
+>
   <div class="mb-10">
-    <h3 class="text-neutral-200 text-xl font-bold grotesk border-l-4 border-[#76e594] pl-4">
-      Küldjön üzenetet
+    <h3
+      class="text-neutral-200 text-xl font-bold grotesk border-l-4 border-[#76e594] pl-4"
+    >
+      {{ "contact_form.title" | translate }}
     </h3>
   </div>
 
   <mat-form-field appearance="fill" class="w-full mb-4">
-    <mat-label class="text-neutral-400">Név</mat-label>
-    <input matInput formControlName="name" placeholder="Adja meg a nevét">
-    <mat-icon matPrefix [ngClass]="isInvalid('name') ? 'icon-error' : 'icon-success'" class="mr-3">person</mat-icon>
-    <mat-error *ngIf="contactForm.get('name')?.hasError('required')">A név megadása kötelező</mat-error>
-    <mat-error *ngIf="contactForm.get('name')?.hasError('minlength')">Minimum 3 karakter szükséges</mat-error>
+    <mat-label class="text-neutral-400">{{
+      "contact_form.name_label" | translate
+    }}</mat-label>
+    <input
+      matInput
+      formControlName="name"
+      [placeholder]="'contact_form.name_placeholder' | translate"
+    />
+    <mat-icon
+      matPrefix
+      [ngClass]="isInvalid('name') ? 'icon-error' : 'icon-success'"
+      class="mr-3"
+      >person</mat-icon
+    >
+    <mat-error *ngIf="contactForm.get('name')?.hasError('required')">{{
+      "contact_form.err_name_req" | translate
+    }}</mat-error>
+    <mat-error *ngIf="contactForm.get('name')?.hasError('minlength')">{{
+      "contact_form.err_name_min" | translate
+    }}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill" class="w-full mb-4">
-    <mat-label class="text-neutral-400">Email</mat-label>
-    <input matInput type="email" formControlName="email" placeholder="pelda@email.hu">
-    <mat-icon matPrefix [ngClass]="isInvalid('email') ? 'icon-error' : 'icon-success'" class="mr-3">email</mat-icon>
-    <mat-error *ngIf="contactForm.get('email')?.invalid">Kérjük, érvényes email címet adjon meg</mat-error>
+    <mat-label class="text-neutral-400">{{
+      "contact_form.email_label" | translate
+    }}</mat-label>
+    <input
+      matInput
+      type="email"
+      formControlName="email"
+      [placeholder]="'contact_form.email_placeholder' | translate"
+    />
+    <mat-icon
+      matPrefix
+      [ngClass]="isInvalid('email') ? 'icon-error' : 'icon-success'"
+      class="mr-3"
+      >email</mat-icon
+    >
+    <mat-error *ngIf="contactForm.get('email')?.invalid">{{
+      "contact_form.err_email" | translate
+    }}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill" class="w-full mb-6">
-    <mat-label class="text-neutral-400">Üzenet</mat-label>
-    <textarea matInput formControlName="message" rows="5" placeholder="Miben segíthetünk?"></textarea>
-    <mat-icon matPrefix [ngClass]="isInvalid('message') ? 'icon-error' : 'icon-success'" class="mr-3">add_comment</mat-icon>
-    <mat-error *ngIf="contactForm.get('message')?.invalid">Kérjük, írjon legalább 10 karaktert</mat-error>
+    <mat-label class="text-neutral-400">{{
+      "contact_form.msg_label" | translate
+    }}</mat-label>
+    <textarea
+      matInput
+      formControlName="message"
+      rows="5"
+      [placeholder]="'contact_form.msg_placeholder' | translate"
+    ></textarea>
+    <mat-icon
+      matPrefix
+      [ngClass]="isInvalid('message') ? 'icon-error' : 'icon-success'"
+      class="mr-3"
+      >add_comment</mat-icon
+    >
+    <mat-error *ngIf="contactForm.get('message')?.invalid">{{
+      "contact_form.err_msg" | translate
+    }}</mat-error>
   </mat-form-field>
 
   <div class="mb-8 flex flex-col">
     <mat-checkbox formControlName="terms" class="custom-checkbox">
-      <span class="text-neutral-400 grotesk">Elfogadom az Általános Szerződési Feltételeket.</span>
+      <span class="text-neutral-400 grotesk">{{
+        "contact_form.terms_text" | translate
+      }}</span>
     </mat-checkbox>
     <small class="text-[#ff5252] mt-2 grotesk" *ngIf="isInvalid('terms')">
-      A feltételek elfogadása kötelező a küldéshez.
+      {{ "contact_form.err_terms" | translate }}
     </small>
   </div>
 
-  <app-primary-button 
-    type="submit" 
-    [text]="'Üzenet küldése'" 
-    [icon]="'send'" 
+  <app-primary-button
+    type="submit"
+    [text]="'contact_form.submit_btn' | translate"
+    [icon]="'send'"
     [disabled]="contactForm.invalid || isLoading"
-    [loading]="isLoading">
+    [loading]="isLoading"
+  >
   </app-primary-button>
 </form>

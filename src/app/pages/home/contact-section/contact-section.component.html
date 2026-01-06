@@ -1,7 +1,8 @@
 <section class="w-full bg-[#000d01] py-20 overflow-visible">
-  <div class="max-w-7xl mx-auto "> <div class="mb-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-8">
       <span class="inline-flex items-center gap-3 px-3 py-1.5 rounded-md border uppercase border-[#76e594] text-[#76e594] text-xs font-bold tracking-wide" style="line-height: 1;">
-        <span>Kapcsolat</span>
+        <span>{{ 'contact.badge' | translate }}</span>
         <mat-icon style="display: flex; align-items: center; justify-content: center; font-size: 1.2rem; height: 1.2rem; width: 1.2rem;">
           contact_mail
         </mat-icon>
@@ -10,20 +11,18 @@
 
     <div class="mb-12 space-y-4 isolate relative">
       <app-below-bg-shades></app-below-bg-shades>
-      <h2 class="md:text-6xl text-4xl font-medium  tracking-tight leading-14 grotesk">
-      <span class="text-[#76e594]"> Mindig egy lépéssel előrébb.</span> 
+      <h2 class="md:text-6xl text-4xl font-medium tracking-tight leading-14 grotesk">
+        <span class="text-[#76e594]">{{ 'contact.title_step' | translate }}</span> 
       </h2>
-      <p class="md:text-6xl text-4xl font-medium text-neutral-200  grotesk">
-        Precíz tervezés. Gyors gyártás.<br/> Gondtalan megvalósítás.
+      <p class="md:text-6xl text-4xl font-medium text-neutral-200 grotesk" [innerHTML]="'contact.title_sub' | translate">
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-      
       <div class="flex flex-col">
         <div class="flex flex-wrap gap-3 mb-8">
-          @for (feature of ['ISO 9001 Minőség', 'Gyors prototípusok', 'EU-s gyártás', 'Szakértő mérnökök', 'GDPR Megfelelőség', 'Modern technológia']; track feature) {
-          <div class="flex items-center gap-2 px-2  rounded-full border border-[#76e594] bg-[#53db78]/5">
+          @for (feature of ('contact.features' | translate); track feature) {
+          <div class="flex items-center gap-2 px-2 rounded-full border border-[#76e594] bg-[#53db78]/5">
             <mat-icon class="!text-[#76e594] text-xl mb-1.5 flex items-center justify-center">
               check_circle
             </mat-icon>
@@ -37,36 +36,36 @@
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none border border-neutral-700 !rounded-md !mb-4 overflow-hidden">
               <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
                 <mat-panel-title class="!text-neutral-200 !text-lg font-bold grotesk">
-                  Szükséges szoftver telepítése a kezeléshez?
+                  {{ 'contact.faq_q1' | translate }}
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
               <div class="py-6 px-8 text-neutral-400 leading-relaxed">
-                A Zane Systems felhőalapú megoldásokat kínál. Hardveres eszközeit böngészőn keresztül kezelheti, így nincs szükség helyi telepítésre a távfelügyelethez.
+                {{ 'contact.faq_a1' | translate }}
               </div>
             </mat-expansion-panel>
 
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md !mb-4">
               <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
                 <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
-                  Kérhetek egyedi árajánlatot prototípusra?
+                  {{ 'contact.faq_q2' | translate }}
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
               <div class="py-6 px-8 text-neutral-400 leading-relaxed">
-                Igen, mérnöki csapatunk készséggel segít az ötlettől a prototípus gyártásáig. Vegye fel velünk a kapcsolatot az egyedi igények megbeszéléséhez.
+                {{ 'contact.faq_a2' | translate }}
               </div>
             </mat-expansion-panel>
 
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md">
               <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
                 <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
-                  Hol készülnek a termékek?
+                  {{ 'contact.faq_q3' | translate }}
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
               <div class="py-6 px-8 text-neutral-400 leading-relaxed">
-                Minden tervezési és gyártási folyamat az Európai Unióban történik, garantálva a legmagasabb minőségi szabványokat és az adatbiztonságot.
+                {{ 'contact.faq_a3' | translate }}
               </div>
             </mat-expansion-panel>
           </mat-accordion>
@@ -76,6 +75,6 @@
       <div class="w-full">
         <app-form-contact></app-form-contact>
       </div>
-
-    </div> </div>
+    </div>
+  </div>
 </section>

@@ -15,6 +15,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import emailjs from '@emailjs/browser';
 import { PrimaryButtonComponent } from '../../../../components/primary-button/primary-button.component';
 import { SuccessDialogComponent } from '../../../../components/dialogs/success-dialog/success-dialog.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-form-contact',
@@ -29,6 +30,7 @@ import { SuccessDialogComponent } from '../../../../components/dialogs/success-d
     MatIconModule,
     MatDialogModule,
     PrimaryButtonComponent,
+    TranslateModule
   ],
   templateUrl: './form-contact.component.html',
   styles: [

@@ -6,7 +6,7 @@ import { BadgeComponent } from '../../../components/ui/badge/badge.component';
 import { GreenShadesComponent } from "../../../components/utils/green-shades/green-shades.component";
 import { MatDialog, MatDialogModule } from '@angular/material/dialog'; 
 import { QuotationDialogComponent } from '../../../components/dialogs/quotation-dialog/quotation-dialog.component';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
@@ -18,7 +18,8 @@ import { QuotationDialogComponent } from '../../../components/dialogs/quotation-
     BadgeComponent, 
     GreenShadesComponent,
     MatDialogModule,
-    QuotationDialogComponent
+    QuotationDialogComponent,
+    TranslateModule 
   ],
   templateUrl: './hero.component.html',
   styles: ``
@@ -30,19 +31,18 @@ export class HeroComponent {
     const element = document.getElementById('protection-section');
     if (element) {
       element.scrollIntoView({ 
-        behavior: 'smooth', // Lágy görgetés
-        block: 'start',     // Az elem tetejére ugorjon
+        behavior: 'smooth',
+        block: 'start',
         inline: 'nearest' 
       });
     }
   }
 
-  
   openQuoteDialog() {
     this.dialog.open(QuotationDialogComponent, {
       width: '600px', 
       maxWidth: '95vw',
-      panelClass: 'custom-dialog-container',  // customizar o estilo nao sei como mas descobrirei
+      panelClass: 'custom-dialog-container',
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '150ms'
     });

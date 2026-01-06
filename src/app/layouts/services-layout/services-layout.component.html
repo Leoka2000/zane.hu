@@ -1,23 +1,6 @@
-<main class="min-h-screen bg-[#000d01] relative flex flex-col overflow-x-hidden">
-  
-  <div class="fixed inset-0 z-0 pointer-events-none opacity-100">
-    <img
-      src="images/blog/bg-pattern-hero.svg"
-      alt="Background Pattern"
-      class="w-full h-full  object-cover"
-    />
-  </div>
-
-  <div class="top-[4.6rem] bg-transparent fixed right-0 z-20 pointer-events-none opacity-40 md:opacity-100">
-    <div class="relative">
-      <img src="images/brand/szecsenytervplusz.jpg" alt="Szechenyi Terv Plusz" class="w-72 object-contain" />
-    </div>
-    <div class="absolute top-[33.5rem] left-10 z-20 pointer-events-none">
-      <div class="relative">
-        <img src="/images/brand/befektetesjovobe.png" alt="Befektetés a jövőbe" class="w-96 object-contain" />
-      </div>
-    </div>
-  </div>
+<main
+  class="min-h-screen bg-[#000d01] relative flex flex-col overflow-x-hidden"
+>
   <app-navbar></app-navbar>
 
   <div class="flex-grow pt-32 lg:pt-40 pb-20">
@@ -34,28 +17,27 @@
               <div class="space-y-4">
                 <div class="pt-4">
                   <a
-                    href="/services"
+                    routerLink="/services"
                     class="text-[#76e594] inline-flex items-center gap-2 group"
                   >
                     <mat-icon
                       class="transition-transform group-hover:-translate-x-1"
                       >arrow_back</mat-icon
                     >
-                    <span class="font-bold uppercase tracking-widest text-sm"
-                      >Vissza az összes szolgáltatáshoz</span
-                    >
+                    <span class="font-bold uppercase tracking-widest text-sm">{{
+                      "serv_layout.back_link" | translate
+                    }}</span>
                   </a>
                 </div>
                 <h1
                   class="text-2xl md:text-5xl font-bold grotesk uppercase text-neutral-100 leading-tight"
                 >
-                  {{ getServiceData()?.title }}
+                  {{ getTranslation("title") }}
                 </h1>
                 <div class="h-1 w-20 bg-[#76e594]"></div>
               </div>
               <div class="space-y-6 max-w-xl">
-                @for (paragraph of getFormattedText('description'); track
-                paragraph) {
+                @for (paragraph of getFormattedText('desc'); track $index) {
                 <p class="text-md text-neutral-400 leading-relaxed">
                   {{ paragraph }}
                 </p>
@@ -65,143 +47,91 @@
           </div>
           <div class="relative group h-fit self-start w-full">
             <div
-              class="absolute -inset-4 bg-[#76e594]/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity"
-            ></div>
-            <div
-              class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 w-full min-h-[300px] lg:min-h-[500px]"
+              class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
               [class.light-bg-fix]="selectedServiceId === 'kapcsolasi-rajz'"
             >
               <img
                 [src]="getServiceData()?.imgUrl"
-                [alt]="getServiceData()?.title"
-                class="absolute inset-0 w-full h-full object-cover"
+                [alt]="getTranslation('title')"
+                class="w-full h-full object-cover min-h-[300px] lg:min-h-[500px]"
               />
-              <div
-                class="absolute inset-0 bg-black/40 pointer-events-none"
-              ></div>
             </div>
           </div>
         </div>
 
-        @if (getServiceData()?.descriptionOne) {
+        @if (getTranslation('d1')) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div
-            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px]"
+            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 min-h-[350px]"
           >
             <img
               [src]="getServiceData()?.imgUrlOne"
               class="absolute inset-0 w-full h-full object-cover"
             />
-            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
-            @if (getHighlightedSentence('descriptionOne')) {
+            @if (getHighlightedSentence('d1')) {
             <div
               class="p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl mb-8"
             >
               <p
                 class="text-lg text-neutral-300 grotesk italic leading-relaxed"
               >
-                {{ getHighlightedSentence("descriptionOne") }}
+                {{ getHighlightedSentence("d1") }}
               </p>
             </div>
-            } @for (paragraph of getFormattedText('descriptionOne'); track
-            paragraph) {
+            } @for (paragraph of getFormattedText('d1'); track $index) {
             <p class="text-md text-neutral-400 leading-relaxed">
               {{ paragraph }}
             </p>
             }
           </div>
         </div>
-        } @if (getServiceData()?.descriptionTwo) {
+        } @if (getTranslation('d2')) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div class="space-y-6 max-w-xl">
-            @if (getHighlightedSentence('descriptionTwo')) {
+            @if (getHighlightedSentence('d2')) {
             <div
               class="p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl mb-8"
             >
               <p
                 class="text-lg text-neutral-300 grotesk italic leading-relaxed"
               >
-                {{ getHighlightedSentence("descriptionTwo") }}
+                {{ getHighlightedSentence("d2") }}
               </p>
             </div>
-            } @for (paragraph of getFormattedText('descriptionTwo'); track
-            paragraph) {
+            } @for (paragraph of getFormattedText('d2'); track $index) {
             <p class="text-md text-neutral-400 leading-relaxed">
               {{ paragraph }}
             </p>
             }
           </div>
           <div
-            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px] bg-neutral-800 p-6 flex items-center justify-center"
+            class="relative rounded-2xl overflow-hidden border border-white/10 bg-neutral-800 p-6 flex items-center justify-center min-h-[350px]"
           >
             <img
               [src]="getServiceData()?.imgUrlTwo"
               class="max-w-full rounded-2xl max-h-full object-contain"
             />
-            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
           </div>
         </div>
-        } @if (getServiceData()?.descriptionThree) {
+        } @if (getTranslation('d3')) {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div
-            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl w-full aspect-[16/9] bg-black"
+            class="order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-white/10 bg-black min-h-[350px]"
           >
             <img
               [src]="getServiceData()?.imgUrlThree"
               class="w-full h-auto max-h-full object-contain mx-auto"
             />
-            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
           </div>
           <div class="order-1 lg:order-2 space-y-6 max-w-xl">
-            @if (getHighlightedSentence('descriptionThree')) {
-            <div
-              class="p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl mb-8"
-            >
-              <p
-                class="text-lg text-neutral-300 grotesk italic leading-relaxed"
-              >
-                {{ getHighlightedSentence("descriptionThree") }}
-              </p>
-            </div>
-            } @for (paragraph of getFormattedText('descriptionThree'); track
-            paragraph) {
+            @for (paragraph of getFormattedText('d3'); track $index) {
             <div
               [innerHTML]="paragraph"
               class="text-md text-neutral-400 leading-relaxed"
             ></div>
             }
-          </div>
-        </div>
-        } @if (getServiceData()?.descriptionFour) {
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-          <div class="space-y-6 max-w-xl">
-            @if (getHighlightedSentence('descriptionFour')) {
-            <div
-              class="p-6 bg-[#76e594]/5 border-l-2 border-[#76e594] rounded-r-xl mb-8"
-            >
-              <p
-                class="text-lg text-neutral-300 grotesk italic leading-relaxed"
-              >
-                {{ getHighlightedSentence("descriptionFour") }}
-              </p>
-            </div>
-            } @for (paragraph of getFormattedText('descriptionFour'); track
-            paragraph) {
-            <p class="text-md text-neutral-400 leading-relaxed">
-              {{ paragraph }}
-            </p>
-            }
-          </div>
-          <div
-            class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-fit self-start w-full min-h-[350px] lg:min-h-[450px]"
-          >
-            <img
-              [src]="getServiceData()?.imgUrlFour"
-              class="absolute inset-0 w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
           </div>
         </div>
         }

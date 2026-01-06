@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule], 
   templateUrl: './footer.component.html',
   styles: [`
     :host {
@@ -13,6 +14,4 @@ import { CommonModule } from '@angular/common';
     }
   `]
 })
-export class FooterComponent {
-
-}
+export class FooterComponent {}
