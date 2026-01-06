@@ -11,7 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class PrimaryButtonComponent {
   @Input() type: 'button' | 'submit' = 'button';
-  @Input() text: string = 'Request quote';
+  @Input() text: string = 'Ajánlatkérés';
   @Input() icon: string = 'request_quote';
   @Input() disabled: boolean = false;
   @Input() loading: boolean = false;

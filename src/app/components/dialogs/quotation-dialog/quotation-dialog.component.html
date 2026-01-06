@@ -1,6 +1,6 @@
 <div class="dialog-container">
   <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-light text-white grotesk">Request a Quote</h2>
+    <h2 class="text-2xl font-light text-white grotesk">Ajánlatkérés</h2>
     <button mat-icon-button (click)="closeDialog()" class="text-neutral-500 hover:text-white" [disabled]="isLoading">
       <mat-icon>close</mat-icon>
     </button>
@@ -8,52 +8,52 @@
 
   <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
     <mat-form-field appearance="fill" class="w-full custom-field">
-      <mat-label class="text-neutral-400">Full Name</mat-label>
-      <input matInput formControlName="name" placeholder="John Doe">
+      <mat-label class="text-neutral-400">Teljes név</mat-label>
+      <input matInput formControlName="name" placeholder="Minta János">
       <mat-icon matPrefix [ngClass]="isInvalid('name') ? 'icon-error' : 'icon-success'" class="mr-2">person</mat-icon>
-      <mat-error *ngIf="quoteForm.get('name')?.hasError('required')">Name is required</mat-error>
-      <mat-error *ngIf="quoteForm.get('name')?.hasError('minlength')">Minimum 3 characters</mat-error>
+      <mat-error *ngIf="quoteForm.get('name')?.hasError('required')">A név megadása kötelező</mat-error>
+      <mat-error *ngIf="quoteForm.get('name')?.hasError('minlength')">Minimum 3 karakter szükséges</mat-error>
     </mat-form-field>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <mat-form-field appearance="fill" class="custom-field">
-        <mat-label class="text-neutral-400">Email Address</mat-label>
-        <input matInput type="email" formControlName="email" placeholder="john@example.com">
+        <mat-label class="text-neutral-400">Email cím</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="pelda@email.hu">
         <mat-icon matPrefix [ngClass]="isInvalid('email') ? 'icon-error' : 'icon-success'" class="mr-2">email</mat-icon>
-        <mat-error>Please enter a valid email</mat-error>
+        <mat-error>Kérjük, érvényes email címet adjon meg</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="custom-field">
-        <mat-label class="text-neutral-400">Phone Number</mat-label>
-        <input matInput formControlName="phone" placeholder="+36 00 00 00">
+        <mat-label class="text-neutral-400">Telefonszám</mat-label>
+        <input matInput formControlName="phone" placeholder="+36 00 000 0000">
         <mat-icon matPrefix [ngClass]="isInvalid('phone') ? 'icon-error' : 'icon-success'" class="mr-2">phone</mat-icon>
-        <mat-error *ngIf="quoteForm.get('phone')?.hasError('required')">Phone is mandatory</mat-error>
-        <mat-error *ngIf="quoteForm.get('phone')?.hasError('pattern')">Numbers/symbols only</mat-error>
+        <mat-error *ngIf="quoteForm.get('phone')?.hasError('required')">A telefonszám kötelező</mat-error>
+        <mat-error *ngIf="quoteForm.get('phone')?.hasError('pattern')">Csak számok és szimbólumok (+, -)</mat-error>
       </mat-form-field>
     </div>
 
     <mat-form-field appearance="fill" class="w-full custom-field">
-      <mat-label class="text-neutral-400">Interested Service</mat-label>
+      <mat-label class="text-neutral-400">Választott szolgáltatás</mat-label>
       <mat-select formControlName="service">
-        <mat-option value="Tervezés">Tervezés</mat-option>
-        <mat-option value="Gyártás">Gyártás</mat-option>
-        <mat-option value="Komplex">Komplex</mat-option>
+        <mat-option value="Tervezés">Rendszertervezés</mat-option>
+        <mat-option value="Gyártás">PCB Gyártás és beültetés</mat-option>
+        <mat-option value="Komplex">Komplex fejlesztés (Hardware + Software)</mat-option>
       </mat-select>
       <mat-icon matPrefix [ngClass]="isInvalid('service') ? 'icon-error' : 'icon-success'" class="mr-2">settings</mat-icon>
-      <mat-error>Selection is required</mat-error>
+      <mat-error>Kérjük, válasszon egy szolgáltatást</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="w-full custom-field">
-      <mat-label class="text-neutral-400">Additional Details</mat-label>
-      <textarea matInput formControlName="message" rows="3" placeholder="Tell us more about your needs"></textarea>
+      <mat-label class="text-neutral-400">További részletek</mat-label>
+      <textarea matInput formControlName="message" rows="3" placeholder="Írja le röviden az igényeit..."></textarea>
       <mat-icon matPrefix [ngClass]="isInvalid('message') ? 'icon-error' : 'icon-success'" class="mr-2">message</mat-icon>
-      <mat-error>Please provide at least 10 characters</mat-error>
+      <mat-error>Kérjük, írjon legalább 10 karaktert</mat-error>
     </mat-form-field>
 
     <div class="mt-4 flex justify-end">
       <app-primary-button 
         type="submit" 
-        text="Send Request" 
+        text="Ajánlat kérése" 
         icon="send" 
         [disabled]="quoteForm.invalid || isLoading"
         [loading]="isLoading">

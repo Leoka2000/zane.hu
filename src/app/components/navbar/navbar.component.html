@@ -21,14 +21,35 @@
     <div
       class="hidden md:flex items-center space-x-8 text-neutral-100 font-medium grotesk bg-transparent"
     >
-      <a href="/" class="hover:text-[#76e594] uppercase transition-colors bg-transparent">Főoldal</a>
-      <a href="services" class="hover:text-[#76e594] uppercase transition-colors bg-transparent">Szolgáltatásaink</a>
-      <a href="about" class="hover:text-[#76e594] uppercase transition-colors bg-transparent">Rólunk</a>
+      <a 
+        routerLink="/" 
+        routerLinkActive="active-link" 
+        [routerLinkActiveOptions]="{exact: true}"
+        class="hover:text-[#76e594] uppercase transition-colors bg-transparent cursor-pointer"
+      >
+        Főoldal
+      </a>
+
+      <a 
+        routerLink="/services" 
+        routerLinkActive="active-link" 
+        class="hover:text-[#76e594] uppercase transition-colors bg-transparent cursor-pointer"
+      >
+        Szolgáltatásaink
+      </a>
+
+      <a 
+        routerLink="/about" 
+        routerLinkActive="active-link" 
+        class="hover:text-[#76e594] uppercase transition-colors bg-transparent cursor-pointer"
+      >
+        Rólunk
+      </a>
     </div>
  
     <div class="flex items-center bg-transparent">
       <app-primary-button
-        text="Get a Quote"
+        text="Ajánlatkérés"
         (click)="openQuoteDialog()"
       >
       </app-primary-button>

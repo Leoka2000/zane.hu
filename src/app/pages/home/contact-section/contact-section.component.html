@@ -10,11 +10,11 @@
 
     <div class="mb-12 space-y-4 isolate relative">
       <app-below-bg-shades></app-below-bg-shades>
-      <h2 class="md:text-6xl text-4xl font-medium text-neutral-200 tracking-tight leading-tight grotesk">
-        Stay ahead of threats
+      <h2 class="md:text-6xl text-4xl font-medium  tracking-tight leading-14 grotesk">
+      <span class="text-[#76e594]"> Mindig egy lépéssel előrébb.</span> 
       </h2>
-      <p class="md:text-6xl text-4xl font-medium text-neutral-400 grotesk">
-        Deploy in one click. No setup. No stress.
+      <p class="md:text-6xl text-4xl font-medium text-neutral-200  grotesk">
+        Precíz tervezés. Gyors gyártás.<br/> Gondtalan megvalósítás.
       </p>
     </div>
 
@@ -22,7 +22,7 @@
       
       <div class="flex flex-col">
         <div class="flex flex-wrap gap-3 mb-8">
-          @for (feature of ['SOC 2 Ready', 'No credit card needed', 'EU-hosted', 'Cancel anytime', 'GDPR Compliant', 'Setup in minutes']; track feature) {
+          @for (feature of ['ISO 9001 Minőség', 'Gyors prototípusok', 'EU-s gyártás', 'Szakértő mérnökök', 'GDPR Megfelelőség', 'Modern technológia']; track feature) {
           <div class="flex items-center gap-2 px-2  rounded-full border border-[#76e594] bg-[#53db78]/5">
             <mat-icon class="!text-[#76e594] text-xl mb-1.5 flex items-center justify-center">
               check_circle
@@ -37,36 +37,36 @@
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none border border-neutral-700 !rounded-md !mb-4 overflow-hidden">
               <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
                 <mat-panel-title class="!text-neutral-200 !text-lg font-bold grotesk">
-                  Do I need to install anything?
+                  Szükséges szoftver telepítése a kezeléshez?
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
               <div class="py-6 px-8 text-neutral-400 leading-relaxed">
-                Zane Systems is cloud-native. You can manage your entire hardware stack via our browser dashboard with zero local installation required.
+                A Zane Systems felhőalapú megoldásokat kínál. Hardveres eszközeit böngészőn keresztül kezelheti, így nincs szükség helyi telepítésre a távfelügyelethez.
               </div>
             </mat-expansion-panel>
 
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md !mb-4">
               <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
                 <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
-                  Can I try it without a credit card?
+                  Kérhetek egyedi árajánlatot prototípusra?
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
               <div class="py-6 px-8 text-neutral-400 leading-relaxed">
-                Yes, our Free Tier allows you to connect up to 3 microcontrollers without any billing information required.
+                Igen, mérnöki csapatunk készséggel segít az ötlettől a prototípus gyártásáig. Vegye fel velünk a kapcsolatot az egyedi igények megbeszéléséhez.
               </div>
             </mat-expansion-panel>
 
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md">
               <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
                 <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
-                  Is my data stored in the EU?
+                  Hol készülnek a termékek?
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
               <div class="py-6 px-8 text-neutral-400 leading-relaxed">
-                Absolutely. We use Frankfurt-based servers to ensure full compliance with GDPR and local data residency laws.
+                Minden tervezési és gyártási folyamat az Európai Unióban történik, garantálva a legmagasabb minőségi szabványokat és az adatbiztonságot.
               </div>
             </mat-expansion-panel>
           </mat-accordion>

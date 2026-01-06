@@ -14,6 +14,8 @@ import { PrimaryButtonComponent } from '../../../components/primary-button/prima
     /* Angular Material Dark téma igazítások */
     ::ng-deep .custom-dark-accordion .mat-expansion-panel {
       background: transparent !important;
+      padding:0!important;
+      margin:0!important;
     }
 
     ::ng-deep .custom-dark-accordion .mat-expansion-panel-header-description,
