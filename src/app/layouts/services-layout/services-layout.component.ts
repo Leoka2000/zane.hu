@@ -1,11 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router'; // RouterModule hozzáadva
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { ServicesHomeComponent } from '../../pages/services-home/services-home.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-services-layout',
@@ -22,6 +23,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './services-layout.component.html',
   styles: [
     `
+      /* Kép konténer javítás világos hátterű logókhoz/tervekhez */
       .light-bg-fix {
         background-color: #e5e7eb !important;
         padding: 1.5rem;
@@ -40,9 +42,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class ServicesLayoutComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private translate = inject(TranslateService);
+  private sanitizer = inject(DomSanitizer);
+  
   selectedServiceId: string | null = null;
 
-  // Csak a technikai adatokat tartjuk itt (ID-k és Képek)
+  // Szolgáltatások adatai: ID és kapcsolódó képek
   services = [
     {
       id: 'rendszertervezes',
@@ -87,44 +91,61 @@ export class ServicesLayoutComponent implements OnInit {
   ];
 
   ngOnInit() {
+    // Figyeljük az URL paraméter változását (szolgáltatás váltás)
     this.route.paramMap.subscribe((params) => {
       this.selectedServiceId = params.get('id');
+      // Visszagörgetés az oldal tetejére váltáskor
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
+  // Aktuális szolgáltatás adatainak lekérése
   getServiceData() {
     return this.services.find((s) => s.id === this.selectedServiceId);
   }
 
-  // Dinamikusan olvassa a fordítást az ID alapján
+  // Fordítás lekérése dinamikus kulcs alapján
   getTranslation(field: string): string {
     if (!this.selectedServiceId) return '';
     const key = `serv_layout.services.${this.selectedServiceId}.${field}`;
     const translation = this.translate.instant(key);
-    return translation === key ? '' : translation; // Ha nincs fordítás, üreset ad vissza
+    return translation === key ? '' : translation;
   }
 
+  // Kiemelt mondat kinyerése (ha nem HTML tartalomról van szó)
   getHighlightedSentence(field: string): string | null {
     const text = this.getTranslation(field);
-    if (!text || (text.includes('<') && text.includes('>'))) return null;
+    if (!text || text.includes('<')) return null;
     const match = text.match(/([^.!?]+[.!?]+(?:\s|$)){1,3}/);
     return match ? match[0].trim() : null;
   }
 
-  getFormattedText(field: string): string[] {
-    let text = this.getTranslation(field);
+  // Szöveg formázása parágrafusokra és HTML biztonságossá tétele
+  getFormattedText(field: string): SafeHtml[] {
+    const text = this.getTranslation(field);
     if (!text) return [];
-    if (text.includes('<') && text.includes('>')) return [text];
 
+    // Ha a szöveg HTML (mint a d3 szekció), biztonságos HTML-ként adjuk vissza
+    if (text.includes('<') && text.includes('>')) {
+      return [this.sanitizer.bypassSecurityTrustHtml(text)];
+    }
+
+    let cleanText = text;
     const highlight = this.getHighlightedSentence(field);
-    if (highlight) text = text.replace(highlight, '').trim();
+    if (highlight) {
+      cleanText = text.replace(highlight, '').trim();
+    }
 
-    const allSentences = text.match(/[^.!?]+[.!?]+(?=\s|$)/g) || [text];
-    const chunks: string[] = [];
+    // Mondatokra bontás pontok alapján
+    const allSentences = cleanText.match(/[^.!?]+[.!?]+(?=\s|$)/g) || [cleanText];
+    
+    const chunks: SafeHtml[] = [];
+    // 4 mondatonként csoportosítjuk a parágrafusokat
     for (let i = 0; i < allSentences.length; i += 4) {
       const chunk = allSentences.slice(i, i + 4).join(' ');
-      if (chunk.trim()) chunks.push(chunk);
+      if (chunk.trim()) {
+        chunks.push(this.sanitizer.bypassSecurityTrustHtml(chunk));
+      }
     }
     return chunks;
   }
