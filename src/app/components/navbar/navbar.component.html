@@ -1,6 +1,4 @@
-<nav
-  class="fixed top-0 left-0 w-full z-50 flex justify-center bg-transparent transition-all duration-300"
->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-center bg-transparent transition-all duration-300">
   <div
     [ngClass]="{
       'backdrop-blur-md bg-transparent border-b border-neutral-700': isScrolled,
@@ -9,65 +7,49 @@
     class="flex items-center justify-between w-full px-6 py-4 z-30 transition-all duration-300"
   >
     <div class="flex items-center bg-transparent">
-      <div
-        class="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer"
-        routerLink="/"
-      >
-        <img
-          src="/images/zane-logo-small.png"
-          alt="Zane Logo"
-          class="object-cover animate-in fade-in zoom-in duration-1000"
-        />
+      <div class="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer" routerLink="/">
+        <img src="/images/zane-logo-small.png" alt="Zane Logo" class="object-cover animate-in fade-in zoom-in duration-1000" />
       </div>
     </div>
 
     <div class="hidden xl:flex items-center space-x-4 bg-transparent">
-      <button
-        mat-button
-        routerLink="/"
-        routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="nav-mat-btn !uppercase !text-sm px-6"
-      >
+      <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="nav-mat-btn !uppercase !text-sm px-6">
         <mat-icon class="mr-2">home</mat-icon>
-        Főoldal
+        {{ 'navbar.HOME' | translate }}
       </button>
 
-      <button
-        mat-button
-        routerLink="/services"
-        routerLinkActive="active-link"
-        class="nav-mat-btn !uppercase !text-sm px-6"
-      >
+      <button mat-button routerLink="/services" routerLinkActive="active-link" class="nav-mat-btn !uppercase !text-sm px-6">
         <mat-icon class="mr-2">design_services</mat-icon>
-        Szolgáltatásaink
-      </button>
+        {{ 'navbar.SHOP' | translate }} </button>
 
-      <button
-        mat-button
-        routerLink="/about"
-        routerLinkActive="active-link"
-        class="nav-mat-btn !uppercase !text-sm px-6"
-      >
+      <button mat-button routerLink="/about" routerLinkActive="active-link" class="nav-mat-btn !uppercase !text-sm px-6">
         <mat-icon class="mr-2">info</mat-icon>
-        Rólunk
+        {{ 'navbar.ABOUT' | translate }}
       </button>
     </div>
 
     <div class="flex items-center space-x-4 bg-transparent">
+      
+      <button mat-button [matMenuTriggerFor]="langMenu" class="text-white !min-w-0 px-2 opacity-80 hover:opacity-100">
+        <span class="uppercase text-xs font-bold">{{ currentLang }}</span>
+        <mat-icon class="!m-0 !text-xs">expand_more</mat-icon>
+      </button>
+      
+      <mat-menu #langMenu="matMenu" class="dark-menu">
+        <button mat-menu-item (click)="changeLang('hu')">
+          <span class="flex items-center gap-2">🇭🇺 Magyar</span>
+        </button>
+        <button mat-menu-item (click)="changeLang('en')">
+          <span class="flex items-center gap-2">🇺🇸 English</span>
+        </button>
+      </mat-menu>
+
       <div class="hidden xl:block">
-        <app-primary-button
-          text="Ajánlatkérés"
-          (click)="openQuoteDialog()"
-        ></app-primary-button>
+        <app-primary-button text="Ajánlatkérés" (click)="openQuoteDialog()"></app-primary-button>
       </div>
 
-      <button
-        mat-icon-button
-        (click)="openMobileMenu()"
-        class="text-white xl:!hidden"
-      >
-        <mat-icon class="!mb-10">menu</mat-icon>
+      <button mat-icon-button (click)="openMobileMenu()" class="text-white xl:!hidden">
+        <mat-icon>menu</mat-icon>
       </button>
     </div>
   </div>
