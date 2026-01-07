@@ -94,12 +94,13 @@ body {
   display: block;
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
-  background-color: #000d01; // Egyezzen meg a weboldalad alapszínével!
+  overflow: hidden; // Megakadályozza, hogy az animált oldalak "kilógjanak" alul/felül
+  background-color: #000d01;
 }
 
-/* Biztosítjuk, hogy az animált komponensek kitöltsék a teret */
+/* Ez segít abban, hogy az oldalak ne essenek szét az abszolút pozicionálás alatt */
 ::ng-deep .route-wrapper > * {
   display: block;
   width: 100%;
+  min-height: 100vh;
 }

@@ -2,36 +2,49 @@ import { trigger, transition, style, query, animate, group } from '@angular/anim
 
 export const fadeSlideAnimation = trigger('routeAnimations', [
   transition('* <=> *', [
-    // 1. Beállítjuk a konténert
-    style({ position: 'relative', minHeight: '100vh' }),
+    // 1. A konténer fixálása az átmenet idejére
+    style({ position: 'relative', minHeight: '100vh', overflow: 'hidden' }),
     
-    // 2. Mindkét oldalt egymásra helyezzük absolute pozícióval
+    // 2. Az oldalak egymásra rétegezése
     query(':enter, :leave', [
       style({
         position: 'absolute',
         top: 0,
         left: 0,
         width: '100%',
-        opacity: 0,
         zIndex: 1
       })
     ], { optional: true }),
 
-    // 3. Az érkező oldal kezdőállapota
+    // 3. Az érkező oldal kezdeti állapota: mélyen lent és teljesen átlátszó
     query(':enter', [
-      style({ opacity: 0, transform: 'translateY(20px)' })
+      style({ 
+        opacity: 0, 
+        transform: 'translateY(100px)', // Alulról indul
+        zIndex: 2 // Ez legyen felül, hogy rácsússzon a régire
+      })
     ], { optional: true }),
 
-    // 4. Párhuzamosan futtatjuk a két animációt
+    // 4. Az animációs csoport indítása
     group([
-      // Távozó oldal halványul
+      // TÁVOZÓ OLDAL: Felfelé úszik és elhalványul
       query(':leave', [
-        animate('400ms ease-in', style({ opacity: 0, transform: 'translateY(-20px)' }))
+        animate('500ms cubic-bezier(0.4, 0.0, 0.2, 1)', 
+          style({ 
+            opacity: 0, 
+            transform: 'translateY(-100px)' // Felfelé távozik
+          })
+        )
       ], { optional: true }),
       
-      // Érkező oldal beúszik
+      // ÉRKEZŐ OLDAL: Alulról beúszik a helyére
       query(':enter', [
-        animate('600ms 100ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+        animate('700ms 100ms cubic-bezier(0.35, 0, 0.25, 1)', 
+          style({ 
+            opacity: 1, 
+            transform: 'translateY(0)' // Beáll a központba
+          })
+        )
       ], { optional: true })
     ])
   ])
