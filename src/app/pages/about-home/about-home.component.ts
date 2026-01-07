@@ -16,7 +16,7 @@ import { ContactSectionComponent } from "../home/contact-section/contact-section
       <img
         src="images/blog/bg-pattern-hero.svg"
         alt="Background Pattern"
-        class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+        class="absolute inset-0 w-full h-full object-cover pointer-events-none z-[-1]"
       />
       <div>
         <app-about-hero></app-about-hero>
