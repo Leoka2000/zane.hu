@@ -1,4 +1,4 @@
-import { Component, HostListener, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
@@ -28,12 +28,18 @@ import { NavMobileSheetComponent } from './nav-mobile-sheet/nav-mobile-sheet.com
   templateUrl: './navbar.component.html',
   styles: [
     `
-      .active-link {
+     .active-link {
         color: #76e594 !important;
         background: rgba(118, 229, 148, 0.1) !important;
         font-weight: 600 !important;
       }
 
+      /* Az ikon színezése aktív állapotban */
+      .active-link mat-icon {
+        color: #76e594 !important;
+      }
+
+      
       .nav-mat-btn {
         color: #f5f5f5 !important;
         font-family: inherit;
@@ -133,6 +139,15 @@ export class NavbarComponent implements OnInit {
     this.currentLang = lang;
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
+  }
+  openRuler(template: TemplateRef<any>) {
+    this.dialog.open(template, {
+      width: '100%',
+      maxWidth: '800px',
+      panelClass: 'ruler-dialog-panel',
+      backdropClass: 'backdrop-blur-[10px]',
+      autoFocus: false
+    });
   }
 
   openQuoteDialog() {

@@ -21,6 +21,11 @@
       <mat-icon matListItemIcon>info</mat-icon>
       <span matListItemTitle>Rólunk</span>
     </a>
+
+    <a mat-list-item (click)="openRuler()" class="mobile-link rounded-lg mt-2">
+      <mat-icon matListItemIcon class="text-[#76e594]">straighten</mat-icon>
+      <span matListItemTitle class="text-[#76e594]">PCB vonalzó</span>
+    </a>
   </mat-nav-list>
 
   <div class="flex justify-center items-center mt-12 mb-8 px-4">
@@ -31,3 +36,23 @@
     />
   </div>
 </div>
+
+<ng-template #rulerDialog>
+  <div class="relative flex flex-col items-center justify-center bg-[#000d01] border border-[#76e594]/30 rounded-lg p-4 shadow-2xl">
+    <button mat-dialog-close class="absolute -top-2 -right-2 bg-[#000d01] border border-[#76e594]/30 rounded-full w-8 h-8 flex items-center justify-center text-white hover:text-[#76e594] z-50">
+      <mat-icon class="!text-[18px]">close</mat-icon>
+    </button>
+    
+    <div class="w-full flex justify-center overflow-hidden">
+      <img 
+        src="images/brand/PCB-vonalzo.png" 
+        alt="PCB Ruler" 
+        class="max-w-full max-h-[70vh] object-contain rounded-sm" 
+      />
+    </div>
+    
+    <p class="text-[#76e594] text-[10px] uppercase tracking-widest mt-4 opacity-70">
+      ZANE Systems - PCB Reference Tool
+    </p>
+  </div>
+</ng-template>

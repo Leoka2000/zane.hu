@@ -1,68 +1,214 @@
-<footer class="relative z-50 !bg-[#000d01] text-neutral-400 py-16 px-6 md:px-12 border-t border-white/5 w-full">
+<footer
+  class="relative z-50 !bg-[#000d01] text-neutral-400 py-16 px-6 md:px-12 border-t border-white/5 w-full"
+>
   <div class="max-w-7xl mx-auto">
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start">
-      
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start"
+    >
       <div class="space-y-6">
-        <img src="images/brand/IPC.png" alt="IPC Certified" class="h-24 object-contain" />
+        <img
+          src="images/brand/IPC.png"
+          alt="IPC Certified"
+          class="h-24 object-contain"
+        />
         <div class="text-[10px] leading-relaxed text-neutral-500 italic">
-          <p>{{ 'footer.iso_text' | translate }}</p>
+          <p>{{ "footer.iso_text" | translate }}</p>
         </div>
       </div>
 
       <div>
-        <h4 class="text-[#76e594] text-lg font-bold mb-6 grotesk">{{ 'footer.services_title' | translate }}</h4>
+        <h4 class="text-[#76e594] text-lg font-bold mb-6 grotesk">
+          {{ "footer.services_title" | translate }}
+        </h4>
         <ul class="space-y-3 text-sm">
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_shop' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_proto' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_embedded' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_quote' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.serv_jobs' | translate }}</a></li>
+          <li>
+            <a
+              href="https://ztrackmap.com/"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.serv_shop" | translate }}</a
+            >
+          </li>
+          <li>
+            <button
+              (click)="openRulerDialog(rulerDialog)"
+              class="hover:text-[#76e594] transition-colors bg-transparent border-none p-0 cursor-pointer text-neutral-400"
+            >
+              {{ "footer.serv_proto" | translate }}
+            </button>
+          </li>
+          
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.serv_quote" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.serv_jobs" | translate }}</a
+            >
+          </li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-[#76e594] text-lg font-bold mb-6 grotesk">{{ 'footer.info_title' | translate }}</h4>
+        <h4 class="text-[#76e594] text-lg font-bold mb-6 grotesk">
+          {{ "footer.info_title" | translate }}
+        </h4>
         <ul class="space-y-3 text-sm">
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_about' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_blog' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_contact' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_data' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_tos' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_cert' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_policy' | translate }}</a></li>
-          <li><a href="#" class="hover:text-[#76e594] transition-colors">{{ 'footer.info_support' | translate }}</a></li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.info_about" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.info_blog" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.info_contact" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.info_data" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.info_tos" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.info_cert" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.info_policy" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="hover:text-[#76e594] transition-colors"
+              >{{ "footer.info_support" | translate }}</a
+            >
+          </li>
         </ul>
       </div>
 
       <div class="flex flex-col items-start lg:items-end">
-        <img src="images/zanelogo.png" alt="ZANE Systems" class="h-12 mb-6 object-contain" />
-        <h4 class="text-white text-sm font-bold mb-4">{{ 'footer.follow_us' | translate }}</h4>
+        <img
+          src="images/zanelogo.png"
+          alt="ZANE Systems"
+          class="h-12 mb-6 object-contain"
+        />
+        <h4 class="text-white text-sm font-bold mb-4">
+          {{ "footer.follow_us" | translate }}
+        </h4>
         <div class="flex gap-4">
-          <a href="#" class="bg-white rounded-full p-2 hover:bg-[#76e594] transition-all">
-            <svg class="w-5 h-5 fill-[#000d01]" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+          <a
+            href="#"
+            class="bg-white rounded-full p-2 hover:bg-[#76e594] transition-all"
+          >
+            <svg class="w-5 h-5 fill-[#000d01]" viewBox="0 0 24 24">
+              <path
+                d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
+              />
+            </svg>
           </a>
-          <a href="#" class="bg-white rounded-full p-2 hover:bg-[#76e594] transition-all">
-            <svg class="w-5 h-5 fill-[#000d01]" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          <a
+            href="#"
+            class="bg-white rounded-full p-2 hover:bg-[#76e594] transition-all"
+          >
+            <svg class="w-5 h-5 fill-[#000d01]" viewBox="0 0 24 24">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              />
+            </svg>
           </a>
         </div>
       </div>
     </div>
 
-    <div class="border-t border-white/10 pt-8 flex flex-wrap justify-center md:justify-end gap-8 text-sm">
+    <div
+      class="border-t border-white/10 pt-8 flex flex-wrap justify-center md:justify-end gap-8 text-sm"
+    >
       <div class="flex items-center gap-2">
         <span class="text-[#76e594]">📞</span>
         <span class="text-white font-medium">+36/30-299-77-77</span>
       </div>
       <div class="flex items-center gap-2">
         <span class="text-[#76e594]">✉️</span>
-        <a href="mailto:sales&#64;zane.hu" class="text-white hover:text-[#76e594] transition-colors">sales&#64;zane.hu</a>
+        <a
+          href="mailto:sales&#64;zane.hu"
+          class="text-white hover:text-[#76e594] transition-colors"
+          >sales&#64;zane.hu</a
+        >
       </div>
       <div class="flex items-center gap-2">
         <span class="text-[#76e594]">📍</span>
-        <span class="text-white">{{ 'footer.address' | translate }}</span>
+        <span class="text-white">{{ "footer.address" | translate }}</span>
       </div>
     </div>
-
   </div>
+
+  <ng-template #rulerDialog>
+    <div
+      class="relative flex flex-col items-center justify-center bg-[#000d01] border border-[#76e594]/30 rounded-lg p-4 shadow-2xl"
+    >
+      <button
+        mat-dialog-close
+        class="absolute -top-2 -right-2 bg-[#000d01] border border-[#76e594]/30 rounded-full w-8 h-8 flex items-center justify-center text-white hover:text-[#76e594] transition-colors z-50"
+      >
+        <span class="material-icons !text-lg">close</span>
+      </button>
+
+      <div class="w-full flex justify-center overflow-hidden">
+        <img
+          src="images/brand/PCB-vonalzo.png"
+          alt="PCB Ruler"
+          class="max-w-full max-h-[85vh] object-contain rounded-sm"
+        />
+      </div>
+
+      <p
+        class="text-[#76e594] text-[10px] uppercase tracking-widest mt-4 opacity-70"
+      >
+        ZANE Systems - PCB Reference Tool
+      </p>
+    </div>
+  </ng-template>
 </footer>

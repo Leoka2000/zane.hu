@@ -1,14 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, TemplateRef, ViewChild } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-nav-mobile-sheet',
   standalone: true,
-  imports: [MatListModule, RouterModule, MatIconModule, CommonModule],
+  imports: [MatListModule, RouterModule, MatIconModule, CommonModule, MatDialogModule],
   templateUrl: './nav-mobile-sheet.component.html',
   styles: [`
     :host {
@@ -43,11 +44,27 @@ import { CommonModule } from '@angular/common';
 })
 export class NavMobileSheetComponent {
   private _bottomSheetRef = inject(MatBottomSheetRef);
+  private dialog = inject(MatDialog);
+
+  @ViewChild('rulerDialog') rulerDialogTemplate!: TemplateRef<any>;
 
   close(event: MouseEvent): void {
     // Engedjük, hogy a router navigáljon, mielőtt bezárjuk a sheet-et
     setTimeout(() => {
       this._bottomSheetRef.dismiss();
     }, 100);
+  }
+
+  openRuler(): void {
+    // Előbb bezárjuk a mobil menüt, hogy ne legyen útban a dialógus alatt
+    this._bottomSheetRef.dismiss();
+    
+    this.dialog.open(this.rulerDialogTemplate, {
+      width: '100%',
+      maxWidth: '800px',
+      panelClass: 'ruler-dialog-panel',
+      backdropClass: 'backdrop-blur-[10px]',
+      autoFocus: false
+    });
   }
 }

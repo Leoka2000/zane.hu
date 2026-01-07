@@ -104,3 +104,27 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+
+
+
+.ruler-dialog-panel .mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(40px);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+
+.ruler-dialog-panel {
+  /* Eltávolítja az alapértelmezett paddingokat a keretről */
+  .mat-mdc-dialog-container .mdc-dialog__surface {
+    padding: 0 !important;
+    background: transparent !important;
+    overflow: visible !important; /* Hogy a bezáró gomb kicsit túllóghasson */
+  }
+}
