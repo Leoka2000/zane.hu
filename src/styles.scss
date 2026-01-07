@@ -88,3 +88,18 @@ body {
 }
 
 
+
+.route-wrapper {
+  position: relative;
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #000d01; // Egyezzen meg a weboldalad alapszínével!
+}
+
+/* Biztosítjuk, hogy az animált komponensek kitöltsék a teret */
+::ng-deep .route-wrapper > * {
+  display: block;
+  width: 100%;
+}
