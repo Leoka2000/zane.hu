@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core'; 
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { QuotationDialogComponent } from '../dialogs/quotation-dialog/quotation-dialog.component';// Importálva
-
+import { TanusitvanyDialogComponent } from '../dialogs/tanusitvany-dialog/tanusitvany-dialog.component';
+import { AdatzekelesDialogComponent } from '../dialogs/adatzekeles-dialog/adatzekeles-dialog.component';
 @Component({
   selector: 'app-footer',
   standalone: true,
@@ -29,11 +30,28 @@ export class FooterComponent {
       autoFocus: false
     });
   }
+  openCertDialog() {
+    this.dialog.open(TanusitvanyDialogComponent, {
+      width: 'auto',
+      maxWidth: '95vw',
+      panelClass: 'custom-dialog-container',
+      backdropClass: 'backdrop-blur-[20px]',
+    });
+  }
 
   //  Ajánlatkérés megnyitása (Komponens alapú)
   openQuoteDialog() {
     this.dialog.open(QuotationDialogComponent, {
       width: '800px',
+      panelClass: 'custom-dialog-container',
+      backdropClass: 'backdrop-blur-[20px]',
+    });
+  }
+
+  openPrivacyDialog() {
+    this.dialog.open(AdatzekelesDialogComponent, {
+      width: 'auto', // Privacy docs often need more width for readability
+      height: '100%',
       panelClass: 'custom-dialog-container',
       backdropClass: 'backdrop-blur-[20px]',
     });
