@@ -26,11 +26,13 @@ import { PrimaryButtonComponent } from '../../../components/primary-button/prima
       }
       ::ng-deep .custom-dark-accordion .mat-expansion-panel-header-description,
       ::ng-deep .custom-dark-accordion .mat-content {
+             background: transparent !important;
         flex-grow: 1;
         justify-content: space-between;
         align-items: center;
       }
       ::ng-deep .mat-expansion-indicator {
+             background: transparent !important;
         display: none !important;
       }
     `,

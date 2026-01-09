@@ -36,6 +36,7 @@ export class BlogComponent {
       data: translatedPost,
       width: '100%',
       maxWidth: '800px',
+    
       maxHeight: '90vh',
       panelClass: 'custom-dialog-panel',
       backdropClass: 'backdrop-blur-[15px]',

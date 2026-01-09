@@ -1,7 +1,7 @@
 <form
   [formGroup]="contactForm"
   (ngSubmit)="onSubmit()"
-  class="w-full custom-material-form mx-auto p-6"
+  class="w-full custom-material-form  mx-auto"
 >
   <div class="mb-10">
     <h3
@@ -19,11 +19,12 @@
       matInput
       formControlName="name"
       [placeholder]="'contact_form.name_placeholder' | translate"
+      class="!bg-transparent"
     />
     <mat-icon
       matPrefix
       [ngClass]="isInvalid('name') ? 'icon-error' : 'icon-success'"
-      class="mr-3"
+      class="mr-3 "
       >person</mat-icon
     >
     <mat-error *ngIf="contactForm.get('name')?.hasError('required')">{{
@@ -43,6 +44,7 @@
       type="email"
       formControlName="email"
       [placeholder]="'contact_form.email_placeholder' | translate"
+      class="!bg-transparent"
     />
     <mat-icon
       matPrefix
@@ -61,6 +63,7 @@
     }}</mat-label>
     <textarea
       matInput
+ 
       formControlName="message"
       rows="5"
       [placeholder]="'contact_form.msg_placeholder' | translate"
