@@ -1,5 +1,6 @@
-<section class="w-full bg-[#000d01] py-20 overflow-visible">
-  <div class="max-w-7xl mx-auto">
+<section class="w-full bg-[#000d01] py-12 lg:py-20 overflow-visible">
+  <div class="max-w-7xl mx-auto  lg:px-0">
+    
     <div class="mb-8">
       <span class="inline-flex items-center gap-3 px-3 py-1.5 rounded-md border uppercase border-[#76e594] text-[#76e594] text-xs font-bold tracking-wide" style="line-height: 1;">
         <span>{{ 'contact.badge' | translate }}</span>
@@ -9,24 +10,24 @@
       </span>
     </div>
 
-    <div class="mb-12 space-y-4 isolate relative">
+    <div class="mb-12 space-y-2 lg:space-y-4 isolate relative">
       <app-below-bg-shades></app-below-bg-shades>
-      <h2 class="md:text-6xl text-4xl font-medium tracking-tight leading-14 grotesk">
+      <h2 class="text-3xl md:text-6xl font-medium tracking-tight leading-tight md:leading-14 grotesk">
         <span class="text-[#76e594]">{{ 'contact.title_step' | translate }}</span> 
       </h2>
-      <p class="md:text-6xl text-4xl font-medium text-neutral-200 grotesk" [innerHTML]="'contact.title_sub' | translate">
+      <p class="text-3xl md:text-6xl font-medium text-neutral-200 grotesk" [innerHTML]="'contact.title_sub' | translate">
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
       <div class="flex flex-col">
-        <div class="flex flex-wrap gap-3 mb-8">
+        <div class="flex flex-wrap gap-2 lg:gap-3 mb-8">
           @for (feature of ('contact.features' | translate); track feature) {
-          <div class="flex items-center gap-2 px-2 rounded-full border border-[#76e594] bg-[#53db78]/5">
-            <mat-icon class="!text-[#76e594] text-xl mb-1.5 flex items-center justify-center">
+          <div class="flex items-center gap-2 px-2 py-0.5 rounded-full border border-[#76e594] bg-[#53db78]/5">
+            <mat-icon class="!text-[#76e594] text-lg lg:text-xl mb-1 flex items-center justify-center">
               check_circle
             </mat-icon>
-            <span class="text-xs font-medium tracking-wide text-neutral-200">{{ feature }}</span>
+            <span class="text-[10px] lg:text-xs font-medium tracking-wide text-neutral-200">{{ feature }}</span>
           </div>
           }
         </div>
@@ -34,37 +35,37 @@
         <div class="space-y-4">
           <mat-accordion class="custom-dark-accordion">
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none border border-neutral-700 !rounded-md !mb-4 overflow-hidden">
-              <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
-                <mat-panel-title class="!text-neutral-200 !text-lg font-bold grotesk">
+              <mat-expansion-panel-header class="!h-16 lg:!h-20 px-4 lg:!px-8 hover:!bg-white/5 transition-colors">
+                <mat-panel-title class="!text-neutral-200 text-base lg:!text-lg font-bold grotesk">
                   {{ 'contact.faq_q1' | translate }}
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
-              <div class="py-6 px-8 text-neutral-400 leading-relaxed">
+              <div class="py-4 lg:py-6 px-4 lg:px-8 text-neutral-400 text-sm lg:text-base leading-relaxed">
                 {{ 'contact.faq_a1' | translate }}
               </div>
             </mat-expansion-panel>
 
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md !mb-4">
-              <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
-                <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
+              <mat-expansion-panel-header class="!h-16 lg:!h-20 px-4 lg:!px-8 hover:!bg-white/5 transition-colors">
+                <mat-panel-title class="text-neutral-200 text-base lg:!text-lg font-bold grotesk">
                   {{ 'contact.faq_q2' | translate }}
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
-              <div class="py-6 px-8 text-neutral-400 leading-relaxed">
+              <div class="py-4 lg:py-6 px-4 lg:px-8 text-neutral-400 text-sm lg:text-base leading-relaxed">
                 {{ 'contact.faq_a2' | translate }}
               </div>
             </mat-expansion-panel>
 
             <mat-expansion-panel hideToggle class="!bg-transparent !shadow-none !border border-neutral-700 !rounded-md">
-              <mat-expansion-panel-header class="!h-20 !px-8 hover:!bg-white/5 transition-colors">
-                <mat-panel-title class="text-neutral-200 !text-lg font-bold grotesk">
+              <mat-expansion-panel-header class="!h-16 lg:!h-20 px-4 lg:!px-8 hover:!bg-white/5 transition-colors">
+                <mat-panel-title class="text-neutral-200 text-base lg:!text-lg font-bold grotesk">
                   {{ 'contact.faq_q3' | translate }}
                 </mat-panel-title>
                 <mat-icon class="!text-[#76e594]">add</mat-icon>
               </mat-expansion-panel-header>
-              <div class="py-6 px-8 text-neutral-400 leading-relaxed">
+              <div class="py-4 lg:py-6 px-4 lg:px-8 text-neutral-400 text-sm lg:text-base leading-relaxed">
                 {{ 'contact.faq_a3' | translate }}
               </div>
             </mat-expansion-panel>
@@ -72,7 +73,7 @@
         </div>
       </div>
 
-      <div class="w-full">
+      <div class="w-full mt-8 lg:mt-0">
         <app-form-contact></app-form-contact>
       </div>
     </div>
