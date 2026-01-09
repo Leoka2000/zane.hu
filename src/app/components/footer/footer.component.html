@@ -37,18 +37,18 @@
               {{ "footer.serv_proto" | translate }}
             </button>
           </li>
-          
+
           <li>
-            <a
-              href="#"
-              target="_blank"
-              class="hover:text-[#76e594] transition-colors"
-              >{{ "footer.serv_quote" | translate }}</a
+            <button
+              (click)="openQuoteDialog()"
+              class="hover:text-[#76e594] transition-colors bg-transparent border-none p-0 cursor-pointer text-neutral-400 text-left"
             >
+              {{ "footer.serv_quote" | translate }}
+            </button>
           </li>
           <li>
             <a
-              href="#"
+              href="https://hu.jooble.org/%C3%A1ll%C3%A1s-smt-oper%C3%A1tor"
               target="_blank"
               class="hover:text-[#76e594] transition-colors"
               >{{ "footer.serv_jobs" | translate }}</a
@@ -62,30 +62,6 @@
           {{ "footer.info_title" | translate }}
         </h4>
         <ul class="space-y-3 text-sm">
-          <li>
-            <a
-              href="#"
-              target="_blank"
-              class="hover:text-[#76e594] transition-colors"
-              >{{ "footer.info_about" | translate }}</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              target="_blank"
-              class="hover:text-[#76e594] transition-colors"
-              >{{ "footer.info_blog" | translate }}</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              target="_blank"
-              class="hover:text-[#76e594] transition-colors"
-              >{{ "footer.info_contact" | translate }}</a
-            >
-          </li>
           <li>
             <a
               href="#"

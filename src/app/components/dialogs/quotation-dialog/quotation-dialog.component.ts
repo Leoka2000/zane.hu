@@ -1,7 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatDialogModule, MatDialogRef, MatDialog } from '@angular/material/dialog';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import {
+  MatDialogModule,
+  MatDialogRef,
+  MatDialog,
+} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -24,20 +33,58 @@ import { TranslateModule } from '@ngx-translate/core';
     MatSelectModule,
     MatIconModule,
     PrimaryButtonComponent,
-    TranslateModule
+    TranslateModule,
   ],
   templateUrl: './quotation-dialog.component.html',
-  styles: [`
-    .dialog-container { background-color: #000d01; color: white; padding: 24px; border-radius: 8px; }
-    ::ng-deep .mat-mdc-form-field-focus-overlay { background-color: transparent !important; }
-    ::ng-deep .custom-field .mat-mdc-text-field-wrapper { background-color: #000d01 !important; border: 1px solid #404040 !important; border-radius: 4px !important; }
-    ::ng-deep .custom-field .mdc-text-field--focused .mat-mdc-text-field-wrapper { border-color: #76e594 !important; }
-    ::ng-deep .mat-mdc-select-arrow { color: #76e594 !important; }
-    ::ng-deep .mat-mdc-select-value-text { color: white !important; }
-    ::ng-deep .mat-mdc-form-field-error { color: #ff5252 !important; font-size: 12px; }
-    .icon-error { color: #ff5252 !important; }
-    .icon-success { color: #76e594 !important; }
-  `]
+  styles: [
+    `
+      .dialog-container {
+        background-color: #000d01;
+        color: white;
+        padding: 24px;
+        border-radius: 8px;
+      }
+      ::ng-deep .mat-mdc-form-field-focus-overlay {
+        background-color: transparent !important;
+      }
+      ::ng-deep .custom-field .mat-mdc-text-field-wrapper {
+        background-color: #000d01 !important;
+        border: 1px solid #404040 !important;
+        border-radius: 4px !important;
+      }
+      ::ng-deep
+        .custom-field
+        .mdc-text-field--focused
+        .mat-mdc-text-field-wrapper {
+        border-color: #76e594 !important;
+      }
+      ::ng-deep .mat-mdc-select-arrow {
+        color: #76e594 !important;
+      }
+      ::ng-deep .mat-mdc-select-value-text {
+        color: white !important;
+      }
+      ::ng-deep .mat-mdc-form-field-error {
+        color: #ff5252 !important;
+        font-size: 12px;
+      }
+      .icon-error {
+        color: #ff5252 !important;
+      }
+      .icon-success {
+        color: #76e594 !important;
+      }
+      ::ng-deep .cdk-overlay-backdrop {
+        backdrop-filter: blur(20px);
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.4
+        ); /* optional semi-transparent background */
+      }
+    `,
+  ],
 })
 export class QuotationDialogComponent {
   private fb = inject(FormBuilder);
@@ -50,9 +97,16 @@ export class QuotationDialogComponent {
   quoteForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
-    phone: ['', [Validators.required, Validators.pattern('^[0-9+\\s-]*$'), Validators.minLength(8)]],
+    phone: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^[0-9+\\s-]*$'),
+        Validators.minLength(8),
+      ],
+    ],
     service: ['', Validators.required],
-    message: ['', [Validators.required, Validators.minLength(10)]]
+    message: ['', [Validators.required, Validators.minLength(10)]],
   });
 
   // Helper for template logic
@@ -73,7 +127,12 @@ export class QuotationDialogComponent {
       const templateParams = this.quoteForm.value;
 
       try {
-        await emailjs.send("service_m9xwdke", "template_o51q5ab", templateParams, "Wz8QOl_kyPBr6ZQT1");
+        await emailjs.send(
+          'service_m9xwdke',
+          'template_o51q5ab',
+          templateParams,
+          'Wz8QOl_kyPBr6ZQT1'
+        );
         this.isLoading = false;
         this.dialogRef.close();
         this.openSuccessDialog();
@@ -90,7 +149,7 @@ export class QuotationDialogComponent {
     this.dialog.open(SuccessDialogComponent, {
       width: '400px',
       enterAnimationDuration: '300ms',
-      exitAnimationDuration: '150ms'
+      exitAnimationDuration: '150ms',
     });
   }
 }
