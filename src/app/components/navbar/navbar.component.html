@@ -130,14 +130,35 @@
         (click)="openMobileMenu()"
         class="text-white xl:!hidden"
       >
-        <mat-icon style="margin-bottom: 0.5rem!important;">menu</mat-icon>
+        <mat-icon style="margin-bottom: 0.5rem !important">menu</mat-icon>
       </button>
     </div>
   </div>
 
   <ng-template #rulerDialog>
-    <div class="p-4 bg-[#000d01] border border-[#76e594]/30 rounded-lg">
-      <img src="images/brand/PCB-vonalzo.png" class="max-w-full h-auto" />
+    <div
+      class="relative bg-[#000d01] border border-[#76e594]/30 rounded-lg overflow-hidden flex flex-col items-center"
+    >
+      <button
+        mat-dialog-close
+        class="absolute top-4 right-4 z-50 bg-black/50 text-white hover:text-[#76e594] border border-white/10 w-10 h-10 rounded-full flex items-center justify-center transition-all cursor-pointer"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <div class="p-2 md:p-6 w-full flex justify-center">
+        <img
+          src="images/brand/PCB-vonalzo.png"
+          alt="PCB Ruler"
+          class="w-full h-auto max-h-[85vh] object-contain"
+        />
+      </div>
+
+      <p
+        class="text-[#76e594] text-[10px] uppercase tracking-widest mb-4 opacity-70"
+      >
+        ZANE Systems - PCB Reference Guide
+      </p>
     </div>
   </ng-template>
 </nav>

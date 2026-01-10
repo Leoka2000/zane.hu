@@ -163,30 +163,27 @@
     </div>
   </div>
 
-  <ng-template #rulerDialog>
-    <div
-      class="relative flex flex-col items-center justify-center bg-[#000d01] border border-[#76e594]/30 rounded-lg p-4 shadow-2xl"
+ <ng-template #rulerDialog>
+  <div class="relative flex flex-col items-center justify-center bg-[#000d01] border border-[#76e594]/30 rounded-lg p-2 md:p-6 shadow-2xl">
+    
+    <button
+      mat-dialog-close
+      class="absolute top-4 right-4 z-50 bg-black/50 text-white hover:text-[#76e594] border border-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-xl cursor-pointer"
     >
-      <button
-        mat-dialog-close
-        class="absolute -top-2 -right-2 bg-[#000d01] border border-[#76e594]/30 rounded-full w-8 h-8 flex items-center justify-center text-white hover:text-[#76e594] transition-colors z-50"
-      >
-        <span class="material-icons !text-lg">close</span>
-      </button>
+      <mat-icon class="!text-base">close</mat-icon>
+    </button>
 
-      <div class="w-full flex justify-center overflow-hidden">
-        <img
-          src="images/brand/PCB-vonalzo.png"
-          alt="PCB Ruler"
-          class="max-w-full max-h-[85vh] object-contain rounded-sm"
-        />
-      </div>
-
-      <p
-        class="text-[#76e594] text-[10px] uppercase tracking-widest mt-4 opacity-70"
-      >
-        ZANE Systems - PCB Reference Tool
-      </p>
+    <div class="w-full flex justify-center mt-8">
+      <img
+        src="images/brand/PCB-vonalzo.png"
+        alt="PCB Ruler"
+        class="w-full h-auto max-h-[80vh] object-contain rounded-sm"
+      />
     </div>
-  </ng-template>
+
+    <p class="text-[#76e594] text-[10px] uppercase tracking-widest mt-6 opacity-70">
+      ZANE Systems - PCB Reference Tool
+    </p>
+  </div>
+</ng-template>
 </footer>

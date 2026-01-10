@@ -141,14 +141,14 @@ export class NavbarComponent implements OnInit {
     localStorage.setItem('lang', lang);
   }
   openRuler(template: TemplateRef<any>) {
-    this.dialog.open(template, {
-      width: '100%',
-      maxWidth: '800px',
-      panelClass: 'ruler-dialog-panel',
-      backdropClass: 'backdrop-blur-[10px]',
-      autoFocus: false
-    });
-  }
+  this.dialog.open(template, {
+    width: '100%',
+    maxWidth: '1400px', // Increased from 800px
+    panelClass: 'ruler-dialog-panel',
+    backdropClass: 'backdrop-blur-[10px]',
+    autoFocus: false
+  });
+}
 
   openQuoteDialog() {
     this.dialog.open(QuotationDialogComponent, {

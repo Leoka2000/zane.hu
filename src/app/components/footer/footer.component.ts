@@ -6,10 +6,11 @@ import { QuotationDialogComponent } from '../dialogs/quotation-dialog/quotation-
 import { TanusitvanyDialogComponent } from '../dialogs/tanusitvany-dialog/tanusitvany-dialog.component';
 import { AdatzekelesDialogComponent } from '../dialogs/adatzekeles-dialog/adatzekeles-dialog.component';
 import { MinosegPolitikaDialogComponent } from '../dialogs/minoseg-politika-dialog/minoseg-politika-dialog.component';
+import { MatIcon } from "@angular/material/icon";
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, TranslateModule, MatDialogModule],
+  imports: [CommonModule, TranslateModule, MatDialogModule, MatIcon],
   templateUrl: './footer.component.html',
   styles: [
     `
@@ -24,15 +25,15 @@ export class FooterComponent {
   private dialog = inject(MatDialog);
 
   // PCB Vonalzó megnyitása (Template alapú)
-  openRulerDialog(templateRef: TemplateRef<any>) {
-    this.dialog.open(templateRef, {
-      width: '100%',
-      maxWidth: '900px',
-      panelClass: 'ruler-dialog-panel',
-      backdropClass: 'backdrop-blur-[20px]',
-      autoFocus: false,
-    });
-  }
+ openRulerDialog(templateRef: TemplateRef<any>) {
+  this.dialog.open(templateRef, {
+    width: '100%',
+    maxWidth: '1400px', // Increased for large screens
+    panelClass: 'ruler-dialog-panel',
+    backdropClass: 'backdrop-blur-[20px]',
+    autoFocus: false,
+  });
+}
   openCertDialog() {
     this.dialog.open(TanusitvanyDialogComponent, {
       width: 'auto',
