@@ -52,13 +52,13 @@ export class FooterComponent {
   }
 
   openPrivacyDialog() {
-    this.dialog.open(AdatzekelesDialogComponent, {
-      width: 'auto',
-      height: '100%',
-      panelClass: 'custom-dialog-container',
-      backdropClass: 'backdrop-blur-[20px]',
-    });
-  }
+  this.dialog.open(AdatzekelesDialogComponent, {
+    width: 'auto',
+    maxWidth: '95vw', 
+    panelClass: 'custom-dialog-container',
+    backdropClass: 'backdrop-blur-[20px]',
+  });
+}
 
   openMinosegDialog() {
   this.dialog.open(MinosegPolitikaDialogComponent, {
